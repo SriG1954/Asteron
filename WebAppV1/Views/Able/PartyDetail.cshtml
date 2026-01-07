@@ -1,0 +1,50 @@
+
+@model AppCoreV1.ABLEModels.Party;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetParty" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>C</td><td>@Model.C</td></tr>
+        <tr><td>I</td><td>@Model.I</td></tr>
+        <tr><td>CustomerNo</td><td>@Model.CustomerNo</td></tr>
+        <tr><td>Name</td><td>@Model.Name</td></tr>
+        <tr><td>Title</td><td>@Model.Title</td></tr>
+        <tr><td>PreferredName</td><td>@Model.PreferredName</td></tr>
+        <tr><td>PreviousName</td><td>@Model.PreviousName</td></tr>
+        <tr><td>Verified</td><td>@Model.Verified</td></tr>
+        <tr><td>Verified</td><td>@Model.DateOfBirth</td></tr>
+        <tr><td>Verified</td><td>@Model.DateOfDeath</td></tr>
+        <tr><td>Gender</td><td>@Model.Gender</td></tr>
+        <tr><td>MaritalStatus</td><td>@Model.MaritalStatus</td></tr>
+        <tr><td>PartyType</td><td>@Model.PartyType</td></tr>
+        <tr><td>Deceased</td><td>@Model.Deceased</td></tr>
+        <tr><td>NotificationsIssued</td><td>@Model.NotificationsIssued</td></tr>
+        <tr><td>Occupation</td><td>@Model.Occupation</td></tr>
+        <tr><td>Tenure</td><td>@Model.Tenure</td></tr>
+        <tr><td>HazardousPursuit</td><td>@Model.HazardousPursuit</td></tr>
+        <tr><td>Nationality</td><td>@Model.Nationality</td></tr>
+        <tr><td>CountryOfBirth</td><td>@Model.CountryOfBirth</td></tr>
+        <tr><td>CulturalConsiderations</td><td>@Model.CulturalConsiderations</td></tr>
+        <tr><td>HighValueAdvisor</td><td>@Model.HighValueAdvisor</td></tr>
+        <tr><td>SecuredClient</td><td>@Model.SecuredClient</td></tr>
+        <tr><td>GroupClient</td><td>@Model.GroupClient</td></tr>
+        <tr><td>StaffMember</td><td>@Model.StaffMember</td></tr>
+        <tr><td>Password</td><td>@Model.Password</td></tr>
+        <tr><td>CorrespondenceTranslationRequired</td><td>@Model.CorrespondenceTranslationRequired</td></tr>
+        <tr><td>InterpreterRequired</td><td>@Model.InterpreterRequired</td></tr>
+
+    </tbody>
+</table>
+
+

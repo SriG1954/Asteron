@@ -1,0 +1,29 @@
+@model AppCoreV1.ABLEModels.RptOverrideriskreport;
+
+
+<table id="tabldata" class="table">
+<thead class="thead-dark">
+<tr>
+<th scope="col">Parameter</th>
+<th scope="col">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Download</td>
+<td><a id="mydownload" asp-action="GetRptOverrideriskreport" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+</tr>
+<tr><td>Id</td><td>@Model.Id</td></tr>
+<tr><td>OverrideProcessedBy</td><td>@Model.OverrideProcessedBy</td></tr>
+<tr><td>LumpsumIpIndicator</td><td>@Model.LumpsumIpIndicator</td></tr>
+<tr><td>ClaimType</td><td>@Model.ClaimType</td></tr>
+<tr><td>ClaimNumber</td><td>@Model.ClaimNumber</td></tr>
+<tr><td>RiskCategory</td><td>@Model.RiskCategory</td></tr>
+<tr><td>RiskCategoryCreationDate</td><td>@Model.RiskCategoryCreationDate</td></tr>
+<tr><td>OverrideRiskCategory</td><td>@Model.OverrideRiskCategory</td></tr>
+<tr><td>OverrideRiskCategoryReason</td><td>@Model.OverrideRiskCategoryReason</td></tr>
+
+</tbody>
+</table>
+
+

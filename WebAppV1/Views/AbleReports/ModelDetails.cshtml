@@ -1,0 +1,19 @@
+﻿
+@model List<string>;
+
+<table id="tabldata" class="table">
+     <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+        <tbody>
+        @foreach(var item in Model)
+        {
+            <tr><td>@item</td><td>@item</td></tr>
+        }
+        </tbody>
+ </table>
+
+

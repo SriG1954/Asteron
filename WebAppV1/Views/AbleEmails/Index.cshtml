@@ -1,0 +1,95 @@
+﻿@using AppCoreV1.ABLEModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model PaginatedList<AbleEmail>
+
+@{
+    ViewData["Title"] = "Able Email";
+    int prevpage = 0;
+    int nextpage = 0;
+    if (Model.HasNextPage) { nextpage = Model.PageIndex + 1; }
+    if (Model.HasPreviousPage) { prevpage = Model.PageIndex - 1; }
+}
+<script src="~/js/ablereport.js"></script>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <partial name="_SidebarA" />
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <div class="row">
+                            <div style="padding-left:10px;">
+                                <h4>Able Email</h4>
+                                <a asp-action="Index" asp-controller="Able">Back to Home</a>
+                                <a id="btncreate" class="btn btn-success" asp-action="Create" asp-controller="AbleEmails">Create</a>
+                            </div>
+                            <div style="float:right;padding-top: 5px;padding-left:10px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    @using (Html.BeginForm(ViewBag.action as string, "AbleEmails", FormMethod.Get, new { @column = ViewBag.column as string, @search = ViewBag.search as string, @page = Model.PageIndex }))
+                    {
+                        <partial name="_FormSearch" />
+                    }
+                    <div class="card-body">
+
+                        <table id="tabldata" class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">EmailId</th>
+                                    <th scope="col">SenderEmail</th>
+                                    <th scope="col">RecipientEmail</th>
+                                    <th scope="col">Subject</th>
+                                    <th scope="col">View</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@Html.DisplayFor(modelItem => item.EmailId)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.SenderEmail)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.RecipientEmail)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.MailSubject)</td>
+                                        <td><a class="btn btn-outline-secondary" onclick="return GetEmail('@item.EmailId')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <div class="card-footer">
+                        <nav aria-label="...">
+                            <ul class="pagination justify-content-center">
+                                @if (Model.TotalPages > 1)
+                                {
+                                    <li id="fpLink" class="page-item"><a class="page-link" href="/AbleEmails/Index?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=1&pageSize=25">First</a></li>
+                                    @if (prevpage > 0)
+                                    {
+                                        <li id="ppLink" class="page-item"><a class="page-link" href="/AbleEmails/Index?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@prevpage&pageSize=25">Prev</a></li>
+                                    }
+                                    <li id="cpLink" class="page-item"><a class="page-link active" href="/AbleEmails/Index?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@Model.PageIndex&pageSize=25">Page @Model.PageIndex of Pages @Model.TotalPages</a></li>
+                                    @if (nextpage > 0)
+                                    {
+                                        <li id="npLink" class="page-item"><a class="page-link" href="/AbleEmails/Index?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@nextpage&pageSize=25">Next</a></li>
+                                    }
+                                    <li id="lpLink" class="page-item"><a class="page-link" href="/AbleEmails/Index?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@Model.TotalPages&pageSize=25">last</a></li>
+                                }
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_ModalPage" />

@@ -1,0 +1,327 @@
+@using AppCoreV1.AsteronModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model PaginatedList<Contact>
+
+@{
+    ViewData["Title"] = "Asteron Contact";
+    int prevpage = 0;
+    int nextpage = 0;
+    if (Model.HasNextPage) { nextpage = Model.PageIndex + 1; }
+    if (Model.HasPreviousPage) { prevpage = Model.PageIndex - 1; }
+}
+<script src="~/js/ablereport.js"></script>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <partial name="_SidebarB" />
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <div class="row">
+                            <div style="padding-left:10px;">
+                                <h4>Asteron Contact</h4>
+                                <a asp-action="Index" asp-controller="FL">Back to Home</a>
+                                <a asp-action="GetContacts" asp-controller="HelphubDownload" asp-route-column="@ViewBag.column" asp-route-search="@ViewBag.search" asp-route-pageIndex="@Model.PageIndex" class="btn btn-success">Download</a>
+                            </div>
+                            <div style="float:right;padding-top: 5px;padding-left:10px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    @using (Html.BeginForm(ViewBag.action as string, "Helphub", FormMethod.Get, new { @column = ViewBag.column as string, @search = ViewBag.search as string, @page = Model.PageIndex }))
+                    {
+                        <partial name="_FormSearch" />
+                    }
+                    <div class="card-body">
+
+                        <table id="tabldata" class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Addressbookuid</th>
+                                    <th scope="col">Afterhours</th>
+                                    <th scope="col">Attorneylicense</th>
+                                    <th scope="col">AutopaymentallowedExt</th>
+                                    <th scope="col">Autosync</th>
+                                    <th scope="col">Beanversion</th>
+                                    <th scope="col">Canmanageprojects</th>
+                                    <th scope="col">Cellphone</th>
+                                    <th scope="col">Claimantidtype</th>
+                                    <th scope="col">CommentsExt</th>
+                                    <th scope="col">Createtime</th>
+                                    <th scope="col">Createuserid</th>
+                                    <th scope="col">Dateofbirth</th>
+                                    <th scope="col">DayperiodExt</th>
+                                    <th scope="col">Donotdestroy</th>
+                                    <th scope="col">Emailaddress1</th>
+                                    <th scope="col">Emailaddress2</th>
+                                    <th scope="col">Employeenumber</th>
+                                    <th scope="col">Faxphone</th>
+                                    <th scope="col">Firstname</th>
+                                    <th scope="col">Firstnamedenorm</th>
+                                    <th scope="col">Formername</th>
+                                    <th scope="col">Gender</th>
+                                    <th scope="col">Homephone</th>
+                                    <th scope="col">IssensitiveExt</th>
+                                    <th scope="col">Lastname</th>
+                                    <th scope="col">Lastnamedenorm</th>
+                                    <th scope="col">Loadrelatedcontacts</th>
+                                    <th scope="col">LocationrepairtypeExt</th>
+                                    <th scope="col">Makesafe</th>
+                                    <th scope="col">Middlename</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Namedenorm</th>
+                                    <th scope="col">Obfuscatedinternal</th>
+                                    <th scope="col">Pendinglinkmessage</th>
+                                    <th scope="col">Postaladdress</th>
+                                    <th scope="col">Preferred</th>
+                                    <th scope="col">Prefix</th>
+                                    <th scope="col">Primaryaddressid</th>
+                                    <th scope="col">Primaryphone</th>
+                                    <th scope="col">Publicid</th>
+                                    <th scope="col">RepairerrelationshipExt</th>
+                                    <th scope="col">Retired</th>
+                                    <th scope="col">ScAcceptsawpclaims</th>
+                                    <th scope="col">ScAcceptsdriveable</th>
+                                    <th scope="col">ScAcceptsnondriveable</th>
+                                    <th scope="col">ScAcceptssms</th>
+                                    <th scope="col">ScAcceptstpafclaims</th>
+                                    <th scope="col">ScAcceptstpvehicles</th>
+                                    <th scope="col">ScAcceptsume</th>
+                                    <th scope="col">ScAccidentsequencekey</th>
+                                    <th scope="col">ScAccountname</th>
+                                    <th scope="col">ScAccountnumber</th>
+                                    <th scope="col">ScActivecontact</th>
+                                    <th scope="col">ScActivepnetaccount</th>
+                                    <th scope="col">ScAuthparty</th>
+                                    <th scope="col">ScB2bEnabled</th>
+                                    <th scope="col">ScBankname</th>
+                                    <th scope="col">ScBsb</th>
+                                    <th scope="col">ScBulkpayments</th>
+                                    <th scope="col">ScBusinesstype</th>
+                                    <th scope="col">ScCellphone</th>
+                                    <th scope="col">ScCentralbillservice</th>
+                                    <th scope="col">ScConsolvendor</th>
+                                    <th scope="col">ScContactpaymentaccountseq</th>
+                                    <th scope="col">ScCorrespondencedelivery</th>
+                                    <th scope="col">ScDeceased</th>
+                                    <th scope="col">ScFormerfirstname</th>
+                                    <th scope="col">ScFormermiddlename</th>
+                                    <th scope="col">ScGstregistered</th>
+                                    <th scope="col">ScHospitalname</th>
+                                    <th scope="col">ScInterpreterreqd</th>
+                                    <th scope="col">ScLanguage</th>
+                                    <th scope="col">ScLanguagepref</th>
+                                    <th scope="col">ScLocationtype</th>
+                                    <th scope="col">ScNodependantadults</th>
+                                    <th scope="col">ScNodependantchildren</th>
+                                    <th scope="col">ScOpenfriday</th>
+                                    <th scope="col">ScOpenmonday</th>
+                                    <th scope="col">ScOpensaturday</th>
+                                    <th scope="col">ScOpensunday</th>
+                                    <th scope="col">ScOpenthursday</th>
+                                    <th scope="col">ScOpentuesday</th>
+                                    <th scope="col">ScOpenwednesday</th>
+                                    <th scope="col">ScOtherphone</th>
+                                    <th scope="col">ScOtherphonedesc</th>
+                                    <th scope="col">ScPayable</th>
+                                    <th scope="col">ScPaymentmethod</th>
+                                    <th scope="col">ScPaymentname</th>
+                                    <th scope="col">ScPaymentserviceackdate</th>
+                                    <th scope="col">ScPaymentservicecorrid</th>
+                                    <th scope="col">ScPaymentservicevendorid</th>
+                                    <th scope="col">ScPaymentterms</th>
+                                    <th scope="col">ScPaystartdate</th>
+                                    <th scope="col">ScPolicytype</th>
+                                    <th scope="col">ScPortfoliocode</th>
+                                    <th scope="col">ScProcesstypeexists</th>
+                                    <th scope="col">ScRecommended</th>
+                                    <th scope="col">ScRemittancedelivery</th>
+                                    <th scope="col">ScRemittancenotificationemail</th>
+                                    <th scope="col">ScSamenotificationemail</th>
+                                    <th scope="col">ScSamenotificationsms</th>
+                                    <th scope="col">ScServiceablepostcodenational</th>
+                                    <th scope="col">ScStaffnumber</th>
+                                    <th scope="col">ScSuspended</th>
+                                    <th scope="col">ScTradingname</th>
+                                    <th scope="col">ScVendorengagementtype</th>
+                                    <th scope="col">ScVendortype</th>
+                                    <th scope="col">Subtype</th>
+                                    <th scope="col">Suffix</th>
+                                    <th scope="col">Taxid</th>
+                                    <th scope="col">Taxstatus</th>
+                                    <th scope="col">Updatetime</th>
+                                    <th scope="col">Updateuserid</th>
+                                    <th scope="col">Validationlevel</th>
+                                    <th scope="col">Vendortype</th>
+                                    <th scope="col">W9received</th>
+                                    <th scope="col">WatchlistproviderExt</th>
+                                    <th scope="col">Workphone</th>
+                                    <th scope="col">View</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Addressbookuid)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Afterhours)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Attorneylicense)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.AutopaymentallowedExt)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Autosync)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Beanversion)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Canmanageprojects)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Cellphone)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Claimantidtype)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.CommentsExt)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Createtime)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Createuserid)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Dateofbirth)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.DayperiodExt)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Donotdestroy)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Emailaddress1)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Emailaddress2)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Employeenumber)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Faxphone)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Firstname)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Firstnamedenorm)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Formername)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Gender)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Homephone)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.IssensitiveExt)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Lastname)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Lastnamedenorm)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Loadrelatedcontacts)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.LocationrepairtypeExt)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Makesafe)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Middlename)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Namedenorm)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Obfuscatedinternal)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Pendinglinkmessage)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Postaladdress)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Preferred)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Prefix)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Primaryaddressid)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Primaryphone)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Publicid)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.RepairerrelationshipExt)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Retired)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScAcceptsawpclaims)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScAcceptsdriveable)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScAcceptsnondriveable)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScAcceptssms)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScAcceptstpafclaims)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScAcceptstpvehicles)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScAcceptsume)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScAccidentsequencekey)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScAccountname)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScAccountnumber)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScActivecontact)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScActivepnetaccount)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScAuthparty)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScB2bEnabled)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScBankname)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScBsb)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScBulkpayments)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScBusinesstype)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScCellphone)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScCentralbillservice)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScConsolvendor)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScContactpaymentaccountseq)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScCorrespondencedelivery)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScDeceased)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScFormerfirstname)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScFormermiddlename)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScGstregistered)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScHospitalname)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScInterpreterreqd)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScLanguage)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScLanguagepref)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScLocationtype)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScNodependantadults)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScNodependantchildren)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScOpenfriday)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScOpenmonday)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScOpensaturday)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScOpensunday)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScOpenthursday)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScOpentuesday)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScOpenwednesday)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScOtherphone)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScOtherphonedesc)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScPayable)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScPaymentmethod)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScPaymentname)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScPaymentserviceackdate)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScPaymentservicecorrid)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScPaymentservicevendorid)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScPaymentterms)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScPaystartdate)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScPolicytype)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScPortfoliocode)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScProcesstypeexists)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScRecommended)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScRemittancedelivery)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScRemittancenotificationemail)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScSamenotificationemail)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScSamenotificationsms)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScServiceablepostcodenational)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScStaffnumber)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScSuspended)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScTradingname)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScVendorengagementtype)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScVendortype)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Subtype)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Suffix)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Taxid)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Taxstatus)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Updatetime)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Updateuserid)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Validationlevel)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Vendortype)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.W9received)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.WatchlistproviderExt)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Workphone)</td>
+                                        <td><a class="btn btn-outline-secondary" onclick="return GetContact('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <div class="card-footer">
+                        <nav aria-label="...">
+                            <ul class="pagination justify-content-center">
+                                @if (Model.TotalPages > 1)
+                                {
+                                    <li id="fpLink" class="page-item"><a class="page-link" href="./Contact?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=1&pageSize=25">First</a></li>
+                                    @if (prevpage > 0)
+                                    {
+                                        <li id="ppLink" class="page-item"><a class="page-link" href="./Contact?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@prevpage&pageSize=25">Prev</a></li>
+                                    }
+                                    <li id="cpLink" class="page-item"><a class="page-link active" href="./Contact?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@Model.PageIndex&pageSize=25">Page @Model.PageIndex of Pages @Model.TotalPages</a></li>
+                                    @if (nextpage > 0)
+                                    {
+                                        <li id="npLink" class="page-item"><a class="page-link" href="./Contact?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@nextpage&pageSize=25">Next</a></li>
+                                    }
+                                    <li id="lpLink" class="page-item"><a class="page-link" href="./Contact?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@Model.TotalPages&pageSize=25">last</a></li>
+                                }
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_ModalPage" />

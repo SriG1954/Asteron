@@ -1,0 +1,78 @@
+@using AppCoreV1.ABLEModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model PaginatedList<MedicalCode>
+
+@{
+    ViewData["Title"] = ViewBag.appName + " MedicalCode";
+    int prevpage = 0;
+    int nextpage = 0;
+    if (Model.HasNextPage) { nextpage = Model.PageIndex + 1; }
+    if (Model.HasPreviousPage) { prevpage = Model.PageIndex - 1; }
+    AppCoreV1.ABLEModels.Case _case = new Case
+            {
+                CaseNumber = @ViewData["CaseNumber"]!.ToString(),
+            };
+}
+<script src="~/js/ablereport.js"></script>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <partial name="_SidebarACT" model="@_case" />
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <div class="row">
+                            <div style="padding-left:10px;">
+                                <h4>@ViewBag.appName Claim Medical Code</h4>
+                                <a asp-action="Index" asp-controller="Able">Back to Home</a>
+                                <a asp-action="GetMedicalCodes" asp-controller="AbleDownload" asp-route-column="@ViewBag.column" asp-route-search="@ViewBag.search" asp-route-pageIndex="@Model.PageIndex" class="btn btn-success">Download</a>
+                            </div>
+                            <div style="float:right;padding-top: 5px;padding-left:10px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+
+                    <div class="card-body">
+
+                        <table id="tabldata" class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Level</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Code</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">View</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@Html.DisplayFor(modelItem => item.Level)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Type)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Code)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                                        <td><a class="btn btn-outline-secondary" onclick="return GetMedicalCode('@item.Id', '@ViewBag.appId')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_ModalPage" />

@@ -1,0 +1,32 @@
+@using AppCoreV1.ABLEModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model List<ActionHistoryEx>
+
+@{
+    ViewData["Title"] = "Able ActionHistory Report";
+}
+<script src="~/js/ablereport.js"></script>
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">BenefitNumber</th>
+            <th scope="col">LastUpdated</th>
+            <th scope="col">Name</th>
+            <th scope="col">View</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.BenefitNumber)</td>
+                <td>@Html.DisplayFor(modelItem => item.LastUpdated)</td>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td><a class="btn btn-outline-secondary" onclick="return GetActionHistory('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>

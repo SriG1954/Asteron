@@ -1,0 +1,27 @@
+﻿@using AppCoreV1.ABLEModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model List<Occupation>;
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">C</th>
+            <th scope="col">I</th>
+            <th scope="col">View</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                <td>@Html.DisplayFor(modelItem => item.C)</td>
+                <td>@Html.DisplayFor(modelItem => item.I)</td>
+                <td><a class="btn btn-outline-secondary" onclick="return GetOccupation('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>

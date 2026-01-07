@@ -1,0 +1,72 @@
+
+@model AppCoreV1.ABLEModels.RptPaymentsummaryl;
+
+
+<table id="tabldata" class="table">
+<thead class="thead-dark">
+<tr>
+<th scope="col">Parameter</th>
+<th scope="col">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Download</td>
+<td><a id="mydownload" asp-action="GetRptPaymentsummaryl" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+</tr>
+<tr><td>Id</td><td>@Model.Id</td></tr>
+<tr><td>ClaimNumber</td><td>@Model.ClaimNumber</td></tr>
+<tr><td>BenefitNumber</td><td>@Model.BenefitNumber</td></tr>
+<tr><td>EFormId</td><td>@Model.EFormId</td></tr>
+<tr><td>LastUpdateDate</td><td>@Model.LastUpdateDate</td></tr>
+<tr><td>PolicyType</td><td>@Model.PolicyType</td></tr>
+<tr><td>ConcurrentClaimYN</td><td>@Model.ConcurrentClaimYN</td></tr>
+<tr><td>ClaimType</td><td>@Model.ClaimType</td></tr>
+<tr><td>GroupOrRetail</td><td>@Model.GroupOrRetail</td></tr>
+<tr><td>PaymentType</td><td>@Model.PaymentType</td></tr>
+<tr><td>BenefitAmtCalc</td><td>@Model.BenefitAmtCalc</td></tr>
+<tr><td>DateCeasedWork</td><td>@Model.DateCeasedWork</td></tr>
+<tr><td>IncurredDate</td><td>@Model.IncurredDate</td></tr>
+<tr><td>AcceptFrom</td><td>@Model.AcceptFrom</td></tr>
+<tr><td>BenefitPayable</td><td>@Model.BenefitPayable</td></tr>
+<tr><td>InvestmentAmount</td><td>@Model.InvestmentAmount</td></tr>
+<tr><td>Bonus</td><td>@Model.Bonus</td></tr>
+<tr><td>OtherTaxable</td><td>@Model.OtherTaxable</td></tr>
+<tr><td>TotalGrossAmount</td><td>@Model.TotalGrossAmount</td></tr>
+<tr><td>OtherNonTaxable</td><td>@Model.OtherNonTaxable</td></tr>
+<tr><td>TaxValue</td><td>@Model.TaxValue</td></tr>
+<tr><td>TotalNetAmount</td><td>@Model.TotalNetAmount</td></tr>
+<tr><td>PartialWdrwlTferReq</td><td>@Model.PartialWdrwlTferReq</td></tr>
+<tr><td>PartialWdrawalTferAmt</td><td>@Model.PartialWdrawalTferAmt</td></tr>
+<tr><td>TaxDollar</td><td>@Model.TaxDollar</td></tr>
+<tr><td>CaldNetAmount</td><td>@Model.CaldNetAmount</td></tr>
+<tr><td>PaymentAddtnlInfo</td><td>@Model.PaymentAddtnlInfo</td></tr>
+<tr><td>PaymentMethod</td><td>@Model.PaymentMethod</td></tr>
+<tr><td>ForGroupPayee</td><td>@Model.ForGroupPayee</td></tr>
+<tr><td>AdminReqdWdrawal</td><td>@Model.AdminReqdWdrawal</td></tr>
+<tr><td>PolicyDelinkedYN</td><td>@Model.PolicyDelinkedYN</td></tr>
+<tr><td>DelinkedPolicyDetails</td><td>@Model.DelinkedPolicyDetails</td></tr>
+<tr><td>AdminDeletePolicyYN</td><td>@Model.AdminDeletePolicyYN</td></tr>
+<tr><td>AdminDeleteProcDate</td><td>@Model.AdminDeleteProcDate</td></tr>
+<tr><td>PremRefundReqdYN</td><td>@Model.PremRefundReqdYN</td></tr>
+<tr><td>RemaingCoverYN</td><td>@Model.RemaingCoverYN</td></tr>
+<tr><td>BuyBackOption</td><td>@Model.BuyBackOption</td></tr>
+<tr><td>BuyBackOptionEffDate</td><td>@Model.BuyBackOptionEffDate</td></tr>
+<tr><td>TrmaReinstmntApplYN</td><td>@Model.TrmaReinstmntApplYN</td></tr>
+<tr><td>FinancialPlanningBftYN</td><td>@Model.FinancialPlanningBftYN</td></tr>
+<tr><td>FinancialPlanningBftAmt</td><td>@Model.FinancialPlanningBftAmt</td></tr>
+<tr><td>OtherPaymentInfo</td><td>@Model.OtherPaymentInfo</td></tr>
+<tr><td>ProcessDate</td><td>@Model.ProcessDate</td></tr>
+<tr><td>AuthoriseDate</td><td>@Model.AuthoriseDate</td></tr>
+<tr><td>OtherAdminInfo</td><td>@Model.OtherAdminInfo</td></tr>
+<tr><td>LumpsumIpIndicator</td><td>@Model.LumpsumIpIndicator</td></tr>
+<tr><td>ClaimTypeIpLs</td><td>@Model.ClaimTypeIpLs</td></tr>
+<tr><td>ClassOfBusiness</td><td>@Model.ClassOfBusiness</td></tr>
+<tr><td>BenefitCode</td><td>@Model.BenefitCode</td></tr>
+<tr><td>ProductCode</td><td>@Model.ProductCode</td></tr>
+<tr><td>BenefitType</td><td>@Model.BenefitType</td></tr>
+
+</tbody>
+</table>
+
+

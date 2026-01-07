@@ -1,0 +1,71 @@
+﻿<link href="~/css/style4.css" rel="stylesheet" />
+<script src="~/js/mysearch.js"></script>
+
+<style>
+    .content-image {
+        font-size: 90px;
+        text-align: center;
+        background-color: #F2F4F4;
+    }
+</style>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <partial name="_SidebarMain" />
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h2>Reports</h2>
+                    </div>
+                    <div class="container">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="viewEventsLink" asp-action="ReportClaims" asp-controller="FigClaims"><i class="fa fa-wheelchair" aria-hidden="true"></i><h5>Claim</h5></a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="viewEventsLink" asp-action="Index" asp-controller="FigAddress"><i class="fas fa-address-card" aria-hidden="true"></i><h5>Address</h5></a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="viewEventsLink" asp-action="Search" asp-controller="FigNotes"><i class="fa fa-clock" aria-hidden="true"></i><h5>Notes</h5></a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="viewEventsLink" asp-action="Search" asp-controller="FigTasks"><i class="fas fa-tasks" aria-hidden="true"></i><h5>Tasks</h5></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="viewEventsLink" asp-action="Index" asp-controller="Reinsure"><i class="fa fa-wheelchair" aria-hidden="true"></i><h5>Re-Insure</h5></a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="viewEventsLink" asp-action="Index" asp-controller="Barcodes"><i class="fa fa-barcode" aria-hidden="true"></i><h5>Barcodes</h5></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_ModalPage" />
+

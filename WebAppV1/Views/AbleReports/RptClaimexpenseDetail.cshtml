@@ -1,0 +1,42 @@
+@model AppCoreV1.ABLEModels.RptClaimexpense;
+
+
+<table id="tabldata" class="table">
+<thead class="thead-dark">
+<tr>
+<th scope="col">Parameter</th>
+<th scope="col">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Download</td>
+<td><a id="mydownload" asp-action="GetRptClaimexpense" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+</tr>
+<tr><td>Id</td><td>@Model.Id</td></tr>
+<tr><td>ClaimNumber</td><td>@Model.ClaimNumber</td></tr>
+<tr><td>Payee</td><td>@Model.Payee</td></tr>
+<tr><td>PolicyNumber</td><td>@Model.PolicyNumber</td></tr>
+<tr><td>InvoiceType</td><td>@Model.InvoiceType</td></tr>
+<tr><td>InvoiceNumber</td><td>@Model.InvoiceNumber</td></tr>
+<tr><td>AmountIncGst</td><td>@Model.AmountIncGst</td></tr>
+<tr><td>Gst</td><td>@Model.Gst</td></tr>
+<tr><td>PaymentMethod</td><td>@Model.PaymentMethod</td></tr>
+<tr><td>VendorId</td><td>@Model.VendorId</td></tr>
+<tr><td>AdminInitials</td><td>@Model.AdminInitials</td></tr>
+<tr><td>PaymentCreationDate</td><td>@Model.PaymentCreationDate</td></tr>
+<tr><td>PaymentReference</td><td>@Model.PaymentReference</td></tr>
+<tr><td>AuthorisedBy</td><td>@Model.AuthorisedBy</td></tr>
+<tr><td>AuthorisationDate</td><td>@Model.AuthorisationDate</td></tr>
+<tr><td>LumpsumIpIndicator</td><td>@Model.LumpsumIpIndicator</td></tr>
+<tr><td>ClaimType</td><td>@Model.ClaimType</td></tr>
+<tr><td>ClassOfBusiness</td><td>@Model.ClassOfBusiness</td></tr>
+<tr><td>BenefitCode</td><td>@Model.BenefitCode</td></tr>
+<tr><td>ProductCode</td><td>@Model.ProductCode</td></tr>
+<tr><td>TargetBenefitType</td><td>@Model.TargetBenefitType</td></tr>
+<tr><td>ClaimExpenseGuid</td><td>@Model.ClaimExpenseGuid</td></tr>
+
+</tbody>
+</table>
+
+

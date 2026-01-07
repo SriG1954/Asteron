@@ -1,0 +1,41 @@
+﻿<link href="~/css/style4.css" rel="stylesheet" />
+<script src="~/js/ablesearch.js"></script>
+
+<style>
+    .content-image {
+        font-size: 90px;
+        text-align: center;
+        background-color: #F2F4F4;
+    }
+</style>
+
+@{
+    ViewData["Title"] = "Able";
+}
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <partial name="_SidebarA" />
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h2>ABLE Portal Architecture</h2>
+                        <p>ABLE Claims and Report Search</p>
+                    </div>
+                    <div class="container">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <img src="~/images/architecture.svg" width="600" height="500" class="img-fluid" alt="Responsive image">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_ModalPage" />
+

@@ -1,0 +1,95 @@
+﻿@using AppCoreV1.ABLEModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model PaginatedList<RptDocumentreport>
+
+@{
+    ViewData["Title"] = "Able Claim Documents";
+    int prevpage = 0;
+    int nextpage = 0;
+    if (Model.HasNextPage) { nextpage = Model.PageIndex + 1; }
+    if (Model.HasPreviousPage) { prevpage = Model.PageIndex - 1; }
+    int r = 1;
+}
+<script src="~/js/mysearch.js"></script>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <partial name="_SidebarAC" />
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <div class="row">
+                            <div style="padding-left:10px;">
+                                <h4>Able Claim Documents</h4>
+                                <a asp-action="Index" asp-controller="Home">Back to Home</a>
+                                <a asp-action="GetClaims" asp-controller="Download" asp-route-column="@ViewBag.column" asp-route-search="@ViewBag.search" asp-route-pageIndex="@Model.PageIndex" class="btn btn-success">Download</a>
+                            </div>
+                            <div style="float:right;padding-top: 5px;padding-left:10px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    @using (Html.BeginForm(ViewBag.action as string, "AbleDocuments", FormMethod.Get, new { @column = ViewBag.column as string, @search = ViewBag.search as string, @page = Model.PageIndex }))
+                    {
+                        <partial name="_FormSearch" />
+                    }
+                    <div class="card-body">
+
+                        <table id="tabldata" class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Case No</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Document Type</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">View</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@Html.DisplayFor(modelItem => item.CaseNumber)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.DocumentType)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                                        <td><a class="btn btn-outline-secondary" asp-action="Index" asp-controller="AbleClaim" asp-route-search="@item.DocumentId">View</a></td>
+
+                                    </tr>
+                                    r++;
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer">
+                        <nav aria-label="...">
+                            <ul class="pagination justify-content-center">
+                                @if (Model.TotalPages > 1)
+                                {
+                                    <li id="fpLink" class="page-item"><a class="page-link" href="/AbleDocuments/index?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=1&pageSize=25">First</a></li>
+                                    @if (prevpage > 0)
+                                    {
+                                        <li id="ppLink" class="page-item"><a class="page-link" href="/AbleDocuments/index?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@prevpage&pageSize=25">Prev</a></li>
+                                    }
+                                    <li id="cpLink" class="page-item"><a class="page-link active" href="/AbleDocuments/index?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@Model.PageIndex&pageSize=25">Page @Model.PageIndex of @Model.TotalPages Pages</a></li>
+                                    @if (nextpage > 0)
+                                    {
+                                        <li id="npLink" class="page-item"><a class="page-link" href="/AbleDocuments/index?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@nextpage&pageSize=25">Next</a></li>
+                                    }
+                                    <li id="lpLink" class="page-item"><a class="page-link" href="/AbleDocuments/index?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@Model.TotalPages&pageSize=25">last</a></li>
+                                }
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_ModalPage" />

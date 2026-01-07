@@ -1,0 +1,92 @@
+@model AppCoreV1.AsteronModels.Claim;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetClaim" asp-controller="AsteronDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>Assignedbyuserid</td><td>@Model.Assignedbyuserid</td></tr>
+        <tr><td>Assignedgroupid</td><td>@Model.Assignedgroupid</td></tr>
+        <tr><td>Assigneduserid</td><td>@Model.Assigneduserid</td></tr>
+        <tr><td>Assignmentdate</td><td>@Model.Assignmentdate</td></tr>
+        <tr><td>Assignmentstatus</td><td>@Model.Assignmentstatus</td></tr>
+        <tr><td>Beanversion</td><td>@Model.Beanversion</td></tr>
+        <tr><td>Claimantdenormid</td><td>@Model.Claimantdenormid</td></tr>
+        <tr><td>Claimnumber</td><td>@Model.Claimnumber</td></tr>
+        <tr><td>Claimtier</td><td>@Model.Claimtier</td></tr>
+        <tr><td>Closedate</td><td>@Model.Closedate</td></tr>
+        <tr><td>Createtime</td><td>@Model.Createtime</td></tr>
+        <tr><td>Createuserid</td><td>@Model.Createuserid</td></tr>
+        <tr><td>Currency</td><td>@Model.Currency</td></tr>
+        <tr><td>Description</td><td>@Model.Description</td></tr>
+        <tr><td>Donotdestroy</td><td>@Model.Donotdestroy</td></tr>
+        <tr><td>Flagged</td><td>@Model.Flagged</td></tr>
+        <tr><td>Flaggeddate</td><td>@Model.Flaggeddate</td></tr>
+        <tr><td>Flaggedreason</td><td>@Model.Flaggedreason</td></tr>
+        <tr><td>Incidentreport</td><td>@Model.Incidentreport</td></tr>
+        <tr><td>Insureddenormid</td><td>@Model.Insureddenormid</td></tr>
+        <tr><td>Insuredpremises</td><td>@Model.Insuredpremises</td></tr>
+        <tr><td>Isoenabled</td><td>@Model.Isoenabled</td></tr>
+        <tr><td>Isostatus</td><td>@Model.Isostatus</td></tr>
+        <tr><td>Lobcode</td><td>@Model.Lobcode</td></tr>
+        <tr><td>Lockingcolumn</td><td>@Model.Lockingcolumn</td></tr>
+        <tr><td>Losscause</td><td>@Model.Losscause</td></tr>
+        <tr><td>Lossdate</td><td>@Model.Lossdate</td></tr>
+        <tr><td>Losslocationid</td><td>@Model.Losslocationid</td></tr>
+        <tr><td>Losstype</td><td>@Model.Losstype</td></tr>
+        <tr><td>Maincontacttype</td><td>@Model.Maincontacttype</td></tr>
+        <tr><td>Permissionrequired</td><td>@Model.Permissionrequired</td></tr>
+        <tr><td>Policyid</td><td>@Model.Policyid</td></tr>
+        <tr><td>Preexdisblty</td><td>@Model.Preexdisblty</td></tr>
+        <tr><td>Previousgroupid</td><td>@Model.Previousgroupid</td></tr>
+        <tr><td>Previoususerid</td><td>@Model.Previoususerid</td></tr>
+        <tr><td>Publicid</td><td>@Model.Publicid</td></tr>
+        <tr><td>Reopendate</td><td>@Model.Reopendate</td></tr>
+        <tr><td>Reopenedreason</td><td>@Model.Reopenedreason</td></tr>
+        <tr><td>Reportedbytype</td><td>@Model.Reportedbytype</td></tr>
+        <tr><td>Reporteddate</td><td>@Model.Reporteddate</td></tr>
+        <tr><td>Retired</td><td>@Model.Retired</td></tr>
+        <tr><td>ScAlternateclaimnumber1</td><td>@Model.ScAlternateclaimnumber1</td></tr>
+        <tr><td>ScClaimauto</td><td>@Model.ScClaimauto</td></tr>
+        <tr><td>ScClaimdecision</td><td>@Model.ScClaimdecision</td></tr>
+        <tr><td>ScClaimdecisioncomments</td><td>@Model.ScClaimdecisioncomments</td></tr>
+        <tr><td>ScClaimeventquestions</td><td>@Model.ScClaimeventquestions</td></tr>
+        <tr><td>ScClaimproctype</td><td>@Model.ScClaimproctype</td></tr>
+        <tr><td>ScClaimreconcilereport</td><td>@Model.ScClaimreconcilereport</td></tr>
+        <tr><td>ScClaimrejectreason</td><td>@Model.ScClaimrejectreason</td></tr>
+        <tr><td>ScClosedoutcome</td><td>@Model.ScClosedoutcome</td></tr>
+        <tr><td>ScDependentsequencenumber</td><td>@Model.ScDependentsequencenumber</td></tr>
+        <tr><td>ScDuplicate</td><td>@Model.ScDuplicate</td></tr>
+        <tr><td>ScIdrstatus</td><td>@Model.ScIdrstatus</td></tr>
+        <tr><td>ScIsaccidentclaim</td><td>@Model.ScIsaccidentclaim</td></tr>
+        <tr><td>ScLegacyclaimno</td><td>@Model.ScLegacyclaimno</td></tr>
+        <tr><td>ScLosscause</td><td>@Model.ScLosscause</td></tr>
+        <tr><td>ScPolicybrand</td><td>@Model.ScPolicybrand</td></tr>
+        <tr><td>ScSignificantinjurydate</td><td>@Model.ScSignificantinjurydate</td></tr>
+        <tr><td>ScWpreasoncode</td><td>@Model.ScWpreasoncode</td></tr>
+        <tr><td>Segment</td><td>@Model.Segment</td></tr>
+        <tr><td>Showmedicalfirstinfo</td><td>@Model.Showmedicalfirstinfo</td></tr>
+        <tr><td>Siescalatesiu</td><td>@Model.Siescalatesiu</td></tr>
+        <tr><td>Siscore</td><td>@Model.Siscore</td></tr>
+        <tr><td>Siustatus</td><td>@Model.Siustatus</td></tr>
+        <tr><td>State</td><td>@Model.State</td></tr>
+        <tr><td>Strategy</td><td>@Model.Strategy</td></tr>
+        <tr><td>Supplementalworkloadweight</td><td>@Model.Supplementalworkloadweight</td></tr>
+        <tr><td>Updatetime</td><td>@Model.Updatetime</td></tr>
+        <tr><td>Updateuserid</td><td>@Model.Updateuserid</td></tr>
+        <tr><td>Validationlevel</td><td>@Model.Validationlevel</td></tr>
+        <tr><td>Workloadweight</td><td>@Model.Workloadweight</td></tr>
+
+    </tbody>
+</table>
+
+

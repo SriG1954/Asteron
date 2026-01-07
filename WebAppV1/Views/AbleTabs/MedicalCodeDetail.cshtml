@@ -1,0 +1,53 @@
+
+@model AppCoreV1.ABLEModels.MedicalCode;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetMedicalCode" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>C</td><td>@Model.C</td></tr>
+        <tr><td>I</td><td>@Model.I</td></tr>
+        <tr><td>ClaimC</td><td>@Model.ClaimC</td></tr>
+        <tr><td>ClaimI</td><td>@Model.ClaimI</td></tr>
+        <tr><td>MedicalCondition</td><td>@Model.MedicalCondition</td></tr>
+
+        <tr><td>DateOfFirstTreatment</td><td>@Model.DateOfFirstTreatment</td></tr>
+        <tr><td>LifeExpectancy</td><td>@Model.LifeExpectancy</td></tr>
+        <tr><td>Diagnosis</td><td>@Model.Diagnosis</td></tr>
+
+        <tr><td>DateOfDiagnosis</td><td>@Model.DateOfDiagnosis</td></tr>
+        <tr><td>DateOfFirstConsultation</td><td>@Model.DateOfFirstConsultation</td></tr>
+        <tr><td>CustomerDominantSide</td><td>@Model.CustomerDominantSide</td></tr>
+        <tr><td>ImpactOnActivityLevels</td><td>@Model.ImpactOnActivityLevels</td></tr>
+        <tr><td>Description</td><td>@Model.Description</td></tr>
+        <tr><td>Level</td><td>@Model.Level</td></tr>
+        <tr><td>Type</td><td>@Model.Type</td></tr>
+        <tr><td>Code</td><td>@Model.Code</td></tr>
+        <tr><td>Severity</td><td>@Model.Severity</td></tr>
+        <tr><td>Status</td><td>@Model.Status</td></tr>
+        <tr><td>EffectiveFrom</td><td>@Model.EffectiveFrom</td></tr>
+        <tr><td>PreExistingCondition</td><td>@Model.PreExistingCondition</td></tr>
+        <tr><td>LevelIndicator</td><td>@Model.LevelIndicator</td></tr>
+        <tr><td>DurationClass</td><td>@Model.DurationClass</td></tr>
+        <tr><td>BodySide</td><td>@Model.BodySide</td></tr>
+        <tr><td>BodyLocation</td><td>@Model.BodyLocation</td></tr>
+        <tr><td>EffectiveTo</td><td>@Model.EffectiveTo</td></tr>
+        <tr><td>Comment</td><td>@Model.Comment</td></tr>
+        <tr><td>RequestDate</td><td>@Model.RequestDate</td></tr>
+        <tr><td>ApprovalDate</td><td>@Model.ApprovalDate</td></tr>
+        <tr><td>Source</td><td>@Model.Source</td></tr>
+
+    </tbody>
+</table>
+
+

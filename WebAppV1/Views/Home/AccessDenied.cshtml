@@ -1,0 +1,43 @@
+﻿<link href="~/css/style4.css" rel="stylesheet" />
+<script src="~/js/mysearch.js"></script>
+
+<style>
+    .content-image {
+        font-size: 90px;
+        text-align: center;
+        background-color: #F2F4F4;
+    }
+</style>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <partial name="_SidebarMain" />
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h2>Access Denied</h2>
+                    </div>
+                    <div class="container">
+                        <div class="jumbotron">
+                            <h1 class="display-4">Hello, @User.Identity?.Name!</h1>
+                            <p class="lead">Your access to the ABLE Claims Arcive website is denied.</p>
+                            <hr class="my-4">
+                            <p>Please raise a SailPoint request for https://claimsarchive.wlife.com.au/able access</p>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="container">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_ModalPage" />
+

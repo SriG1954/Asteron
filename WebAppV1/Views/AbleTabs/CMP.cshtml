@@ -1,0 +1,109 @@
+@using AppCoreV1.ABLEModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model AppCoreV1.ABLEModels.TabCMP;
+
+@{
+    ViewData["Title"] = ViewBag.appName + " CMP";
+    AppCoreV1.ABLEModels.Case _case = new Case
+            {
+                CaseNumber = @ViewData["CaseNumber"]!.ToString(),
+            };
+}
+<script src="~/js/ablereport.js"></script>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <partial name="_SidebarACT" model="@_case" />
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <div class="row">
+                            <div style="padding-left:10px;">
+                                <h4>@ViewBag.appName CMP</h4>
+                                <a asp-action="Index" asp-controller="Able">Back to Home</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+  
+                    <div id="tbltabsearch">
+                        <div class="card-body">
+
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <b>Customer Goals</b>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <partial name="../AbleTabs/ClientGoal" model="@Model.clientgoal" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            <b>Summary Snapshot</b>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <partial name="../AbleTabs/Goal" model="@Model.goals" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            <b>Action and Services</b>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <partial name="../AbleTabs/ActionA" model="@Model.actions" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            <b>Factors</b>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <partial name="../AbleTabs/LifeArea" model="@Model.factors" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFive">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                            <b>Action History</b>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <partial name="../AbleTabs/ActionHistory" model="@Model.history" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_ModalPage" />

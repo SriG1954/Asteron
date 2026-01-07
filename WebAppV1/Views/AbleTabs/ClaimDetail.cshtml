@@ -1,0 +1,48 @@
+
+@model AppCoreV1.ABLEModels.Claim;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetClaim" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>C</td><td>@Model.C</td></tr>
+        <tr><td>I</td><td>@Model.I</td></tr>
+        <tr><td>CaseC</td><td>@Model.CaseC</td></tr>
+        <tr><td>CaseI</td><td>@Model.CaseI</td></tr>
+        <tr><td>AccidentSickness</td><td>@Model.AccidentSickness</td></tr>
+        <tr><td>AdditionalInformation</td><td>@Model.AdditionalInformation</td></tr>
+        <tr><td>FatalClaim</td><td>@Model.FatalClaim</td></tr>
+        <tr><td>OccurredInAnotherCountry</td><td>@Model.OccurredInAnotherCountry</td></tr>
+        <tr><td>ClaimantIsNotifier</td><td>@Model.ClaimantIsNotifier</td></tr>
+        <tr><td>ClaimReceivedDate</td><td>@Model.ClaimReceivedDate</td></tr>
+        <tr><td>DateReturnedToWork</td><td>@Model.DateReturnedToWork</td></tr>
+        <tr><td>TraumaDefinition</td><td>@Model.TraumaDefinition</td></tr>
+        <tr><td>InsuredClaimCorrespondence</td><td>@Model.InsuredClaimCorrespondence</td></tr>
+        <tr><td>ExpectedRtwftdateIfKnown</td><td>@Model.ExpectedRtwftdateIfKnown</td></tr>
+        <tr><td>TpdsubDefinition</td><td>@Model.TpdsubDefinition</td></tr>
+        <tr><td>Source</td><td>@Model.Source</td></tr>
+        <tr><td>IncurredDateOnLastUpdate</td><td>@Model.IncurredDateOnLastUpdate</td></tr>
+        <tr><td>GuidelinesDate</td><td>@Model.GuidelinesDate</td></tr>
+        <tr><td>RecoveryDurationUnit</td><td>@Model.RecoveryDurationUnit</td></tr>
+        <tr><td>Min</td><td>@Model.Min</td></tr>
+        <tr><td>Opt</td><td>@Model.Opt</td></tr>
+        <tr><td>Max</td><td>@Model.Max</td></tr>
+        <tr><td>DisableAutoUpdates</td><td>@Model.DisableAutoUpdates</td></tr>
+        <tr><td>Min1</td><td>@Model.Min1</td></tr>
+        <tr><td>Opt1</td><td>@Model.Opt1</td></tr>
+        <tr><td>Max1</td><td>@Model.Max1</td></tr>
+
+    </tbody>
+</table>
+
+

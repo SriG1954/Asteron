@@ -1,0 +1,40 @@
+
+@model AppCoreV1.ABLEModels.Contact;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetContact" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>C</td><td>@Model.C</td></tr>
+        <tr><td>I</td><td>@Model.I</td></tr>
+        <tr><td>CaseC</td><td>@Model.CaseC</td></tr>
+        <tr><td>CaseI</td><td>@Model.CaseI</td></tr>
+        <tr><td>DateTime</td><td>@Model.DateTime</td></tr>
+        <tr><td>Reason</td><td>@Model.Reason</td></tr>
+        <tr><td>Method</td><td>@Model.Method</td></tr>
+        <tr><td>Direction</td><td>@Model.Direction</td></tr>
+        <tr><td>ContactSuccessful</td><td>@Model.ContactSuccessful</td></tr>
+        <tr><td>Description</td><td>@Model.Description</td></tr>
+        <tr><td>MethodOfContact</td><td>@Model.MethodOfContact</td></tr>
+        <tr><td>CustomerRepresentative</td><td>@Model.CustomerRepresentative</td></tr>
+        <tr><td>PhoneRecordingLink</td><td>@Model.PhoneRecordingLink</td></tr>
+        <tr><td>User</td><td>@Model.User</td></tr>
+        <tr><td>ContactDuration</td><td>@Model.ContactDuration</td></tr>
+        <tr><td>PrivacyTag</td><td>@Model.PrivacyTag</td></tr>
+        <tr><td>DealtWithBy</td><td>@Model.DealtWithBy</td></tr>
+        <tr><td>ClaimNumber</td><td>@Model.ClaimNumber</td></tr>
+
+    </tbody>
+</table>
+
+

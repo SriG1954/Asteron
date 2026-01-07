@@ -1,0 +1,58 @@
+
+@model AppCoreV1.ABLEModels.RptActionsservice;
+
+
+<table id="tabldata" class="table">
+<thead class="thead-dark">
+<tr>
+<th scope="col">Parameter</th>
+<th scope="col">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Download</td>
+<td><a id="mydownload" asp-action="GetRptActionsservice" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+</tr>
+<tr><td>Id</td><td>@Model.Id</td></tr>
+<tr><td>ClaimCase</td><td>@Model.ClaimCase</td></tr>
+<tr><td>ClaimCreationDate</td><td>@Model.ClaimCreationDate</td></tr>
+<tr><td>NotificationDate</td><td>@Model.NotificationDate</td></tr>
+<tr><td>IncurredDate</td><td>@Model.IncurredDate</td></tr>
+<tr><td>CaseManager</td><td>@Model.CaseManager</td></tr>
+<tr><td>TeamManager</td><td>@Model.TeamManager</td></tr>
+<tr><td>TriageSegment</td><td>@Model.TriageSegment</td></tr>
+<tr><td>DepartmentOfCase</td><td>@Model.DepartmentOfCase</td></tr>
+<tr><td>CmpCustomerGoal</td><td>@Model.CmpCustomerGoal</td></tr>
+<tr><td>CmpGoalDate</td><td>@Model.CmpGoalDate</td></tr>
+<tr><td>ActionName</td><td>@Model.ActionName</td></tr>
+<tr><td>ActionStartDate</td><td>@Model.ActionStartDate</td></tr>
+<tr><td>ActionOpenDuration</td><td>@Model.ActionOpenDuration</td></tr>
+<tr><td>ActionOutcome</td><td>@Model.ActionOutcome</td></tr>
+<tr><td>ActionOutcomeReason</td><td>@Model.ActionOutcomeReason</td></tr>
+<tr><td>ActionOutcomeComments</td><td>@Model.ActionOutcomeComments</td></tr>
+<tr><td>ActionOutcomeDate</td><td>@Model.ActionOutcomeDate</td></tr>
+<tr><td>ServiceCreatorActionOwner</td><td>@Model.ServiceCreatorActionOwner</td></tr>
+<tr><td>ServiceProvider</td><td>@Model.ServiceProvider</td></tr>
+<tr><td>ServiceCode</td><td>@Model.ServiceCode</td></tr>
+<tr><td>ServiceName</td><td>@Model.ServiceName</td></tr>
+<tr><td>UnitsOfferedNumberOfHours</td><td>@Model.UnitsOfferedNumberOfHours</td></tr>
+<tr><td>RatePerHour</td><td>@Model.RatePerHour</td></tr>
+<tr><td>TotalCosts</td><td>@Model.TotalCosts</td></tr>
+<tr><td>ServiceStartDate</td><td>@Model.ServiceStartDate</td></tr>
+<tr><td>ServiceEndDate</td><td>@Model.ServiceEndDate</td></tr>
+<tr><td>PrimaryDiagnosis</td><td>@Model.PrimaryDiagnosis</td></tr>
+<tr><td>PrimaryCauseDescription</td><td>@Model.PrimaryCauseDescription</td></tr>
+<tr><td>Occupation</td><td>@Model.Occupation</td></tr>
+<tr><td>DeathBenefitCase</td><td>@Model.DeathBenefitCase</td></tr>
+<tr><td>BexBenefitCase</td><td>@Model.BexBenefitCase</td></tr>
+<tr><td>IpBenefitCase</td><td>@Model.IpBenefitCase</td></tr>
+<tr><td>TpdBenefitCase</td><td>@Model.TpdBenefitCase</td></tr>
+<tr><td>TtdBenefitCase</td><td>@Model.TtdBenefitCase</td></tr>
+<tr><td>TraumaBenefitCase</td><td>@Model.TraumaBenefitCase</td></tr>
+<tr><td>StandAloneWopBenefitCase</td><td>@Model.StandAloneWopBenefitCase</td></tr>
+
+</tbody>
+</table>
+
+

@@ -1,0 +1,102 @@
+@using AppCoreV1.ABLEModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model PaginatedList<Claimbenefitmv>
+
+@{
+    ViewData["Title"] = "Claim Benefit Report";
+    int prevpage = 0;
+    int nextpage = 0;
+    if (Model.HasNextPage) { nextpage = Model.PageIndex + 1; }
+    if (Model.HasPreviousPage) { prevpage = Model.PageIndex - 1; }
+}
+<script src="~/js/ablereport.js"></script>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <partial name="_SidebarAR" />
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <div class="row">
+                            <div style="padding-left:10px;">
+                                <h4>Able Claim Bbenefit Report</h4>
+                                <a asp-action="Index" asp-controller="Able">Back to Home</a>
+                                <a asp-action="GetClaimbenefitmvs" asp-controller="AbleDownload" asp-route-column="@ViewBag.column" asp-route-search="@ViewBag.search" asp-route-pageIndex="@Model.PageIndex" class="btn btn-success">Download</a>
+                            </div>
+                            <div style="float:right;padding-top: 5px;padding-left:10px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    @using (Html.BeginForm(ViewBag.action as string, "AbleReports", FormMethod.Get, new { @column = ViewBag.column as string, @search = ViewBag.search as string, @page = Model.PageIndex }))
+                    {
+                        <partial name="_FormSearchD" />
+                    }
+                    <div class="card-body">
+
+                        <table id="tabldata" class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">ClaimNumber</th>
+                                    <!--<th scope="col">BenefitNumber</th>-->
+                                    <th scope="col">PolicyNumber</th>
+                                    <th scope="col">Surname</th>
+                                    <th scope="col">GivenName</th>
+                                    <th scope="col">DateOfBirth</th>
+                                    <th scope="col">ClaimStatus</th>
+                                    <th scope="col">View</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@Html.DisplayFor(modelItem => item.ClaimNumber)</td>
+                                        <!--<td>@Html.DisplayFor(modelItem => item.BenefitNumber)</td>-->
+                                        <td>@Html.DisplayFor(modelItem => item.PolicyNumber)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Surname)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.GivenName)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.DateOfBirth)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ClaimStatus)</td>
+@*                                         <td><a class="btn btn-outline-secondary" onclick="return GetClaimbenefitmv('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+                                    *@
+                                        <td><a class="btn btn-outline-secondary" asp-action="ClaimbenefitmvDetail" asp-controller="AbleReports" asp-route-search="@item.ClaimNumber" asp-route-id="@item.Id"><i class="fa fa-info-circle"></i></a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <div class="card-footer">
+                        <nav aria-label="...">
+                            <ul class="pagination justify-content-center">
+                                @if (Model.TotalPages > 1)
+                                {
+                                    <li id="fpLink" class="page-item"><a class="page-link" href="/AbleReports/Claimbenefitmv?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&column1=@ViewBag.column1&search1=@ViewBag.search1&pageIndex=1&pageSize=25">First</a></li>
+                                    @if (prevpage > 0)
+                                    {
+                                        <li id="ppLink" class="page-item"><a class="page-link" href="/AbleReports/Claimbenefitmv?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&column1=@ViewBag.column1&search1=@ViewBag.search1&pageIndex=@prevpage&pageSize=25">Prev</a></li>
+                                    }
+                                    <li id="cpLink" class="page-item"><a class="page-link active" href="/AbleReports/Claimbenefitmv?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&column1=@ViewBag.column1&search1=@ViewBag.search1&pageIndex=@Model.PageIndex&pageSize=25">Page @Model.PageIndex of @Model.TotalPages Pages</a></li>
+                                    @if (nextpage > 0)
+                                    {
+                                        <li id="npLink" class="page-item"><a class="page-link" href="/AbleReports/Claimbenefitmv?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&column1=@ViewBag.column1&search1=@ViewBag.search1&pageIndex=@nextpage&pageSize=25">Next</a></li>
+                                    }
+                                    <li id="lpLink" class="page-item"><a class="page-link" href="/AbleReports/Claimbenefitmv?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&column1=@ViewBag.column1&search1=@ViewBag.search1&pageIndex=@Model.TotalPages&pageSize=25">last</a></li>
+                                }
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_ModalPage" />

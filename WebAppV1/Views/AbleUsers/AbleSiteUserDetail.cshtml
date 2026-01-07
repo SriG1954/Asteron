@@ -1,0 +1,26 @@
+
+@model AppCoreV1.ABLEModels.AbleSiteUser;
+
+
+<table id="tabldata" class="table">
+<thead class="thead-dark">
+<tr>
+<th scope="col">Parameter</th>
+<th scope="col">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Download</td>
+<td><a id="mydownload" asp-action="GetAbleSiteUser" asp-controller="AbleDownload" asp-route-id="@Model.UserId" class="btn btn-success">Download</a></td>
+</tr>
+<tr><td>UserId</td><td>@Model.UserId</td></tr>
+<tr><td>UserName</td><td>@Model.UserName</td></tr>
+<tr><td>RoleName</td><td>@Model.RoleName</td></tr>
+<tr><td>DateCreated</td><td>@Model.DateCreated</td></tr>
+<tr><td>IsActive</td><td>@Model.IsActive</td></tr>
+
+</tbody>
+</table>
+
+

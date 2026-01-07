@@ -1,0 +1,63 @@
+@model AppCoreV1.ABLEModels.RptCmpaction;
+
+
+<table id="tabldata" class="table">
+<thead class="thead-dark">
+<tr>
+<th scope="col">Parameter</th>
+<th scope="col">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Download</td>
+<td><a id="mydownload" asp-action="GetRptCmpaction" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+</tr>
+<tr><td>Id</td><td>@Model.Id</td></tr>
+<tr><td>ClaimNumber</td><td>@Model.ClaimNumber</td></tr>
+<tr><td>CmpStatus</td><td>@Model.CmpStatus</td></tr>
+<tr><td>GoalName</td><td>@Model.GoalName</td></tr>
+<tr><td>GoalOutcome</td><td>@Model.GoalOutcome</td></tr>
+<tr><td>GoalDescription</td><td>@Model.GoalDescription</td></tr>
+<tr><td>GoalCreationDate</td><td>@Model.GoalCreationDate</td></tr>
+<tr><td>GoalOutcomeDate</td><td>@Model.GoalOutcomeDate</td></tr>
+<tr><td>CmpGoalDate</td><td>@Model.CmpGoalDate</td></tr>
+<tr><td>PlanName</td><td>@Model.PlanName</td></tr>
+<tr><td>PlanNotes</td><td>@Model.PlanNotes</td></tr>
+<tr><td>PlanStatus</td><td>@Model.PlanStatus</td></tr>
+<tr><td>PlanCreationDate</td><td>@Model.PlanCreationDate</td></tr>
+<tr><td>FactorName</td><td>@Model.FactorName</td></tr>
+<tr><td>FactorDescription</td><td>@Model.FactorDescription</td></tr>
+<tr><td>Factors</td><td>@Model.Factors</td></tr>
+<tr><td>FactorStatus</td><td>@Model.FactorStatus</td></tr>
+<tr><td>StrategyName</td><td>@Model.StrategyName</td></tr>
+<tr><td>StrategyOutcome</td><td>@Model.StrategyOutcome</td></tr>
+<tr><td>StrategyTargetDate</td><td>@Model.StrategyTargetDate</td></tr>
+<tr><td>StrategyCreationDate</td><td>@Model.StrategyCreationDate</td></tr>
+<tr><td>StrategyOutcomeDate</td><td>@Model.StrategyOutcomeDate</td></tr>
+<tr><td>ActionName</td><td>@Model.ActionName</td></tr>
+<tr><td>ActionLastUpdated</td><td>@Model.ActionLastUpdated</td></tr>
+<tr><td>ActionStartDate</td><td>@Model.ActionStartDate</td></tr>
+<tr><td>ActionOwner</td><td>@Model.ActionOwner</td></tr>
+<tr><td>ActionOwnerTeam</td><td>@Model.ActionOwnerTeam</td></tr>
+<tr><td>ActionOutcome</td><td>@Model.ActionOutcome</td></tr>
+<tr><td>ActionOutcomeDate</td><td>@Model.ActionOutcomeDate</td></tr>
+<tr><td>ActionOutcomeReason</td><td>@Model.ActionOutcomeReason</td></tr>
+<tr><td>ActionOwnerType</td><td>@Model.ActionOwnerType</td></tr>
+<tr><td>ServiceCode</td><td>@Model.ServiceCode</td></tr>
+<tr><td>ServiceDescription</td><td>@Model.ServiceDescription</td></tr>
+<tr><td>ServiceCreator</td><td>@Model.ServiceCreator</td></tr>
+<tr><td>ServiceStartDate</td><td>@Model.ServiceStartDate</td></tr>
+<tr><td>ServiceEndDate</td><td>@Model.ServiceEndDate</td></tr>
+<tr><td>ServiceNotes</td><td>@Model.ServiceNotes</td></tr>
+<tr><td>CommenceDate</td><td>@Model.CommenceDate</td></tr>
+<tr><td>ServicePractitioner</td><td>@Model.ServicePractitioner</td></tr>
+<tr><td>DocumentUploadDate</td><td>@Model.DocumentUploadDate</td></tr>
+<tr><td>LumpsumIpIndicator</td><td>@Model.LumpsumIpIndicator</td></tr>
+<tr><td>ClaimType</td><td>@Model.ClaimType</td></tr>
+<tr><td>GoalReason</td><td>@Model.GoalReason</td></tr>
+
+</tbody>
+</table>
+
+

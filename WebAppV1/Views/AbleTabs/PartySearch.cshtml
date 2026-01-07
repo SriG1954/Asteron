@@ -1,0 +1,33 @@
+@using AppCoreV1.ABLEModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model PaginatedList<PartySearch>
+
+<a asp-action="GetPartySearchs" asp-controller="AbleDownload" asp-route-column="@ViewBag.column" asp-route-search="@ViewBag.search" asp-route-pageIndex="@Model.PageIndex" class="btn btn-success">Download</a>
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">CustomerNo</th>
+            <th scope="col">Title</th>
+            <th scope="col">Name</th>
+            <th scope="col">Dob</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.CustomerNo)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Dob)</td>
+
+                </tr>
+            }   
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,38 @@
+
+@model AppCoreV1.ABLEModels.ActionA;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetActionA" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>C</td><td>@Model.C</td></tr>
+        <tr><td>I</td><td>@Model.I</td></tr>
+        <tr><td>GoalC</td><td>@Model.GoalC</td></tr>
+        <tr><td>GoalI</td><td>@Model.GoalI</td></tr>
+        <tr><td>PartyCResponsibilityOfServiceProvider</td><td>@Model.PartyCResponsibilityOfServiceProvider</td></tr>
+        <tr><td>PartyCResponsibilityOfClient</td><td>@Model.PartyCResponsibilityOfClient</td></tr>
+        <tr><td>PartyIResponsibilityOfClient</td><td>@Model.PartyIResponsibilityOfClient</td></tr>
+        <tr><td>UserCResponsibilityOfStaffMember</td><td>@Model.UserCResponsibilityOfStaffMember</td></tr>
+        <tr><td>UserIResponsibilityOfStaffMember</td><td>@Model.UserIResponsibilityOfStaffMember</td></tr>
+        <tr><td>Rationale</td><td>@Model.Rationale</td></tr>
+        <tr><td>ActionOutcome</td><td>@Model.ActionOutcome</td></tr>
+        <tr><td>OutcomeComments</td><td>@Model.OutcomeComments</td></tr>
+        <tr><td>ActionName</td><td>@Model.ActionName</td></tr>
+        <tr><td>StartDate</td><td>@Model.StartDate</td></tr>
+        <tr><td>EndDate</td><td>@Model.EndDate</td></tr>
+        <tr><td>ReviewDate</td><td>@Model.ReviewDate</td></tr>
+
+    </tbody>
+</table>
+
+

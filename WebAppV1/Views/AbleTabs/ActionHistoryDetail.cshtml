@@ -1,0 +1,26 @@
+
+@model AppCoreV1.ABLEModels.ActionHistoryEx;
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetActionHistory" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>LastUpdated</td><td>@Model.LastUpdated</td></tr>
+        <tr><td>ClaimNumber</td><td>@Model.ClaimNumber</td></tr>
+        <tr><td>BenefitNumber</td><td>@Model.BenefitNumber</td></tr>
+        <tr><td>Name</td><td>@Model.Name</td></tr>
+        <tr><td>Description</td><td>@Model.Description</td></tr>
+
+    </tbody>
+</table>
+
+

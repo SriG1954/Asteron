@@ -1,0 +1,34 @@
+
+@model AppCoreV1.ABLEModels.Policy;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetPolicy" asp-controller="AbleDownload" asp-route-id="@Model.Id" asp-route-appflag="@Model.ApplicationId" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>C</td><td>@Model.C</td></tr>
+        <tr><td>I</td><td>@Model.I</td></tr>
+        <tr><td>PolicyNumber</td><td>@Model.PolicyNumber</td></tr>
+        <tr><td>Product</td><td>@Model.Product</td></tr>
+        <tr><td>ProductName</td><td>@Model.ProductName</td></tr>
+        <tr><td>ContractStatus</td><td>@Model.ContractStatus</td></tr>
+        <tr><td>ContractStatusName</td><td>@Model.ContractStatusName</td></tr>
+        <tr><td>SourceSystem</td><td>@Model.SourceSystem</td></tr>
+        <tr><td>SourceSystemName</td><td>@Model.SourceSystemName</td></tr>
+        <tr><td>StartDate</td><td>@Model.StartDate</td></tr>
+        <tr><td>TerminationDate</td><td>@Model.TerminationDate</td></tr>
+        <tr><td>EffectiveDate</td><td>@Model.EffectiveDate</td></tr>
+
+    </tbody>
+</table>
+
+

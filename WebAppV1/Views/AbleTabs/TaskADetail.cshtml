@@ -1,0 +1,49 @@
+
+@model AppCoreV1.ABLEModels.TaskA;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetTaskA" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>C</td><td>@Model.C</td></tr>
+        <tr><td>I</td><td>@Model.I</td></tr>
+        <tr><td>DocumentC</td><td>@Model.DocumentC</td></tr>
+        <tr><td>DocumentI</td><td>@Model.DocumentI</td></tr>
+        <tr><td>PartyC</td><td>@Model.PartyC</td></tr>
+        <tr><td>PartyI</td><td>@Model.PartyI</td></tr>
+        <tr><td>PlicyC</td><td>@Model.PlicyC</td></tr>
+        <tr><td>PlicyI</td><td>@Model.PlicyI</td></tr>
+        <tr><td>ProcessC</td><td>@Model.ProcessC</td></tr>
+        <tr><td>ProcessI</td><td>@Model.ProcessI</td></tr>
+        <tr><td>TaskC</td><td>@Model.TaskC</td></tr>
+        <tr><td>TaskI</td><td>@Model.TaskI</td></tr>
+        <tr><td>TaskType</td><td>@Model.TaskType</td></tr>
+        <tr><td>Status</td><td>@Model.Status</td></tr>
+        <tr><td>TargetDate</td><td>@Model.TargetDate</td></tr>
+        <tr><td>Description</td><td>@Model.Description</td></tr>
+        <tr><td>OriginalTargetDate</td><td>@Model.OriginalTargetDate</td></tr>
+        <tr><td>Priority</td><td>@Model.Priority</td></tr>
+        <tr><td>Subject</td><td>@Model.Subject</td></tr>
+        <tr><td>Assignee</td><td>@Model.Assignee</td></tr>
+        <tr><td>OnHoldUntil</td><td>@Model.OnHoldUntil</td></tr>
+        <tr><td>CreationDate</td><td>@Model.CreationDate1</td></tr>
+        <tr><td>CreatedBy</td><td>@Model.CreatedBy</td></tr>
+        <tr><td>DefaultDepartment</td><td>@Model.DefaultDepartment</td></tr>
+        <tr><td>LastUpdateDate</td><td>@Model.LastUpdateDate</td></tr>
+        <tr><td>UpdatedBy</td><td>@Model.UpdatedBy</td></tr>
+        <tr><td>ClaimNumber</td><td>@Model.ClaimNumber</td></tr>
+
+    </tbody>
+</table>
+
+

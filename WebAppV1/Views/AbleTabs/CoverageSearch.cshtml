@@ -1,0 +1,145 @@
+@using AppCoreV1.ABLEModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model AppCoreV1.ABLEModels.CoverageSearch;
+
+@{
+    ViewData["Title"] = ViewBag.appName + " Coverage";
+    AppCoreV1.ABLEModels.Case _case = new Case
+            {
+                CaseNumber = @ViewData["CaseNumber"]!.ToString(),
+            };
+}
+<script src="~/js/ablereport.js"></script>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <partial name="_SidebarACT" model="@_case" />
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <div class="row">
+                            <div style="padding-left:10px;">
+                                <h4>@ViewBag.appName Coverage</h4>
+                                <a asp-action="Index" asp-controller="Able">Back to Home</a>
+                            </div>
+                            <div style="float:right;padding-top: 5px;padding-left:10px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+
+                    <div class="card-body">
+
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <b>Policy</b>
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <table id="tabldata" class="table">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">Parameter</th>
+                                                    <th scope="col">Value</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Download</td>
+                                                    <td><a id="mydownload" asp-action="GetCoverageSearch" asp-controller="AbleDownload" asp-route-id="@Model.ClaimNumber" class="btn btn-success">Download</a></td>
+                                                </tr>
+                                                <tr><td>PolicyNumber</td><td>@Model.PolicyNumber</td></tr>
+                                                <tr><td>Product</td><td>@Model.Product</td></tr>
+                                                <tr><td>ProductName</td><td>@Model.ProductName</td></tr>
+                                                <tr><td>ContractStatus</td><td>@Model.ContractStatus</td></tr>
+                                                <tr><td>ContractStatusName</td><td>@Model.ContractStatusName</td></tr>
+                                                <tr><td>SourceSystem</td><td>@Model.SourceSystem</td></tr>
+                                                <tr><td>SourceSystemName</td><td>@Model.SourceSystemName</td></tr>
+
+                                                <tr><td>PolicyNumber</td><td>@Model.StartDate</td></tr>
+                                                <tr><td>PolicyNumber</td><td>@Model.TerminationDate</td></tr>
+                                                <tr><td>PolicyNumber</td><td>@Model.EffectiveDate</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <b>Coverage</b>
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <table id="tabldata" class="table">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">Parameter</th>
+                                                    <th scope="col">Value</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Download</td>
+                                                    <td><a id="mydownload" asp-action="GetCoverageSearch" asp-controller="AbleDownload" asp-route-id="@Model.ClaimNumber" class="btn btn-success">Download</a></td>
+                                                </tr>
+
+                                                <tr><td>Coverage</td><td>@Model.Coverage</td></tr>
+                                                <tr><td>CoverageCode</td><td>@Model.CoverageCode</td></tr>
+                                                <tr><td>Status</td><td>@Model.Status</td></tr>
+                                                <tr><td>EffectiveDate1</td><td>@Model.EffectiveDate1</td></tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <b>Benefit Rights</b>
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <table id="tabldata" class="table">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">Parameter</th>
+                                                    <th scope="col">Value</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Download</td>
+                                                    <td><a id="mydownload" asp-action="GetCoverageSearch" asp-controller="AbleDownload" asp-route-id="@Model.ClaimNumber" class="btn btn-success">Download</a></td>
+                                                </tr>
+                                                <tr><td>Type</td><td>@Model.Type</td></tr>
+                                                <tr><td>BenefitEntitlementDescription</td><td>@Model.BenefitEntitlementDescription</td></tr>
+                                                <tr><td>BenefitSelected</td><td>@Model.BenefitSelected</td></tr>
+                                                <tr><td>PasriskOptionCode</td><td>@Model.PasriskOptionCode</td></tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_ModalPage" />

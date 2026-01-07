@@ -1,0 +1,31 @@
+@model AppCoreV1.ABLEModels.RptCmpgoaldatemovement;
+
+
+<table id="tabldata" class="table">
+<thead class="thead-dark">
+<tr>
+<th scope="col">Parameter</th>
+<th scope="col">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Download</td>
+<td><a id="mydownload" asp-action="GetRptCmpgoaldatemovement" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+</tr>
+<tr><td>Id</td><td>@Model.Id</td></tr>
+<tr><td>ClaimNumber</td><td>@Model.ClaimNumber</td></tr>
+<tr><td>CmpStatus</td><td>@Model.CmpStatus</td></tr>
+<tr><td>PlanName</td><td>@Model.PlanName</td></tr>
+<tr><td>PlanCreationDate</td><td>@Model.PlanCreationDate</td></tr>
+<tr><td>CmpGoalDate</td><td>@Model.CmpGoalDate</td></tr>
+<tr><td>CmpGoalCreationDate</td><td>@Model.CmpGoalCreationDate</td></tr>
+<tr><td>CmpGoalUpdatedDate</td><td>@Model.CmpGoalUpdatedDate</td></tr>
+<tr><td>CmpGoalUpdatedByUserName</td><td>@Model.CmpGoalUpdatedByUserName</td></tr>
+<tr><td>LumpsumIpIndicator</td><td>@Model.LumpsumIpIndicator</td></tr>
+<tr><td>ClaimType</td><td>@Model.ClaimType</td></tr>
+
+</tbody>
+</table>
+
+

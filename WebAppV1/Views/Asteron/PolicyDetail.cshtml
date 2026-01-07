@@ -1,0 +1,52 @@
+@model AppCoreV1.AsteronModels.Policy;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetPolicy" asp-controller="HelphubDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>Accountnumber</td><td>@Model.Accountnumber</td></tr>
+        <tr><td>Beanversion</td><td>@Model.Beanversion</td></tr>
+        <tr><td>Cancellationdate</td><td>@Model.Cancellationdate</td></tr>
+        <tr><td>Createtime</td><td>@Model.Createtime</td></tr>
+        <tr><td>Createuserid</td><td>@Model.Createuserid</td></tr>
+        <tr><td>Currency</td><td>@Model.Currency</td></tr>
+        <tr><td>Effectivedate</td><td>@Model.Effectivedate</td></tr>
+        <tr><td>Expirationdate</td><td>@Model.Expirationdate</td></tr>
+        <tr><td>Foreigncoverage</td><td>@Model.Foreigncoverage</td></tr>
+        <tr><td>Origeffectivedate</td><td>@Model.Origeffectivedate</td></tr>
+        <tr><td>Otherinsurance</td><td>@Model.Otherinsurance</td></tr>
+        <tr><td>Policynumber</td><td>@Model.Policynumber</td></tr>
+        <tr><td>Policytype</td><td>@Model.Policytype</td></tr>
+        <tr><td>Producercode</td><td>@Model.Producercode</td></tr>
+        <tr><td>Publicid</td><td>@Model.Publicid</td></tr>
+        <tr><td>Retired</td><td>@Model.Retired</td></tr>
+        <tr><td>Retroactivedate</td><td>@Model.Retroactivedate</td></tr>
+        <tr><td>Returntoworkprgm</td><td>@Model.Returntoworkprgm</td></tr>
+        <tr><td>ScBrand</td><td>@Model.ScBrand</td></tr>
+        <tr><td>ScGstexempt</td><td>@Model.ScGstexempt</td></tr>
+        <tr><td>ScGstregistered</td><td>@Model.ScGstregistered</td></tr>
+        <tr><td>ScIntermedtype</td><td>@Model.ScIntermedtype</td></tr>
+        <tr><td>ScStampdutyexempt</td><td>@Model.ScStampdutyexempt</td></tr>
+        <tr><td>ScUnderwritingcompany</td><td>@Model.ScUnderwritingcompany</td></tr>
+        <tr><td>Status</td><td>@Model.Status</td></tr>
+        <tr><td>Totalproperties</td><td>@Model.Totalproperties</td></tr>
+        <tr><td>Totalvehicles</td><td>@Model.Totalvehicles</td></tr>
+        <tr><td>Updatetime</td><td>@Model.Updatetime</td></tr>
+        <tr><td>Updateuserid</td><td>@Model.Updateuserid</td></tr>
+        <tr><td>Validationlevel</td><td>@Model.Validationlevel</td></tr>
+        <tr><td>Verified</td><td>@Model.Verified</td></tr>
+
+    </tbody>
+</table>
+
+

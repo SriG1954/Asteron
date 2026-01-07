@@ -1,0 +1,45 @@
+@model AppCoreV1.AsteronModels.Note;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetNote" asp-controller="HelphubDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>Activityid</td><td>@Model.Activityid</td></tr>
+        <tr><td>Authorid</td><td>@Model.Authorid</td></tr>
+        <tr><td>Authoringdate</td><td>@Model.Authoringdate</td></tr>
+        <tr><td>Beanversion</td><td>@Model.Beanversion</td></tr>
+        <tr><td>Body</td><td>@Model.Body</td></tr>
+        <tr><td>Claimcontactid</td><td>@Model.Claimcontactid</td></tr>
+        <tr><td>Claimid</td><td>@Model.Claimid</td></tr>
+        <tr><td>Confidential</td><td>@Model.Confidential</td></tr>
+        <tr><td>Createtime</td><td>@Model.Createtime</td></tr>
+        <tr><td>Createuserid</td><td>@Model.Createuserid</td></tr>
+        <tr><td>ExpcustomernoteExt</td><td>@Model.ExpcustomernoteExt</td></tr>
+        <tr><td>Exposureid</td><td>@Model.Exposureid</td></tr>
+        <tr><td>ExptocustselfserviceExt</td><td>@Model.ExptocustselfserviceExt</td></tr>
+        <tr><td>Language</td><td>@Model.Language</td></tr>
+        <tr><td>Matterid</td><td>@Model.Matterid</td></tr>
+        <tr><td>Publicid</td><td>@Model.Publicid</td></tr>
+        <tr><td>Retired</td><td>@Model.Retired</td></tr>
+        <tr><td>ScIsmanualnote</td><td>@Model.ScIsmanualnote</td></tr>
+        <tr><td>Securitytype</td><td>@Model.Securitytype</td></tr>
+        <tr><td>Subject</td><td>@Model.Subject</td></tr>
+        <tr><td>Topic</td><td>@Model.Topic</td></tr>
+        <tr><td>Updatetime</td><td>@Model.Updatetime</td></tr>
+        <tr><td>Updateuserid</td><td>@Model.Updateuserid</td></tr>
+        <tr><td>ClaimnumberRefOnly</td><td>@Model.ClaimnumberRefOnly</td></tr>
+
+    </tbody>
+</table>
+
+

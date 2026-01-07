@@ -1,0 +1,247 @@
+
+public async Task<FileResult> GetRptClaimexpenses(string column, string search, int pageIndex = 1, int pageSize = 25)
+{
+    byte[] data = null!;
+    data = await _context.GetRptClaimexpenses(column, search, pageIndex, pageSize);
+
+    string filename = "RptClaimexpenses" + search + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+// Details Download
+public async Task<FileResult> GetRptClaimexpense(string id)
+{
+    byte[] data = null!;
+    data = await _context.GetRptClaimexpense(id);
+
+    string filename = "RptClaimexpense" + id + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+public async Task<FileResult> GetRptClaimparticipants(string column, string search, int pageIndex = 1, int pageSize = 25)
+{
+    byte[] data = null!;
+    data = await _context.GetRptClaimparticipants(column, search, pageIndex, pageSize);
+
+    string filename = "RptClaimparticipants" + search + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+// Details Download
+public async Task<FileResult> GetRptClaimparticipant(string id)
+{
+    byte[] data = null!;
+    data = await _context.GetRptClaimparticipant(id);
+
+    string filename = "RptClaimparticipant" + id + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+public async Task<FileResult> GetRptClosedtaskreports(string column, string search, int pageIndex = 1, int pageSize = 25)
+{
+    byte[] data = null!;
+    data = await _context.GetRptClosedtaskreports(column, search, pageIndex, pageSize);
+
+    string filename = "RptClosedtaskreports" + search + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+// Details Download
+public async Task<FileResult> GetRptClosedtaskreport(string id)
+{
+    byte[] data = null!;
+    data = await _context.GetRptClosedtaskreport(id);
+
+    string filename = "RptClosedtaskreport" + id + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+public async Task<FileResult> GetRptCmpactions(string column, string search, int pageIndex = 1, int pageSize = 25)
+{
+    byte[] data = null!;
+    data = await _context.GetRptCmpactions(column, search, pageIndex, pageSize);
+
+    string filename = "RptCmpactions" + search + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+// Details Download
+public async Task<FileResult> GetRptCmpaction(string id)
+{
+    byte[] data = null!;
+    data = await _context.GetRptCmpaction(id);
+
+    string filename = "RptCmpaction" + id + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+public async Task<FileResult> GetRptCmpgoaldatemovements(string column, string search, int pageIndex = 1, int pageSize = 25)
+{
+    byte[] data = null!;
+    data = await _context.GetRptCmpgoaldatemovements(column, search, pageIndex, pageSize);
+
+    string filename = "RptCmpgoaldatemovements" + search + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+// Details Download
+public async Task<FileResult> GetRptCmpgoaldatemovement(string id)
+{
+    byte[] data = null!;
+    data = await _context.GetRptCmpgoaldatemovement(id);
+
+    string filename = "RptCmpgoaldatemovement" + id + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+public async Task<FileResult> GetRptCmpplanstatuss(string column, string search, int pageIndex = 1, int pageSize = 25)
+{
+    byte[] data = null!;
+    data = await _context.GetRptCmpplanstatuss(column, search, pageIndex, pageSize);
+
+    string filename = "RptCmpplanstatuss" + search + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+// Details Download
+public async Task<FileResult> GetRptCmpplanstatus(string id)
+{
+    byte[] data = null!;
+    data = await _context.GetRptCmpplanstatus(id);
+
+    string filename = "RptCmpplanstatus" + id + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+public async Task<FileResult> GetRptCmpservices(string column, string search, int pageIndex = 1, int pageSize = 25)
+{
+    byte[] data = null!;
+    data = await _context.GetRptCmpservices(column, search, pageIndex, pageSize);
+
+    string filename = "RptCmpservices" + search + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+// Details Download
+public async Task<FileResult> GetRptCmpservice(string id)
+{
+    byte[] data = null!;
+    data = await _context.GetRptCmpservice(id);
+
+    string filename = "RptCmpservice" + id + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+public async Task<FileResult> GetRptCompliants(string column, string search, int pageIndex = 1, int pageSize = 25)
+{
+    byte[] data = null!;
+    data = await _context.GetRptCompliants(column, search, pageIndex, pageSize);
+
+    string filename = "RptCompliants" + search + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+// Details Download
+public async Task<FileResult> GetRptCompliant(string id)
+{
+    byte[] data = null!;
+    data = await _context.GetRptCompliant(id);
+
+    string filename = "RptCompliant" + id + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+public async Task<FileResult> GetRptDocumentreports(string column, string search, int pageIndex = 1, int pageSize = 25)
+{
+    byte[] data = null!;
+    data = await _context.GetRptDocumentreports(column, search, pageIndex, pageSize);
+
+    string filename = "RptDocumentreports" + search + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+// Details Download
+public async Task<FileResult> GetRptDocumentreport(string id)
+{
+    byte[] data = null!;
+    data = await _context.GetRptDocumentreport(id);
+
+    string filename = "RptDocumentreport" + id + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+public async Task<FileResult> GetRptEnquirycasereports(string column, string search, int pageIndex = 1, int pageSize = 25)
+{
+    byte[] data = null!;
+    data = await _context.GetRptEnquirycasereports(column, search, pageIndex, pageSize);
+
+    string filename = "RptEnquirycasereports" + search + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+// Details Download
+public async Task<FileResult> GetRptEnquirycasereport(string id)
+{
+    byte[] data = null!;
+    data = await _context.GetRptEnquirycasereport(id);
+
+    string filename = "RptEnquirycasereport" + id + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+public async Task<FileResult> GetRptHcrcompletednotes(string column, string search, int pageIndex = 1, int pageSize = 25)
+{
+    byte[] data = null!;
+    data = await _context.GetRptHcrcompletednotes(column, search, pageIndex, pageSize);
+
+    string filename = "RptHcrcompletednotes" + search + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+// Details Download
+public async Task<FileResult> GetRptHcrcompletednote(string id)
+{
+    byte[] data = null!;
+    data = await _context.GetRptHcrcompletednote(id);
+
+    string filename = "RptHcrcompletednote" + id + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+public async Task<FileResult> GetRptOpentasks(string column, string search, int pageIndex = 1, int pageSize = 25)
+{
+    byte[] data = null!;
+    data = await _context.GetRptOpentasks(column, search, pageIndex, pageSize);
+
+    string filename = "RptOpentasks" + search + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+// Details Download
+public async Task<FileResult> GetRptOpentask(string id)
+{
+    byte[] data = null!;
+    data = await _context.GetRptOpentask(id);
+
+    string filename = "RptOpentask" + id + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+public async Task<FileResult> GetRptOverrideriskreports(string column, string search, int pageIndex = 1, int pageSize = 25)
+{
+    byte[] data = null!;
+    data = await _context.GetRptOverrideriskreports(column, search, pageIndex, pageSize);
+
+    string filename = "RptOverrideriskreports" + search + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}
+
+// Details Download
+public async Task<FileResult> GetRptOverrideriskreport(string id)
+{
+    byte[] data = null!;
+    data = await _context.GetRptOverrideriskreport(id);
+
+    string filename = "RptOverrideriskreport" + id + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+    return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+}

@@ -1,0 +1,70 @@
+﻿<link href="~/css/style4.css" rel="stylesheet" />
+<script src="~/js/ablesearch.js"></script>
+
+@{
+    ViewData["Title"] = "Able Export";
+}
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <partial name="_SidebarA" />
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h2>ABLE Export</h2>
+                        <p>All Able reports will be created as CSV files in <b>wlife.com.au\apps\ClaimsCentral\Figtree Reports\Actuarial\</b> folder.</p>
+                        <p>The maximum number of rows is restricted to 6 million.</p>
+                    </div>
+                    <div class="container">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-body">
+                        <table id="tabldata" class="table overflow-auto">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Report Name</th>
+                                    <th scope="col">Export</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Able Users</td>
+                                    <td><a class="btn btn-primary" asp-action="RptAbleuser" asp-controller="AbleExport" />Export Report</td>
+                                </tr>
+                                <tr>
+                                    <td>Able User Roles</td>
+                                    <td><a class="btn btn-primary" asp-action="RptAbleUserRole" asp-controller="AbleExport" />Export Report</td>
+                                </tr>
+                                <tr>
+                                    <td>Action Services</td>
+                                    <td><a class="btn btn-primary" asp-action="RptActionService" asp-controller="AbleExport" />Export Report</td>
+                                </tr>
+                                <tr>
+                                    <td>Case Actions</td>
+                                    <td><a class="btn btn-primary" asp-action="RptCaseAction" asp-controller="AbleExport" />Export Report</td>
+                                </tr>
+                                <tr>
+                                    <td>Claim Benefit</td>
+                                    <td><a class="btn btn-primary" asp-action="RptClaimBenefit" asp-controller="AbleExport" />Export Report</td>
+                                </tr>
+                                <tr>
+                                    <td>Able Users</td>
+                                    <td><a class="btn btn-primary" asp-action="RptAbleuser" asp-controller="AbleExport" />Export Report</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_ModalPage" />
+

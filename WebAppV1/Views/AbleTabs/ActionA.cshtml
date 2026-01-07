@@ -1,0 +1,32 @@
+@using AppCoreV1.ABLEModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model List<ActionAEx>
+
+@{
+    ViewData["Title"] = "Able ActionA Report";
+}
+<script src="~/js/ablereport.js"></script>
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">StartDate</th>
+            <th scope="col">ActionName</th>
+            <th scope="col">ActionOutcome</th>
+            <th scope="col">View</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.StartDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.ActionName)</td>
+                <td>@Html.DisplayFor(modelItem => item.ActionOutcome)</td>
+                <td><a class="btn btn-outline-secondary" onclick="return GetActionA('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>

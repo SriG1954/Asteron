@@ -1,0 +1,119 @@
+﻿@using AppCoreV1.ABLEModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model PaginatedList<Note1>
+
+@{
+    ViewData["Title"] = ViewBag.appName + " Claim Notes External Document";
+    int r = 0;
+    AppCoreV1.ABLEModels.Case _case = new Case
+            {
+                CaseNumber = @ViewData["CaseNumber"]!.ToString(),
+            };
+    int prevpage = 0;
+    int nextpage = 0;
+    if (Model.HasNextPage) { nextpage = Model.PageIndex + 1; }
+    if (Model.HasPreviousPage) { prevpage = Model.PageIndex - 1; }
+}
+<script src="~/js/ablereport.js"></script>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <partial name="_SidebarACT" model="@_case" />
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <div class="row">
+                            <div style="padding-left:10px;">
+                                <h4>@ViewBag.appName Claim @ViewData["CaseNumber"]!.ToString() Notes External Document</h4>
+                                <a asp-action="Index" asp-controller="Able">Back to Home</a>
+                            </div>
+                            <div style="float:right;padding-top: 5px;padding-left:10px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    @using (Html.BeginForm(ViewBag.action as string, "AbleTabs", FormMethod.Get, new { @search = ViewBag.search as string, @id = ViewBag.id as string }))
+                    {
+                    }
+
+                    <div class="card-body">
+                        <div class="accordion accordion-flush" id="accordionClaimNotes">
+                            
+                            @foreach (var item in Model)
+                            {
+                                r = r + 1;
+                                List<string> nodes = FormatHelper.ParseXML(item!.PackedData!);
+                                string? _cols = "Last Updated By";
+                                string _values = "UnKnown";
+
+                                if(item!.UpdatedBy != null && item!.UpdatedBy.Length > 0)
+                                {
+                                    _values = item!.UpdatedBy;
+                                }
+
+                                string notes = FormatHelper.ParseXML2(item!.PackedData!, _cols, _values);
+                                int c = 1;
+
+                               @*  foreach(var node in nodes)
+                                {
+                                    string[] message = node.Split("@@");
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-heading-@r@c">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-@r@c" aria-expanded="false" aria-controls="flush-collapse-@r@c">
+                                                @message[0]
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapse-@r@c" class="accordion-collapse collapse" aria-labelledby="flush-heading-@r@c" data-bs-parent="#accordionClaimNotes">
+                                            <div class="accordion-body">@message[1]</div>
+                                        </div>
+                                    </div>
+                                    c = c + 1;
+                                } *@
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-heading-@r@c">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-@r@c" aria-expanded="false" aria-controls="flush-collapse-@r@c">
+                                            @Convert.ToDateTime(@item.DateCreated).ToString("dddd, dd MMMM yyyy")
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapse-@r@c" class="accordion-collapse collapse" aria-labelledby="flush-heading-@r@c" data-bs-parent="#accordionClaimNotes">
+                                        <div class="accordion-body">@Html.Raw(@notes)</div>
+                                    </div>
+                                </div>
+
+                            }
+                        </div>
+
+                    </div>
+                    <div class="card-footer">
+                        <nav aria-label="...">
+                            <ul class="pagination justify-content-center">
+                                @if (Model.TotalPages > 1)
+                                {
+                                    <li id="fpLink" class="page-item"><a class="page-link" href="/AbleTabs/NotesExtDocument?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=1&pageSize=25">First</a></li>
+                                    @if (prevpage > 0)
+                                    {
+                                        <li id="ppLink" class="page-item"><a class="page-link" href="/AbleTabs/NotesExtDocument?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@prevpage&pageSize=25">Prev</a></li>
+                                    }
+                                    <li id="cpLink" class="page-item"><a class="page-link active" href="/AbleTabs/NotesExtDocument?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@Model.PageIndex&pageSize=25">Page @Model.PageIndex of @Model.TotalPages Pages</a></li>
+                                    @if (nextpage > 0)
+                                    {
+                                        <li id="npLink" class="page-item"><a class="page-link" href="/AbleTabs/NotesExtDocument?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@nextpage&pageSize=25">Next</a></li>
+                                    }
+                                    <li id="lpLink" class="page-item"><a class="page-link" href="/AbleTabs/NotesExtDocument?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@Model.TotalPages&pageSize=25">last</a></li>
+                                }
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_ModalPage" />

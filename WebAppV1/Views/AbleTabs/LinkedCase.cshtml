@@ -1,0 +1,31 @@
+@using AppCoreV1.ABLEModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model List<Case>;
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">CaseNumber</th>
+            <th scope="col">Context</th>
+            <th scope="col">CaseType</th>
+            <th scope="col">IncuredDate</th>
+            <th scope="col">CreationDate</th>
+            <th scope="col">View</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.CaseNumber)</td>
+                <td>@Html.DisplayFor(modelItem => item.Context)</td>
+                <td>@Html.DisplayFor(modelItem => item.CaseType)</td>
+                <td>@Html.DisplayFor(modelItem => item.IncuredDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.CreationDate)</td>
+                <td><a class="btn btn-outline-secondary" onclick="return GetCase('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>

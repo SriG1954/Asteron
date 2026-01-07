@@ -1,0 +1,109 @@
+
+@model AppCoreV1.ABLEModels.Benefit;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetBenefit" asp-controller="AbleDownload" asp-route-id="@Model.Id" asp-route-appflag="@Model.ApplicationId" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>C</td><td>@Model.C</td></tr>
+        <tr><td>I</td><td>@Model.I</td></tr>
+        <tr><td>CaseC</td><td>@Model.CaseC</td></tr>
+        <tr><td>CaseI</td><td>@Model.CaseI</td></tr>
+        <tr><td>OverrideClaimIncurredDate</td><td>@Model.OverrideClaimIncurredDate</td></tr>
+        <tr><td>BenefitStartDate</td><td>@Model.BenefitStartDate</td></tr>
+        <tr><td>BenefitEndDate</td><td>@Model.BenefitEndDate</td></tr>
+
+        <tr><td>ProofOfLossDate</td><td>@Model.ProofOfLossDate</td></tr>
+        <tr><td>ExpectedBenefitClosureDate</td><td>@Model.ExpectedBenefitClosureDate</td></tr>
+        <tr><td>Source</td><td>@Model.Source</td></tr>
+        <tr><td>EffectiveDateOfCoverage</td><td>@Model.EffectiveDateOfCoverage</td></tr>
+        <tr><td>BenefitExpiryDate</td><td>@Model.BenefitExpiryDate</td></tr>
+
+        <tr><td>WaitingPeriod</td><td>@Model.WaitingPeriod</td></tr>
+        <tr><td>WaitingPeriodBasis</td><td>@Model.WaitingPeriodBasis</td></tr>
+        <tr><td>FullyRetained</td><td>@Model.FullyRetained</td></tr>
+        <tr><td>BenefitDecision</td><td>@Model.BenefitDecision</td></tr>
+        <tr><td>BenefitDecisionDate</td><td>@Model.BenefitDecisionDate</td></tr>
+        <tr><td>ReasonForBenefitDecision</td><td>@Model.ReasonForBenefitDecision</td></tr>
+        <tr><td>BenefitSelected</td><td>@Model.BenefitSelected</td></tr>
+        <tr><td>AgreedValue</td><td>@Model.AgreedValue</td></tr>
+        <tr><td>ChronicConditionOption</td><td>@Model.ChronicConditionOption</td></tr>
+        <tr><td>Day1AccidentOption</td><td>@Model.Day1AccidentOption</td></tr>
+        <tr><td>Iar</td><td>@Model.Iar</td></tr>
+        <tr><td>OccupationalCategory</td><td>@Model.OccupationalCategory</td></tr>
+        <tr><td>PasriskOptionCode</td><td>@Model.PasriskOptionCode</td></tr>
+        <tr><td>PasriskOptionDesc</td><td>@Model.PasriskOptionDesc</td></tr>
+        <tr><td>SuperContributionPct</td><td>@Model.SuperContributionPct</td></tr>
+        <tr><td>GroupId</td><td>@Model.GroupId</td></tr>
+        <tr><td>SubBenefitFlag</td><td>@Model.SubBenefitFlag</td></tr>
+        <tr><td>StartDateCalculationType</td><td>@Model.StartDateCalculationType</td></tr>
+        <tr><td>EndDateCalculationType</td><td>@Model.EndDateCalculationType</td></tr>
+        <tr><td>MaximumBenefitPeriod</td><td>@Model.MaximumBenefitPeriod</td></tr>
+        <tr><td>MaximumBenefitPeriodAccident</td><td>@Model.MaximumBenefitPeriodAccident</td></tr>
+        <tr><td>MaximumBenefitPeriodHospital</td><td>@Model.MaximumBenefitPeriodHospital</td></tr>
+        <tr><td>MaximumBenefitPeriodBasis</td><td>@Model.MaximumBenefitPeriodBasis</td></tr>
+        <tr><td>MaximumBenefitPeriodAccidentBasis</td><td>@Model.MaximumBenefitPeriodAccidentBasis</td></tr>
+        <tr><td>MaximumBenefitPeriodHospitalBasis</td><td>@Model.MaximumBenefitPeriodHospitalBasis</td></tr>
+        <tr><td>SicknessWaitingPeriod</td><td>@Model.SicknessWaitingPeriod</td></tr>
+        <tr><td>AccidentWaitingPeriod</td><td>@Model.AccidentWaitingPeriod</td></tr>
+        <tr><td>HospitalWaitingPeriod</td><td>@Model.HospitalWaitingPeriod</td></tr>
+        <tr><td>WaitingPeriodBasis1</td><td>@Model.WaitingPeriodBasis1</td></tr>
+        <tr><td>AccidentWaitingPeriodBasis</td><td>@Model.AccidentWaitingPeriodBasis</td></tr>
+        <tr><td>HospitalWaitingPeriodBasis</td><td>@Model.HospitalWaitingPeriodBasis</td></tr>
+        <tr><td>SumInsured</td><td>@Model.SumInsured</td></tr>
+        <tr><td>AgeroundingRule</td><td>@Model.AgeroundingRule</td></tr>
+        <tr><td>RoundUnit</td><td>@Model.RoundUnit</td></tr>
+        <tr><td>AgeroundingPrecision</td><td>@Model.AgeroundingPrecision</td></tr>
+        <tr><td>RoundInstruction</td><td>@Model.RoundInstruction</td></tr>
+        <tr><td>MaximumAggregateAmount</td><td>@Model.MaximumAggregateAmount</td></tr>
+        <tr><td>MinimumAmount</td><td>@Model.MinimumAmount</td></tr>
+        <tr><td>MinimumPercentage</td><td>@Model.MinimumPercentage</td></tr>
+        <tr><td>MinimumCalculationType</td><td>@Model.MinimumCalculationType</td></tr>
+        <tr><td>AutomaticAcceptanceLimit</td><td>@Model.AutomaticAcceptanceLimit</td></tr>
+        <tr><td>DuesCreatedInArrears</td><td>@Model.DuesCreatedInArrears</td></tr>
+        <tr><td>MaximumAmount</td><td>@Model.MaximumAmount</td></tr>
+        <tr><td>MaximumPercentage</td><td>@Model.MaximumPercentage</td></tr>
+        <tr><td>MaximumCalculationType</td><td>@Model.MaximumCalculationType</td></tr>
+        <tr><td>Underwritten</td><td>@Model.Underwritten</td></tr>
+        <tr><td>ReinsurerLiabilityApprovedToDate</td><td>@Model.ReinsurerLiabilityApprovedToDate</td></tr>
+        <tr><td>ToEndOfBenefit</td><td>@Model.ToEndOfBenefit</td></tr>
+        <tr><td>IndexationApplies</td><td>@Model.IndexationApplies</td></tr>
+        <tr><td>AdjustmentTypeName</td><td>@Model.AdjustmentTypeName</td></tr>
+        <tr><td>EliminationPeriod</td><td>@Model.EliminationPeriod</td></tr>
+        <tr><td>EliminationPeriodBasis</td><td>@Model.EliminationPeriodBasis</td></tr>
+        <tr><td>MinimumRate</td><td>@Model.MinimumRate</td></tr>
+        <tr><td>IndexLeadTime</td><td>@Model.IndexLeadTime</td></tr>
+        <tr><td>AdjustBenefit</td><td>@Model.AdjustBenefit</td></tr>
+        <tr><td>MaximumRate</td><td>@Model.MaximumRate</td></tr>
+        <tr><td>MaximumCumulativeRate</td><td>@Model.MaximumCumulativeRate</td></tr>
+        <tr><td>MaxNumberIndexations</td><td>@Model.MaxNumberIndexations</td></tr>
+        <tr><td>MinThresholdApplies</td><td>@Model.MinThresholdApplies</td></tr>
+        <tr><td>MaxThresholdApplies</td><td>@Model.MaxThresholdApplies</td></tr>
+        <tr><td>Type</td><td>@Model.Type</td></tr>
+        <tr><td>ChangeInClaimDefinitionDate</td><td>@Model.ChangeInClaimDefinitionDate</td></tr>
+        <tr><td>WhenAnyAllDecisionMade</td><td>@Model.WhenAnyAllDecisionMade</td></tr>
+        <tr><td>DateBenefitsWithheld</td><td>@Model.DateBenefitsWithheld</td></tr>
+        <tr><td>WhoAuthorizedBenefitsWithheldC</td><td>@Model.WhoAuthorizedBenefitsWithheldC</td></tr>
+        <tr><td>WhoAuthorizedBenefitsWithheldI</td><td>@Model.WhoAuthorizedBenefitsWithheldI</td></tr>
+        <tr><td>LastUpdateUserNameC</td><td>@Model.LastUpdateUserNameC</td></tr>
+        <tr><td>LastUpdateUserNameI</td><td>@Model.LastUpdateUserNameI</td></tr>
+        <tr><td>AnyAllReviewDate</td><td>@Model.AnyAllReviewDate</td></tr>
+        <tr><td>ReasonBenefitsWithheld</td><td>@Model.ReasonBenefitsWithheld</td></tr>
+        <tr><td>OverrideChangeInDefinitionDate</td><td>@Model.OverrideChangeInDefinitionDate</td></tr>
+        <tr><td>AnyAllStatus</td><td>@Model.AnyAllStatus</td></tr>
+        <tr><td>ApplicationId</td><td>@Model.ApplicationId</td></tr>
+
+    </tbody>
+</table>
+
+

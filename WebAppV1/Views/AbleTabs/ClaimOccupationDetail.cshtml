@@ -1,0 +1,46 @@
+
+@model AppCoreV1.ABLEModels.ClaimOccupation;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetClaimOccupation" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>C</td><td>@Model.C</td></tr>
+        <tr><td>I</td><td>@Model.I</td></tr>
+        <tr><td>CaseC</td><td>@Model.CaseC</td></tr>
+        <tr><td>CaseI</td><td>@Model.CaseI</td></tr>
+        <tr><td>ClaimC</td><td>@Model.ClaimC</td></tr>
+        <tr><td>ClaimI</td><td>@Model.ClaimI</td></tr>
+        <tr><td>PartyC</td><td>@Model.PartyC</td></tr>
+        <tr><td>PartyI</td><td>@Model.PartyI</td></tr>
+        <tr><td>ClaimNumber</td><td>@Model.ClaimNumber</td></tr>
+        <tr><td>Occupation</td><td>@Model.Occupation</td></tr>
+        <tr><td>JobTitle</td><td>@Model.JobTitle</td></tr>
+        <tr><td>HoursWorkedPerWeek</td><td>@Model.HoursWorkedPerWeek</td></tr>
+        <tr><td>GrossAmt</td><td>@Model.GrossAmt</td></tr>
+        <tr><td>DateOfHire</td><td>@Model.DateOfHire</td></tr>
+        <tr><td>DateJobEnded</td><td>@Model.DateJobEnded</td></tr>
+        <tr><td>OccupationCode</td><td>@Model.OccupationCode</td></tr>
+        <tr><td>IncomeType</td><td>@Model.IncomeType</td></tr>
+        <tr><td>EmploymentStatus</td><td>@Model.EmploymentStatus</td></tr>
+        <tr><td>SelfEmployed</td><td>@Model.SelfEmployed</td></tr>
+        <tr><td>DaysWorkedPerWeek</td><td>@Model.DaysWorkedPerWeek</td></tr>
+        <tr><td>NatureOfWorkDuties</td><td>@Model.NatureOfWorkDuties</td></tr>
+        <tr><td>ReasonForCeasingPosition</td><td>@Model.ReasonForCeasingPosition</td></tr>
+        <tr><td>BusinessStructure</td><td>@Model.BusinessStructure</td></tr>
+        <tr><td>Rank</td><td>@Model.Rank</td></tr>
+
+    </tbody>
+</table>
+
+

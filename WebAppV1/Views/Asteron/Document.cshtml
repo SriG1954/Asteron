@@ -1,0 +1,161 @@
+@using AppCoreV1.AsteronModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model PaginatedList<Document>
+
+@{
+    ViewData["Title"] = "Asteron Document";
+    int prevpage = 0;
+    int nextpage = 0;
+    if (Model.HasNextPage) { nextpage = Model.PageIndex + 1; }
+    if (Model.HasPreviousPage) { prevpage = Model.PageIndex - 1; }
+}
+<script src="~/js/ablereport.js"></script>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <partial name="_SidebarB" />
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <div class="row">
+                            <div style="padding-left:10px;">
+                                <h4>Asteron Document</h4>
+                                <a asp-action="Index" asp-controller="FL">Back to Home</a>
+                                <a asp-action="GetDocuments" asp-controller="HelphubDownload" asp-route-column="@ViewBag.column" asp-route-search="@ViewBag.search" asp-route-pageIndex="@Model.PageIndex" class="btn btn-success">Download</a>
+                            </div>
+                            <div style="float:right;padding-top: 5px;padding-left:10px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    @using (Html.BeginForm(ViewBag.action as string, "Helphub", FormMethod.Get, new { @column = ViewBag.column as string, @search = ViewBag.search as string, @page = Model.PageIndex }))
+                    {
+                        <partial name="_FormSearch" />
+                    }
+                    <div class="card-body">
+
+                        <table id="tabldata" class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Author</th>
+                                    <th scope="col">Authordenorm</th>
+                                    <th scope="col">Beanversion</th>
+                                    <th scope="col">Claimcontactid</th>
+                                    <th scope="col">Claimid</th>
+                                    <th scope="col">Createtime</th>
+                                    <th scope="col">Createuserid</th>
+                                    <th scope="col">Datemodified</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Dms</th>
+                                    <th scope="col">Docuid</th>
+                                    <th scope="col">Documentidentifier</th>
+                                    <th scope="col">Documentidentifierdenorm</th>
+                                    <th scope="col">ExposetocustomerExt</th>
+                                    <th scope="col">Exposureid</th>
+                                    <th scope="col">Inbound</th>
+                                    <th scope="col">Mimetype</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Namedenorm</th>
+                                    <th scope="col">Obsolete</th>
+                                    <th scope="col">Publicid</th>
+                                    <th scope="col">Recipient</th>
+                                    <th scope="col">Retired</th>
+                                    <th scope="col">ScActivitystatus</th>
+                                    <th scope="col">ScArchiveonly</th>
+                                    <th scope="col">ScBatchid</th>
+                                    <th scope="col">ScDisclosurestatus</th>
+                                    <th scope="col">ScDocsource</th>
+                                    <th scope="col">ScDocumentdate</th>
+                                    <th scope="col">ScDocumentsize</th>
+                                    <th scope="col">ScIsversion</th>
+                                    <th scope="col">Securitytype</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Updatetime</th>
+                                    <th scope="col">Updateuserid</th>
+                                    <th scope="col">View</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Author)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Authordenorm)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Beanversion)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Claimcontactid)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Claimid)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Createtime)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Createuserid)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Datemodified)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Dms)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Docuid)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Documentidentifier)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Documentidentifierdenorm)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ExposetocustomerExt)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Exposureid)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Inbound)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Mimetype)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Namedenorm)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Obsolete)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Publicid)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Recipient)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Retired)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScActivitystatus)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScArchiveonly)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScBatchid)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScDisclosurestatus)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScDocsource)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScDocumentdate)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScDocumentsize)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ScIsversion)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Securitytype)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Type)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Updatetime)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Updateuserid)</td>
+                                        <td><a class="btn btn-outline-secondary" onclick="return GetDocument('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <div class="card-footer">
+                        <nav aria-label="...">
+                            <ul class="pagination justify-content-center">
+                                @if (Model.TotalPages > 1)
+                                {
+                                    <li id="fpLink" class="page-item"><a class="page-link" href="./Document?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=1&pageSize=25">First</a></li>
+                                    @if (prevpage > 0)
+                                    {
+                                        <li id="ppLink" class="page-item"><a class="page-link" href="./Document?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@prevpage&pageSize=25">Prev</a></li>
+                                    }
+                                    <li id="cpLink" class="page-item"><a class="page-link active" href="./Document?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@Model.PageIndex&pageSize=25">Page @Model.PageIndex of Pages @Model.TotalPages</a></li>
+                                    @if (nextpage > 0)
+                                    {
+                                        <li id="npLink" class="page-item"><a class="page-link" href="./Document?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@nextpage&pageSize=25">Next</a></li>
+                                    }
+                                    <li id="lpLink" class="page-item"><a class="page-link" href="./Document?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@Model.TotalPages&pageSize=25">last</a></li>
+                                }
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_ModalPage" />

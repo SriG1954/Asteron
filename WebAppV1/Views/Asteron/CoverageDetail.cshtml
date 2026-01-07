@@ -1,0 +1,42 @@
+@model AppCoreV1.AsteronModels.Coverage;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetCoverage" asp-controller="HelphubDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>Beanversion</td><td>@Model.Beanversion</td></tr>
+        <tr><td>Createtime</td><td>@Model.Createtime</td></tr>
+        <tr><td>Createuserid</td><td>@Model.Createuserid</td></tr>
+        <tr><td>Currency</td><td>@Model.Currency</td></tr>
+        <tr><td>Effectivedate</td><td>@Model.Effectivedate</td></tr>
+        <tr><td>Expirationdate</td><td>@Model.Expirationdate</td></tr>
+        <tr><td>OccupationExt</td><td>@Model.OccupationExt</td></tr>
+        <tr><td>Policyid</td><td>@Model.Policyid</td></tr>
+        <tr><td>PremiumstatusExt</td><td>@Model.PremiumstatusExt</td></tr>
+        <tr><td>Publicid</td><td>@Model.Publicid</td></tr>
+        <tr><td>Retired</td><td>@Model.Retired</td></tr>
+        <tr><td>Riskunitid</td><td>@Model.Riskunitid</td></tr>
+        <tr><td>ScCoveragesourcekey</td><td>@Model.ScCoveragesourcekey</td></tr>
+        <tr><td>ScRawproduct</td><td>@Model.ScRawproduct</td></tr>
+        <tr><td>ScStatus</td><td>@Model.ScStatus</td></tr>
+        <tr><td>Subtype</td><td>@Model.Subtype</td></tr>
+        <tr><td>TermenddateExt</td><td>@Model.TermenddateExt</td></tr>
+        <tr><td>TermstartdateExt</td><td>@Model.TermstartdateExt</td></tr>
+        <tr><td>Type</td><td>@Model.Type</td></tr>
+        <tr><td>Updatetime</td><td>@Model.Updatetime</td></tr>
+        <tr><td>Updateuserid</td><td>@Model.Updateuserid</td></tr>
+
+    </tbody>
+</table>
+
+

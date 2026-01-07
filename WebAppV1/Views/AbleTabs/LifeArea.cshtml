@@ -1,0 +1,32 @@
+@using AppCoreV1.ABLEModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model List<LifeAreaEx>
+
+@{
+    ViewData["Title"] = "Able LifeArea Report";
+}
+<script src="~/js/ablereport.js"></script>
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Factors</th>
+            <th scope="col">Notes</th>
+            <th scope="col">FactorStatus</th>
+            <th scope="col">View</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Factors)</td>
+                <td>@Html.DisplayFor(modelItem => item.Notes)</td>
+                <td>@Html.DisplayFor(modelItem => item.FactorStatus)</td>
+                <td><a class="btn btn-outline-secondary" onclick="return GetLifeArea('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>

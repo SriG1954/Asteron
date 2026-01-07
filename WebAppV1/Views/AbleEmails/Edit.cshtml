@@ -1,0 +1,68 @@
+﻿@model AppCoreV1.ABLEModels.AbleEmail;
+
+@{
+    ViewData["Title"] = "Edit Issue";
+}
+
+<link href="~/css/style4.css" rel="stylesheet" />
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <partial name="_SidebarMain" />
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h4>Edit Email</h4>
+                        <a asp-action="Index" asp-controller="AbleEmails">Back to Emails</a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form asp-action="Edit" asp-controller="Emails" method="post">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <input type="hidden" asp-for="EmailId" />
+                                <input type="hidden" asp-for="DateSent" />
+                                <div class="form-group">
+                                    <label asp-for="SenderEmail" class="control-label"></label>
+                                    <input asp-for="SenderEmail" class="form-control" />
+                                    <span asp-validation-for="SenderEmail" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="RecipientEmail" class="control-label"></label>
+                                    <input asp-for="RecipientEmail" class="form-control" />
+                                    <span asp-validation-for="RecipientEmail" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="MailSubject" class="control-label"></label>
+                                    <input asp-for="MailSubject" class="form-control" />
+                                    <span asp-validation-for="MailSubject" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    @Html.TextArea("MailBody", new { name = "MailBody", id = "MailBody", rows = "10", cols = "150" })
+                                    <span asp-validation-for="MailBody" class="text-danger"></span>
+                                </div>
+                                <div class="form-inline">
+                                    <input type="submit" value="Save" class="btn btn-success" style="width:150px;" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div>
+                        <a asp-action="Index" asp-controller="AbleEmails">Back to Emails</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

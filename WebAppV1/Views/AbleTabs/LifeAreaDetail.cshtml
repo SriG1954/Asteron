@@ -1,0 +1,29 @@
+
+@model AppCoreV1.ABLEModels.LifeArea;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetLifeArea" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>C</td><td>@Model.C</td></tr>
+        <tr><td>I</td><td>@Model.I</td></tr>
+        <tr><td>CaseC</td><td>@Model.CaseC</td></tr>
+        <tr><td>CaseI</td><td>@Model.CaseI</td></tr>
+        <tr><td>Factors</td><td>@Model.Factors</td></tr>
+        <tr><td>FactorStatus</td><td>@Model.FactorStatus</td></tr>
+        <tr><td>Notes</td><td>@Model.Notes</td></tr>
+
+    </tbody>
+</table>
+
+

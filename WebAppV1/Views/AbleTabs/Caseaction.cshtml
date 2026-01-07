@@ -1,0 +1,32 @@
+@using AppCoreV1.ABLEModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model PaginatedList<RptCaseaction>
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">ClaimNumber</th>
+            <th scope="col">CaseType</th>
+            <th scope="col">Status</th>
+            <th scope="col">ActionedBy</th>
+            <th scope="col">ActionDate</th>
+            <th scope="col">View</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.ClaimNumber)</td>
+                <td>@Html.DisplayFor(modelItem => item.CaseType)</td>
+                <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                <td>@Html.DisplayFor(modelItem => item.ActionedBy)</td>
+                <td>@Html.DisplayFor(modelItem => item.ActionDate)</td>
+
+                <td><a class="btn btn-outline-secondary" onclick="return GetRptCaseaction('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>

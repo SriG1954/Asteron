@@ -1,0 +1,33 @@
+
+@model AppCoreV1.ABLEModels.RptAbleuser;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetRptAbleuser" asp-controller="AbleDownload" asp-route-id="@Model.ClaimUserId" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>ClaimUserId</td><td>@Model.ClaimUserId</td></tr>
+        <tr><td>LanId</td><td>@Model.LanId</td></tr>
+        <tr><td>FullName</td><td>@Model.FullName</td></tr>
+        <tr><td>JobTitle</td><td>@Model.JobTitle</td></tr>
+        <tr><td>Mail</td><td>@Model.Mail</td></tr>
+        <!--<tr><td>Mobile</td><td>@Model.Mobile</td></tr>-->
+        <tr><td>DepartmentNumber</td><td>@Model.DepartmentNumber</td></tr>
+        <tr><td>ManagerLanId</td><td>@Model.ManagerLanId</td></tr>
+        <tr><td>ManagerName</td><td>@Model.ManagerName</td></tr>
+        <!--<tr><td>ManagerMobile</td><td>@Model.ManagerMobile</td></tr>-->
+        <tr><td>LastLogonDate</td><td>@Model.LastLogonDate</td></tr>
+        <tr><td>DefaultDepartment</td><td>@Model.DefaultDepartment</td></tr>
+
+    </tbody>
+</table>
+
+

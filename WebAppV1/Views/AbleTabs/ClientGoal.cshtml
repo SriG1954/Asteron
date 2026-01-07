@@ -1,0 +1,34 @@
+@using AppCoreV1.ABLEModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model List<ClientGoalEx>
+
+@{
+    ViewData["Title"] = "Able ClientGoal";
+}
+
+<script src="~/js/ablereport.js"></script>
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">CustomerGoalName</th>
+            <th scope="col">GoalDescription</th>
+            <th scope="col">GoalTargetDate</th>
+            <th scope="col">View</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.CustomerGoalName)</td>
+                <td>@Html.DisplayFor(modelItem => item.GoalDescription)</td>
+                <td>@Html.DisplayFor(modelItem => item.GoalTargetDate)</td>
+
+                <td><a class="btn btn-outline-secondary" onclick="return GetClientGoal('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>

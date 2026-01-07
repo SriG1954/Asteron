@@ -1,0 +1,38 @@
+﻿<link href="~/css/style4.css" rel="stylesheet" />
+<link href="~/plugin/fontawesome-free/css/all.css" rel="stylesheet" />
+
+<nav id="sidebar">
+    <div class="sidebar-header">
+        @*<b>Menu</b>*@
+    </div>
+
+    <ul class="list-unstyled components" style="border-bottom:none;">
+        <li>
+            <a><i class="fas fa-table"></i>PAYG Portal</a>
+        </li>
+        <li>
+            <a id="viewEventsLink1" asp-action="Dashboard" asp-controller="Home"><i class="fas fa-tachometer-alt-fast"></i>Dashboard</a>
+        </li>
+        <li>
+            <a id="viewEventsLink1" asp-action="Index" asp-controller="PaymentClaims"><i class="fas fa-credit-card"></i>Payment Claims</a>
+        </li>
+        <li>
+            <a id="viewEventsLink1" asp-action="Index" asp-controller="PAYGReportings"><i class="fas fa-chart-bar"></i>PAYG Reportings</a>
+        </li>
+        <li>
+            <a id="viewEventsLink1" asp-action="Index" asp-controller="Emails"><i class="fas fa-download"></i>Download</a>
+        </li>
+        <li>
+            <a id="viewEventsLink1" asp-action="Index" asp-controller="Emails"><i class="fas fa-envelope"></i>Emails</a>
+        </li>
+        <li>
+            <a id="viewEventsLink1" asp-action="Index" asp-controller="ErrorLogs"><i class="fas fa-history"></i>Logs</a>
+        </li>
+        <li>
+            <a id="viewEventsLink1" asp-action="Index" asp-controller="FigIssues"><i class="fas fa-bug"></i>Issues</a>
+        </li>
+        <li>
+            <a id="viewEventsLink1" asp-action="Index" asp-controller="Services"><i class="fas fa-cogs"></i>Services</a>
+        </li>
+    </ul>
+</nav>

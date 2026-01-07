@@ -1,0 +1,29 @@
+
+@model AppCoreV1.ABLEModels.RptRecoveryrehabnote;
+
+
+<table id="tabldata" class="table">
+<thead class="thead-dark">
+<tr>
+<th scope="col">Parameter</th>
+<th scope="col">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Download</td>
+<td><a id="mydownload" asp-action="GetRptRecoveryrehabnote" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+</tr>
+<tr><td>Id</td><td>@Model.Id</td></tr>
+<tr><td>ClaimNumber</td><td>@Model.ClaimNumber</td></tr>
+<tr><td>NoteType</td><td>@Model.NoteType</td></tr>
+<tr><td>DateCreated</td><td>@Model.DateCreated</td></tr>
+<tr><td>Status</td><td>@Model.Status</td></tr>
+<tr><td>DateOfStatusChange</td><td>@Model.DateOfStatusChange</td></tr>
+<tr><td>LumpsumIpIndicator</td><td>@Model.LumpsumIpIndicator</td></tr>
+<tr><td>ClaimType</td><td>@Model.ClaimType</td></tr>
+
+</tbody>
+</table>
+
+

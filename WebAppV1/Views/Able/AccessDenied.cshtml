@@ -1,0 +1,58 @@
+﻿@using AppCoreV1.ABLEModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model AppCoreV1.ABLEModels.AbleSiteUser;
+
+<link href="~/css/style4.css" rel="stylesheet" />
+<script src="~/js/mysearch.js"></script>
+
+<style>
+    .content-image {
+        font-size: 90px;
+        text-align: center;
+        background-color: #F2F4F4;
+    }
+</style>
+
+@{
+    ViewData["Title"] = "Claim Hub";
+    AppCoreV1.ABLEModels.Case _case = new Case
+            {
+                CaseNumber = @ViewData["CaseNumber"]!.ToString(),
+            };
+    var _username = Context.Session.GetString("ABLEUserName");
+
+}
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <partial name="_SidebarA" model="@_case" />
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h2>Access Denied</h2>
+                    </div>
+                    <div class="container">
+                        <div class="jumbotron">
+                            <h1 class="display-4">Hello, @_username</h1>
+                            <p class="lead">@ViewData["msg1"]!.ToString()</p>
+                            <hr class="my-4">
+                            <p>@ViewData["msg2"]!.ToString()</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="container">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_ModalPage" />
+

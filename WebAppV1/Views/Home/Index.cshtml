@@ -1,0 +1,142 @@
+﻿<link href="~/css/style4.css" rel="stylesheet" />
+<script src="~/js/ablesearch.js"></script>
+
+<style>
+    .content-image {
+        font-size: 90px;
+        text-align: center;
+        background-color: #F2F4F4;
+    }
+</style>
+
+@{
+    ViewData["Title"] = "Able";
+}
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <partial name="_SidebarA" />
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h2>ABLE Portal</h2>
+                        <p>Resolution Life Portal for ABLE Claims</p>
+                    </div>
+                    <div class="container">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="lnkDashboard" asp-action="Dashboard" asp-controller="Able"><i class="fa fa-tachometer-alt-fast" aria-hidden="true"></i><h5>Dashboard</h5></a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="lnkClaims" asp-action="Claim" asp-controller="Able"><i class="fa fa-wheelchair" aria-hidden="true"></i><h5>Claims</h5></a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="lnkReports" asp-action="Benefit" asp-controller="Able"><i class="fas fa fa-dollar" aria-hidden="true"></i><h5>Benefits</h5></a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="viewEventsLink" asp-action="Policy" asp-controller="Able"><i class="fa fas fa-award" aria-hidden="true"></i><h5>Policies</h5></a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <br />
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="viewEventsLink" asp-action="Party" asp-controller="Able"><i class="fa fa-user-friends" aria-hidden="true"></i><h5>Parties</h5></a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="viewEventsLink" asp-action="PartyAddress" asp-controller="Able"><i class="fa fa-address-card" aria-hidden="true"></i><h5>Address</h5></a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="viewEventsLink" asp-action="Note1" asp-controller="Able"><i class="fa fas fa-file-alt" aria-hidden="true"></i><h5>Notes</h5></a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="viewEventsLink" asp-action="Index" asp-controller="AbleReports"><i class="fas fa-chart-bar" aria-hidden="true"></i><h5>Reports</h5></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="viewEventsLink" asp-action="RptDocumentreport" asp-controller="AbleReports"><i class="fa fa-solid fa-file" aria-hidden="true"></i><h5>Documents</h5></a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="viewEventsLink" asp-action="Taskmv" asp-controller="AbleReports"><i class="fa fas fa-tasks" aria-hidden="true"></i><h5>Tasks</h5></a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="viewEventsLink" asp-action="RptCaseaction" asp-controller="AbleReports"><i class="fa fa-solid fa-gear" aria-hidden="true"></i><h5>Actions</h5></a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="viewEventsLink" asp-action="Paymentsummarymv" asp-controller="Able"><i class="fas fa-credit-card" aria-hidden="true"></i><h5>Payments</h5></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="lnkDashboard" asp-action="Dashboard" asp-controller="Able"><i class="fa fa-tachometer-alt-fast" aria-hidden="true"></i><h5>Dashboard</h5></a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="lnkClaims" asp-action="Claim" asp-controller="Orion"><i class="fa fa-wheelchair" aria-hidden="true"></i><h5>Claims</h5></a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="lnkReports" asp-action="Benefit" asp-controller="Orion"><i class="fas fa fa-dollar" aria-hidden="true"></i><h5>Benefits</h5></a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card content-image">
+                                    <a id="viewEventsLink" asp-action="Policy" asp-controller="Orion"><i class="fa fas fa-award" aria-hidden="true"></i><h5>Policies</h5></a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <br />
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_ModalPage" />
+

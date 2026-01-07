@@ -1,0 +1,32 @@
+
+@model AppCoreV1.ABLEModels.Goal;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetGoal" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>C</td><td>@Model.C</td></tr>
+        <tr><td>I</td><td>@Model.I</td></tr>
+        <tr><td>ClientGoalC</td><td>@Model.ClientGoalC</td></tr>
+        <tr><td>ClientGoalI</td><td>@Model.ClientGoalI</td></tr>
+        <tr><td>LifeAreaC</td><td>@Model.LifeAreaC</td></tr>
+        <tr><td>LifeAreaI</td><td>@Model.LifeAreaI</td></tr>
+        <tr><td>StrategyName</td><td>@Model.StrategyName</td></tr>
+        <tr><td>SummarySnapshot</td><td>@Model.SummarySnapshot</td></tr>
+        <tr><td>CustomerStrategyStatus</td><td>@Model.CustomerStrategyStatus</td></tr>
+        <tr><td>TargetDate</td><td>@Model.TargetDate</td></tr>
+
+    </tbody>
+</table>
+
+

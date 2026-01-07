@@ -1,0 +1,52 @@
+@model AppCoreV1.AsteronModels.Incident;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetIncident" asp-controller="HelphubDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>Ambulanceused</td><td>@Model.Ambulanceused</td></tr>
+        <tr><td>Beanversion</td><td>@Model.Beanversion</td></tr>
+        <tr><td>ClaimanttypeExt</td><td>@Model.ClaimanttypeExt</td></tr>
+        <tr><td>Claimid</td><td>@Model.Claimid</td></tr>
+        <tr><td>Createtime</td><td>@Model.Createtime</td></tr>
+        <tr><td>Createuserid</td><td>@Model.Createuserid</td></tr>
+        <tr><td>Description</td><td>@Model.Description</td></tr>
+        <tr><td>Detailedinjurytype</td><td>@Model.Detailedinjurytype</td></tr>
+        <tr><td>Employmentdataid</td><td>@Model.Employmentdataid</td></tr>
+        <tr><td>FaultratingExt</td><td>@Model.FaultratingExt</td></tr>
+        <tr><td>FirstnoticeindicatorExt</td><td>@Model.FirstnoticeindicatorExt</td></tr>
+        <tr><td>Generalinjurytype</td><td>@Model.Generalinjurytype</td></tr>
+        <tr><td>HowreportedExt</td><td>@Model.HowreportedExt</td></tr>
+        <tr><td>LosscauseExt</td><td>@Model.LosscauseExt</td></tr>
+        <tr><td>Lostwages</td><td>@Model.Lostwages</td></tr>
+        <tr><td>PrimarybodyfunctionExt</td><td>@Model.PrimarybodyfunctionExt</td></tr>
+        <tr><td>Publicid</td><td>@Model.Publicid</td></tr>
+        <tr><td>RehabilitationreferralindExt</td><td>@Model.RehabilitationreferralindExt</td></tr>
+        <tr><td>ReportedbytypeExt</td><td>@Model.ReportedbytypeExt</td></tr>
+        <tr><td>ReporteddateExt</td><td>@Model.ReporteddateExt</td></tr>
+        <tr><td>ReportonlyExt</td><td>@Model.ReportonlyExt</td></tr>
+        <tr><td>ResultofinjuryExt</td><td>@Model.ResultofinjuryExt</td></tr>
+        <tr><td>Retired</td><td>@Model.Retired</td></tr>
+        <tr><td>ScClaimeventquestions</td><td>@Model.ScClaimeventquestions</td></tr>
+        <tr><td>ScInjuryquestions</td><td>@Model.ScInjuryquestions</td></tr>
+        <tr><td>Severity</td><td>@Model.Severity</td></tr>
+        <tr><td>StatutorybenefitsExt</td><td>@Model.StatutorybenefitsExt</td></tr>
+        <tr><td>StatutorycareExtid</td><td>@Model.StatutorycareExtid</td></tr>
+        <tr><td>Subtype</td><td>@Model.Subtype</td></tr>
+        <tr><td>Updatetime</td><td>@Model.Updatetime</td></tr>
+        <tr><td>Updateuserid</td><td>@Model.Updateuserid</td></tr>
+
+    </tbody>
+</table>
+
+

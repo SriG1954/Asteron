@@ -1,0 +1,57 @@
+@model AppCoreV1.AsteronModels.Document;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetDocument" asp-controller="HelphubDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>Author</td><td>@Model.Author</td></tr>
+        <tr><td>Authordenorm</td><td>@Model.Authordenorm</td></tr>
+        <tr><td>Beanversion</td><td>@Model.Beanversion</td></tr>
+        <tr><td>Claimcontactid</td><td>@Model.Claimcontactid</td></tr>
+        <tr><td>Claimid</td><td>@Model.Claimid</td></tr>
+        <tr><td>Createtime</td><td>@Model.Createtime</td></tr>
+        <tr><td>Createuserid</td><td>@Model.Createuserid</td></tr>
+        <tr><td>Datemodified</td><td>@Model.Datemodified</td></tr>
+        <tr><td>Description</td><td>@Model.Description</td></tr>
+        <tr><td>Dms</td><td>@Model.Dms</td></tr>
+        <tr><td>Docuid</td><td>@Model.Docuid</td></tr>
+        <tr><td>Documentidentifier</td><td>@Model.Documentidentifier</td></tr>
+        <tr><td>Documentidentifierdenorm</td><td>@Model.Documentidentifierdenorm</td></tr>
+        <tr><td>ExposetocustomerExt</td><td>@Model.ExposetocustomerExt</td></tr>
+        <tr><td>Exposureid</td><td>@Model.Exposureid</td></tr>
+        <tr><td>Inbound</td><td>@Model.Inbound</td></tr>
+        <tr><td>Mimetype</td><td>@Model.Mimetype</td></tr>
+        <tr><td>Name</td><td>@Model.Name</td></tr>
+        <tr><td>Namedenorm</td><td>@Model.Namedenorm</td></tr>
+        <tr><td>Obsolete</td><td>@Model.Obsolete</td></tr>
+        <tr><td>Publicid</td><td>@Model.Publicid</td></tr>
+        <tr><td>Recipient</td><td>@Model.Recipient</td></tr>
+        <tr><td>Retired</td><td>@Model.Retired</td></tr>
+        <tr><td>ScActivitystatus</td><td>@Model.ScActivitystatus</td></tr>
+        <tr><td>ScArchiveonly</td><td>@Model.ScArchiveonly</td></tr>
+        <tr><td>ScBatchid</td><td>@Model.ScBatchid</td></tr>
+        <tr><td>ScDisclosurestatus</td><td>@Model.ScDisclosurestatus</td></tr>
+        <tr><td>ScDocsource</td><td>@Model.ScDocsource</td></tr>
+        <tr><td>ScDocumentdate</td><td>@Model.ScDocumentdate</td></tr>
+        <tr><td>ScDocumentsize</td><td>@Model.ScDocumentsize</td></tr>
+        <tr><td>ScIsversion</td><td>@Model.ScIsversion</td></tr>
+        <tr><td>Securitytype</td><td>@Model.Securitytype</td></tr>
+        <tr><td>Status</td><td>@Model.Status</td></tr>
+        <tr><td>Type</td><td>@Model.Type</td></tr>
+        <tr><td>Updatetime</td><td>@Model.Updatetime</td></tr>
+        <tr><td>Updateuserid</td><td>@Model.Updateuserid</td></tr>
+
+    </tbody>
+</table>
+
+

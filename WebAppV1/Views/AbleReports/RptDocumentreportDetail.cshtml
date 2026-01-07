@@ -1,0 +1,33 @@
+@model AppCoreV1.ABLEModels.RptDocumentreport;
+
+
+<table id="tabldata" class="table">
+<thead class="thead-dark">
+<tr>
+<th scope="col">Parameter</th>
+<th scope="col">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Download</td>
+<td><a id="mydownload" asp-action="GetRptDocumentreport" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+</tr>
+<tr><td>Id</td><td>@Model.Id</td></tr>
+<tr><td>CaseNumber</td><td>@Model.CaseNumber</td></tr>
+<tr><td>BenefitNumber</td><td>@Model.BenefitNumber</td></tr>
+<tr><td>CaseType</td><td>@Model.CaseType</td></tr>
+<tr><td>DocumentType</td><td>@Model.DocumentType</td></tr>
+<tr><td>DocumentId</td><td>@Model.DocumentId</td></tr>
+<tr><td>DateCreatedInAble</td><td>@Model.DateCreatedInAble</td></tr>
+<tr><td>CreatedBy</td><td>@Model.CreatedBy</td></tr>
+<tr><td>LastUpdatedBy</td><td>@Model.LastUpdatedBy</td></tr>
+<tr><td>Status</td><td>@Model.Status</td></tr>
+<tr><td>Description</td><td>@Model.Description</td></tr>
+<tr><td>LumpsumIpIndicator</td><td>@Model.LumpsumIpIndicator</td></tr>
+<tr><td>ClaimType</td><td>@Model.ClaimType</td></tr>
+
+</tbody>
+</table>
+
+

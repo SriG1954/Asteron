@@ -1,0 +1,32 @@
+
+@model AppCoreV1.ABLEModels.ClaimPeriod;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetClaimPeriod" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>C</td><td>@Model.C</td></tr>
+        <tr><td>I</td><td>@Model.I</td></tr>
+        <tr><td>ClaimC</td><td>@Model.ClaimC</td></tr>
+        <tr><td>ClaimI</td><td>@Model.ClaimI</td></tr>
+        <tr><td>PartyCFacility</td><td>@Model.PartyCFacility</td></tr>
+        <tr><td>PartyIFacility</td><td>@Model.PartyIFacility</td></tr>
+        <tr><td>StartDate</td><td>@Model.StartDate</td></tr>
+        <tr><td>EndDate</td><td>@Model.EndDate</td></tr>
+        <tr><td>Description</td><td>@Model.Description</td></tr>
+        <tr><td>ClaimNumber</td><td>@Model.ClaimNumber</td></tr>
+
+    </tbody>
+</table>
+
+

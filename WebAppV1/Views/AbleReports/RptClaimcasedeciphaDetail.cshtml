@@ -1,0 +1,28 @@
+@model AppCoreV1.ABLEModels.RptClaimcasedecipha;
+
+
+<table id="tabldata" class="table">
+<thead class="thead-dark">
+<tr>
+<th scope="col">Parameter</th>
+<th scope="col">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Download</td>
+<td><a id="mydownload" asp-action="GetRptClaimcasedecipha" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+</tr>
+<tr><td>Id</td><td>@Model.Id</td></tr>
+<tr><td>ClaimNumber</td><td>@Model.ClaimNumber</td></tr>
+<tr><td>PolicyNumber</td><td>@Model.PolicyNumber</td></tr>
+<tr><td>CustomerFirstName</td><td>@Model.CustomerFirstName</td></tr>
+<tr><td>CustomerLastName</td><td>@Model.CustomerLastName</td></tr>
+<tr><td>State</td><td>@Model.State</td></tr>
+<tr><td>PostCode</td><td>@Model.PostCode</td></tr>
+<tr><td>ClaimsTeamDepartment</td><td>@Model.ClaimsTeamDepartment</td></tr>
+
+</tbody>
+</table>
+
+

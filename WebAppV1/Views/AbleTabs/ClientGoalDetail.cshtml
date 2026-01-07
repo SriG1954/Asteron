@@ -1,0 +1,36 @@
+
+@model AppCoreV1.ABLEModels.ClientGoal;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetClientGoal" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>C</td><td>@Model.C</td></tr>
+        <tr><td>I</td><td>@Model.I</td></tr>
+        <tr><td>CaseC</td><td>@Model.CaseC</td></tr>
+        <tr><td>CaseI</td><td>@Model.CaseI</td></tr>
+        <tr><td>CustomerGoalName</td><td>@Model.CustomerGoalName</td></tr>
+        <tr><td>GoalDescription</td><td>@Model.GoalDescription</td></tr>
+        <tr><td>GoalTargetDate</td><td>@Model.GoalTargetDate</td></tr>
+        <tr><td>Status</td><td>@Model.Status</td></tr>
+        <tr><td>OutcomeDate</td><td>@Model.OutcomeDate</td></tr>
+        <tr><td>OutcomeNotes</td><td>@Model.OutcomeNotes</td></tr>
+        <tr><td>GoalDateRationale</td><td>@Model.GoalDateRationale</td></tr>
+        <tr><td>AchievementTimeframe</td><td>@Model.AchievementTimeframe</td></tr>
+        <tr><td>CreateDate</td><td>@Model.CreateDate</td></tr>
+        <tr><td>GoalReason</td><td>@Model.GoalReason</td></tr>
+
+    </tbody>
+</table>
+
+

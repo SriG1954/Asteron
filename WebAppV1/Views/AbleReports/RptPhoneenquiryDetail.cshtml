@@ -1,0 +1,39 @@
+
+@model AppCoreV1.ABLEModels.RptPhoneenquiry;
+
+
+<table id="tabldata" class="table">
+<thead class="thead-dark">
+<tr>
+<th scope="col">Parameter</th>
+<th scope="col">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Download</td>
+<td><a id="mydownload" asp-action="GetRptPhoneenquiry" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+</tr>
+<tr><td>Id</td><td>@Model.Id</td></tr>
+<tr><td>ClaimNumber</td><td>@Model.ClaimNumber</td></tr>
+<tr><td>ReasonForContact</td><td>@Model.ReasonForContact</td></tr>
+<tr><td>DateOfContact</td><td>@Model.DateOfContact</td></tr>
+<tr><td>DirectionOfContact</td><td>@Model.DirectionOfContact</td></tr>
+<tr><td>ClaimantName</td><td>@Model.ClaimantName</td></tr>
+<tr><td>ContactName</td><td>@Model.ContactName</td></tr>
+<tr><td>MethodOfContact</td><td>@Model.MethodOfContact</td></tr>
+<tr><td>ContactMadeIndicator</td><td>@Model.ContactMadeIndicator</td></tr>
+<tr><td>PhoneRecordingLink</td><td>@Model.PhoneRecordingLink</td></tr>
+<tr><td>DurationOfContact</td><td>@Model.DurationOfContact</td></tr>
+<tr><td>UserName</td><td>@Model.UserName</td></tr>
+<tr><td>LumpsumIpIndicator</td><td>@Model.LumpsumIpIndicator</td></tr>
+<tr><td>ClaimType</td><td>@Model.ClaimType</td></tr>
+<tr><td>ContactDescription</td><td>@Model.ContactDescription</td></tr>
+<tr><td>Decision</td><td>@Model.Decision</td></tr>
+<tr><td>DecisionDate</td><td>@Model.DecisionDate</td></tr>
+<tr><td>DecisionReason</td><td>@Model.DecisionReason</td></tr>
+
+</tbody>
+</table>
+
+

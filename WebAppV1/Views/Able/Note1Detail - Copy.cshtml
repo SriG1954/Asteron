@@ -1,0 +1,42 @@
+
+@model AppCoreV1.ABLEModels.Note1;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetNote1" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>C</td><td>@Model.C</td></tr>
+        <tr><td>I</td><td>@Model.I</td></tr>
+        <tr><td>PartyC</td><td>@Model.PartyC</td></tr>
+        <tr><td>PartyI</td><td>@Model.PartyI</td></tr>
+        <tr><td>ContactC</td><td>@Model.ContactC</td></tr>
+        <tr><td>ContactI</td><td>@Model.ContactI</td></tr>
+        <tr><td>CaseC</td><td>@Model.CaseC</td></tr>
+        <tr><td>CaseI</td><td>@Model.CaseI</td></tr>
+        <tr><td>PackedData</td><td>@Model.PackedData</td></tr>
+        <tr><td>EnvelopId</td><td>@Model.EnvelopId</td></tr>
+        <tr><td>Tag</td><td>@Model.Tag</td></tr>
+        <tr><td>DateCreated</td><td>@Model.DateCreated</td></tr>
+        <tr><td>LastUpdated</td><td>@Model.LastUpdated</td></tr>
+        <tr><td>Description</td><td>@Model.Description</td></tr>
+        <tr><td>KeyDocument</td><td>@Model.KeyDocument</td></tr>
+        <tr><td>EffectiveFrom</td><td>@Model.EffectiveFrom</td></tr>
+        <tr><td>EffectiveTo</td><td>@Model.EffectiveTo</td></tr>
+        <tr><td>DocumentType</td><td>@Model.DocumentType</td></tr>
+        <tr><td>CreatedBy</td><td>@Model.CreatedBy</td></tr>
+        <tr><td>UpdatedBy</td><td>@Model.UpdatedBy</td></tr>
+
+    </tbody>
+</table>
+
+

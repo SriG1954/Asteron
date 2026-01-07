@@ -1,0 +1,74 @@
+
+@model AppCoreV1.ABLEModels.Paymentsummarymv;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetPaymentsummarymv" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>ClaimNumber</td><td>@Model.ClaimNumber</td></tr>
+        <tr><td>BenefitNumber</td><td>@Model.BenefitNumber</td></tr>
+        <tr><td>EFormId</td><td>@Model.EFormId</td></tr>
+        <tr><td>BenefitPayment</td><td>@Model.BenefitPayment</td></tr>
+        <tr><td>AcceptFrom</td><td>@Model.AcceptFrom</td></tr>
+        <tr><td>From</td><td>@Model.From</td></tr>
+        <tr><td>To</td><td>@Model.To</td></tr>
+
+        <tr><td>BenefitAmount</td><td>@Model.BenefitAmount</td></tr>
+        <tr><td>BenefitAmountInfo</td><td>@Model.BenefitAmountInfo</td></tr>
+        <tr><td>StampDuty</td><td>@Model.StampDuty</td></tr>
+        <tr><td>StampDutyInfo</td><td>@Model.StampDutyInfo</td></tr>
+        <tr><td>PremiumRefund</td><td>@Model.PremiumRefund</td></tr>
+        <tr><td>PremiumRefundInfo</td><td>@Model.PremiumRefundInfo</td></tr>
+        <tr><td>SuperContributions</td><td>@Model.SuperContributions</td></tr>
+        <tr><td>SuperContributionsInfo</td><td>@Model.SuperContributionsInfo</td></tr>
+        <tr><td>NoClaimBonus</td><td>@Model.NoClaimBonus</td></tr>
+        <tr><td>NoClaimBonusInfo</td><td>@Model.NoClaimBonusInfo</td></tr>
+        <tr><td>Offsets</td><td>@Model.Offsets</td></tr>
+        <tr><td>OffsetsInfo</td><td>@Model.OffsetsInfo</td></tr>
+        <tr><td>Others</td><td>@Model.Others</td></tr>
+        <tr><td>OthersInfo</td><td>@Model.OthersInfo</td></tr>
+        <tr><td>Tax</td><td>@Model.Tax</td></tr>
+        <tr><td>TaxInfo</td><td>@Model.TaxInfo</td></tr>
+        <tr><td>CalculationDescription</td><td>@Model.CalculationDescription</td></tr>
+        <tr><td>PaymentMethod</td><td>@Model.PaymentMethod</td></tr>
+        <tr><td>PartialBenefit</td><td>@Model.PartialBenefit</td></tr>
+        <tr><td>GroupPayee</td><td>@Model.GroupPayee</td></tr>
+        <tr><td>CpiEbrClaimsEscalation</td><td>@Model.CpiEbrClaimsEscalation</td></tr>
+        <tr><td>CpiEbrClaimsEscalDes</td><td>@Model.CpiEbrClaimsEscalDes</td></tr>
+        <tr><td>NumberOfPayments</td><td>@Model.NumberOfPayments</td></tr>
+        <tr><td>AdminInitials</td><td>@Model.AdminInitials</td></tr>
+        <tr><td>Verified</td><td>@Model.AdminDate</td></tr>
+        <tr><td>PaymentReference</td><td>@Model.PaymentReference</td></tr>
+        <tr><td>AdminAuthorisedByInitials</td><td>@Model.AdminAuthorisedByInitials</td></tr>
+        <tr><td>Verified</td><td>@Model.AdminAuthorisedDate</td></tr>
+        <tr><td>PsoftRefForWaivPremiums</td><td>@Model.PsoftRefForWaivPremiums</td></tr>
+        <tr><td>PsoftWvedPremiumAuthBy</td><td>@Model.PsoftWvedPremiumAuthBy</td></tr>
+        <tr><td>Verified</td><td>@Model.PsoftPayAuthDate</td></tr>
+        <tr><td>PeopleSoftScoReference</td><td>@Model.PeopleSoftScoReference</td></tr>
+        <tr><td>PsoftPayAuthBy</td><td>@Model.PsoftPayAuthBy</td></tr>
+        <tr><td>PsoftPayAuthDate1</td><td>@Model.PsoftPayAuthDate1</td></tr>
+        <tr><td>ServiceRequestScoReference</td><td>@Model.ServiceRequestScoReference</td></tr>
+        <tr><td>OtherInformationEnd</td><td>@Model.OtherInformationEnd</td></tr>
+        <tr><td>Total</td><td>@Model.Total</td></tr>
+        <tr><td>LumpsumIpIndicator</td><td>@Model.LumpsumIpIndicator</td></tr>
+        <tr><td>ClaimType</td><td>@Model.ClaimType</td></tr>
+        <tr><td>ClassOfBusiness</td><td>@Model.ClassOfBusiness</td></tr>
+        <tr><td>BenefitCode</td><td>@Model.BenefitCode</td></tr>
+        <tr><td>ProductCode</td><td>@Model.ProductCode</td></tr>
+        <tr><td>BenefitType</td><td>@Model.BenefitType</td></tr>
+        <tr><td>DateCreated</td><td>@Model.DateCreated</td></tr>
+
+    </tbody>
+</table>
+
+

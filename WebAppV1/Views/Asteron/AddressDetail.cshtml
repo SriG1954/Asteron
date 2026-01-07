@@ -1,0 +1,45 @@
+@model AppCoreV1.AsteronModels.Address;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetAddress" asp-controller="HelphubDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>Addressline1</td><td>@Model.Addressline1</td></tr>
+        <tr><td>Addressline2</td><td>@Model.Addressline2</td></tr>
+        <tr><td>Addressline3</td><td>@Model.Addressline3</td></tr>
+        <tr><td>Addresstype</td><td>@Model.Addresstype</td></tr>
+        <tr><td>Batchgeocode</td><td>@Model.Batchgeocode</td></tr>
+        <tr><td>Beanversion</td><td>@Model.Beanversion</td></tr>
+        <tr><td>City</td><td>@Model.City</td></tr>
+        <tr><td>Citydenorm</td><td>@Model.Citydenorm</td></tr>
+        <tr><td>Country</td><td>@Model.Country</td></tr>
+        <tr><td>Createtime</td><td>@Model.Createtime</td></tr>
+        <tr><td>Createuserid</td><td>@Model.Createuserid</td></tr>
+        <tr><td>Description</td><td>@Model.Description</td></tr>
+        <tr><td>Geocodestatus</td><td>@Model.Geocodestatus</td></tr>
+        <tr><td>Postalcode</td><td>@Model.Postalcode</td></tr>
+        <tr><td>Postalcodedenorm</td><td>@Model.Postalcodedenorm</td></tr>
+        <tr><td>Publicid</td><td>@Model.Publicid</td></tr>
+        <tr><td>Retired</td><td>@Model.Retired</td></tr>
+        <tr><td>ScAddressformat</td><td>@Model.ScAddressformat</td></tr>
+        <tr><td>ScPermanentchange</td><td>@Model.ScPermanentchange</td></tr>
+        <tr><td>State</td><td>@Model.State</td></tr>
+        <tr><td>Subtype</td><td>@Model.Subtype</td></tr>
+        <tr><td>Updatetime</td><td>@Model.Updatetime</td></tr>
+        <tr><td>Updateuserid</td><td>@Model.Updateuserid</td></tr>
+        <tr><td>Validuntil</td><td>@Model.Validuntil</td></tr>
+
+    </tbody>
+</table>
+
+

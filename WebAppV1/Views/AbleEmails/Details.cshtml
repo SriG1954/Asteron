@@ -1,0 +1,32 @@
+﻿@model AppCoreV1.ABLEModels.AbleEmail;
+
+<table id="tabldata" class="table">
+     <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr>
+                <td>SenderEmail</td>
+                <td>@Model.SenderEmail</td>
+            </tr>
+            <tr>
+                <td>RecipientEmail</td>
+                <td>@Model.RecipientEmail</td>
+            </tr>
+            <tr>
+                <td>MailSubject</td>
+                <td>@Model.MailSubject</td>
+            </tr>
+            <tr>
+                <td>MailBody</td>
+                <td>@Model.MailBody</td>
+            </tr>
+            <tr>
+                <td>DateSent</td>
+                <td>@Model.DateSent</td>
+            </tr>
+        </tbody>
+ </table>

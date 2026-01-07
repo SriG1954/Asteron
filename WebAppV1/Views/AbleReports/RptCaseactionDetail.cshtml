@@ -1,0 +1,31 @@
+
+@model AppCoreV1.ABLEModels.RptCaseaction;
+
+
+<table id="tabldata" class="table">
+<thead class="thead-dark">
+<tr>
+<th scope="col">Parameter</th>
+<th scope="col">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Download</td>
+<td><a id="mydownload" asp-action="GetRptCaseaction" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+</tr>
+<tr><td>Id</td><td>@Model.Id</td></tr>
+<tr><td>ClaimNumber</td><td>@Model.ClaimNumber</td></tr>
+<tr><td>BenefitNumber</td><td>@Model.BenefitNumber</td></tr>
+<tr><td>CaseType</td><td>@Model.CaseType</td></tr>
+<tr><td>Status</td><td>@Model.Status</td></tr>
+<tr><td>Reason</td><td>@Model.Reason</td></tr>
+<tr><td>ActionedBy</td><td>@Model.ActionedBy</td></tr>
+<tr><td>ActionDate</td><td>@Model.ActionDate</td></tr>
+<tr><td>LumpsumIpIndicator</td><td>@Model.LumpsumIpIndicator</td></tr>
+<tr><td>ClaimType</td><td>@Model.ClaimType</td></tr>
+
+</tbody>
+</table>
+
+

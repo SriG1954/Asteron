@@ -1,0 +1,45 @@
+@model AppCoreV1.ABLEModels.RptEnquirycasereport;
+
+
+<table id="tabldata" class="table">
+<thead class="thead-dark">
+<tr>
+<th scope="col">Parameter</th>
+<th scope="col">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Download</td>
+<td><a id="mydownload" asp-action="GetRptEnquirycasereport" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+</tr>
+<tr><td>Id</td><td>@Model.Id</td></tr>
+<tr><td>EnquiryNumber</td><td>@Model.EnquiryNumber</td></tr>
+<tr><td>EnquiryCaseStatus</td><td>@Model.EnquiryCaseStatus</td></tr>
+<tr><td>GivenName</td><td>@Model.GivenName</td></tr>
+<tr><td>Surname</td><td>@Model.Surname</td></tr>
+<tr><td>Sex</td><td>@Model.Sex</td></tr>
+<tr><td>DateOfBirth</td><td>@Model.DateOfBirth</td></tr>
+<tr><td>PostCode</td><td>@Model.PostCode</td></tr>
+<tr><td>CaseManager</td><td>@Model.CaseManager</td></tr>
+<tr><td>Team</td><td>@Model.Team</td></tr>
+<tr><td>CreationDate</td><td>@Model.CreationDate</td></tr>
+<tr><td>IncurredDate</td><td>@Model.IncurredDate</td></tr>
+<tr><td>Source</td><td>@Model.Source</td></tr>
+<tr><td>ContactDate</td><td>@Model.ContactDate</td></tr>
+<tr><td>Notifier</td><td>@Model.Notifier</td></tr>
+<tr><td>IfOther</td><td>@Model.IfOther</td></tr>
+<tr><td>NatureOfIllnessOrInjury</td><td>@Model.NatureOfIllnessOrInjury</td></tr>
+<tr><td>NatureOfIncident</td><td>@Model.NatureOfIncident</td></tr>
+<tr><td>Description</td><td>@Model.Description</td></tr>
+<tr><td>Product</td><td>@Model.Product</td></tr>
+<tr><td>ContractStatus</td><td>@Model.ContractStatus</td></tr>
+<tr><td>PolicyNumber</td><td>@Model.PolicyNumber</td></tr>
+<tr><td>CommencementDate</td><td>@Model.CommencementDate</td></tr>
+<tr><td>LumpsumIpIndicator</td><td>@Model.LumpsumIpIndicator</td></tr>
+<tr><td>ClaimType</td><td>@Model.ClaimType</td></tr>
+
+</tbody>
+</table>
+
+

@@ -1,0 +1,91 @@
+﻿<link href="~/css/style4.css" rel="stylesheet" />
+<script src="~/js/mysearch.js"></script>
+
+<style>
+    .content-image {
+        font-size: 90px;
+        text-align: center;
+        background-color: #F2F4F4;
+    }
+</style>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <partial name="_SidebarA" />
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h2>Dashboard</h2>
+                        <p>Able Source Entities and Reports</p>
+                    </div>
+                    <div class="container">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <canvas id="myChart" width="150" height="120"></canvas>
+                            </div>
+                            <div class="col-md-6">
+                                <canvas id="myChart1" width="150" height="120"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/Chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+  const ctx1 = document.getElementById('myChart1');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Cases', 'Claims', 'Parties', 'Address'],
+      datasets: [{
+        label: '# of Rows',
+                data: [129538, 93829, 171920, 128079],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+    new Chart(ctx1, {
+        type: 'bar',
+        data: {
+            labels: ['Documents', 'Tasks', 'Process'],
+            datasets: [{
+                label: '# of Rows',
+                data: [5177440, 5374637, 55248998],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+</script>
+
+<partial name="_ModalPage" />
+

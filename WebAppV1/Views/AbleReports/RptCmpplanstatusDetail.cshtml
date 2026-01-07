@@ -1,0 +1,36 @@
+@model AppCoreV1.ABLEModels.RptCmpplanstatus;
+
+
+<table id="tabldata" class="table">
+<thead class="thead-dark">
+<tr>
+<th scope="col">Parameter</th>
+<th scope="col">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Download</td>
+<td><a id="mydownload" asp-action="GetRptCmpplanstatus" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+</tr>
+<tr><td>Id</td><td>@Model.Id</td></tr>
+<tr><td>ClaimNumber</td><td>@Model.ClaimNumber</td></tr>
+<tr><td>CmpStatus</td><td>@Model.CmpStatus</td></tr>
+<tr><td>CmpGoalDate</td><td>@Model.CmpGoalDate</td></tr>
+<tr><td>PlanName</td><td>@Model.PlanName</td></tr>
+<tr><td>PlanNotes</td><td>@Model.PlanNotes</td></tr>
+<tr><td>PlanStatus</td><td>@Model.PlanStatus</td></tr>
+<tr><td>PlanCreationDate</td><td>@Model.PlanCreationDate</td></tr>
+<tr><td>ServiceCode</td><td>@Model.ServiceCode</td></tr>
+<tr><td>ServiceDescription</td><td>@Model.ServiceDescription</td></tr>
+<tr><td>ServiceCreator</td><td>@Model.ServiceCreator</td></tr>
+<tr><td>ServiceStartDate</td><td>@Model.ServiceStartDate</td></tr>
+<tr><td>ServiceEndDate</td><td>@Model.ServiceEndDate</td></tr>
+<tr><td>PlanStatusDate</td><td>@Model.PlanStatusDate</td></tr>
+<tr><td>LumpsumIpIndicator</td><td>@Model.LumpsumIpIndicator</td></tr>
+<tr><td>ClaimType</td><td>@Model.ClaimType</td></tr>
+
+</tbody>
+</table>
+
+

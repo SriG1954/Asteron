@@ -1,0 +1,67 @@
+
+@model AppCoreV1.ABLEModels.OutstandingRequest;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetOutstandingRequest" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>C</td><td>@Model.C</td></tr>
+        <tr><td>I</td><td>@Model.I</td></tr>
+        <tr><td>PartySourceC</td><td>@Model.PartySourceC</td></tr>
+        <tr><td>PartySourceI</td><td>@Model.PartySourceI</td></tr>
+        <tr><td>PartySubjectC</td><td>@Model.PartySubjectC</td></tr>
+        <tr><td>PartySubjectI</td><td>@Model.PartySubjectI</td></tr>
+        <tr><td>CaseC</td><td>@Model.CaseC</td></tr>
+        <tr><td>CaseI</td><td>@Model.CaseI</td></tr>
+        <tr><td>ProcessC</td><td>@Model.ProcessC</td></tr>
+        <tr><td>ProcessI</td><td>@Model.ProcessI</td></tr>
+        <tr><td>TaskC</td><td>@Model.TaskC</td></tr>
+        <tr><td>TaskI</td><td>@Model.TaskI</td></tr>
+        <tr><td>DocumentC</td><td>@Model.DocumentC</td></tr>
+        <tr><td>DocumentI</td><td>@Model.DocumentI</td></tr>
+        <tr><td>Type</td><td>@Model.Type</td></tr>
+
+        <tr><td>SelectedType</td><td>@Model.DateCreated</td></tr>
+        <tr><td>CreatedBy</td><td>@Model.CreatedBy</td></tr>
+        <tr><td>LastFollowedUpBy</td><td>@Model.LastFollowedUpBy</td></tr>
+
+        <tr><td>NextFollowUpDate</td><td>@Model.NextFollowUpDate</td></tr>
+        <tr><td>Description</td><td>@Model.Description</td></tr>
+        <tr><td>Category</td><td>@Model.Category</td></tr>
+
+        <tr><td>CreationDate</td><td>@Model.CreationDate</td></tr>
+        <tr><td>Status</td><td>@Model.Status</td></tr>
+
+        <tr><td>DateRequested</td><td>@Model.DateRequested</td></tr>
+        <tr><td>RequestedBy</td><td>@Model.RequestedBy</td></tr>
+
+        <tr><td>DateLastFollowedUp</td><td>@Model.DateLastFollowedUp</td></tr>
+        <tr><td>NotProceedingWithDate</td><td>@Model.NotProceedingWithDate</td></tr>
+        <tr><td>DateCompleted</td><td>@Model.DateCompleted</td></tr>
+        <tr><td>CompletionReason</td><td>@Model.CompletionReason</td></tr>
+        <tr><td>CompletionNotes</td><td>@Model.CompletionNotes</td></tr>
+
+        <tr><td>SelectedType</td><td>@Model.DateSuppressed</td></tr>
+        <tr><td>SuppressionReason</td><td>@Model.SuppressionReason</td></tr>
+        <tr><td>SuppressionNotes</td><td>@Model.SuppressionNotes</td></tr>
+        <tr><td>SuppressedBy</td><td>@Model.SuppressedBy</td></tr>
+        <tr><td>UserCreated</td><td>@Model.UserCreated</td></tr>
+        <tr><td>UserLastUpdated</td><td>@Model.UserLastUpdated</td></tr>
+        <tr><td>UpdatedBy</td><td>@Model.UpdatedBy</td></tr>
+        <tr><td>SelectedCategory</td><td>@Model.SelectedCategory</td></tr>
+        <tr><td>SelectedType</td><td>@Model.SelectedType</td></tr>
+
+    </tbody>
+</table>
+
+

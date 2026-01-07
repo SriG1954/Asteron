@@ -1,0 +1,32 @@
+﻿@model AppCoreV1.ABLEModels.AbleIssue;
+
+<table id="tabldata" class="table">
+     <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td>@Model.Id</td>
+            </tr>
+            <tr>
+                <td>ReportedBy</td>
+                <td>@Model.ReportedBy</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>@Model.Description</td>
+            </tr>
+            <tr>
+                <td>DateReported</td>
+                <td>@Model.DateReported</td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>@Model.Status</td>
+            </tr>
+        </tbody>
+ </table>

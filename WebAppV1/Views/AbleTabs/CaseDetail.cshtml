@@ -1,0 +1,39 @@
+
+@model AppCoreV1.ABLEModels.Case;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetCase" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>C</td><td>@Model.C</td></tr>
+        <tr><td>I</td><td>@Model.I</td></tr>
+        <tr><td>CaseC</td><td>@Model.CaseC</td></tr>
+        <tr><td>CaseI</td><td>@Model.CaseI</td></tr>
+        <tr><td>Id</td><td>@Model.IncuredDate</td></tr>
+        <tr><td>Context</td><td>@Model.Context</td></tr>
+        <tr><td>TriageSegment</td><td>@Model.TriageSegment</td></tr>
+        <tr><td>CaseNumber</td><td>@Model.CaseNumber</td></tr>
+        <tr><td>UnexpectedCircumstances</td><td>@Model.UnexpectedCircumstances</td></tr>
+        <tr><td>CustomerContactFrequency</td><td>@Model.CustomerContactFrequency</td></tr>
+        <tr><td>OpportunityToInfluenceExhausted</td><td>@Model.OpportunityToInfluenceExhausted</td></tr>
+        <tr><td>Description</td><td>@Model.Description</td></tr>
+        <tr><td>OverrideTriageSegmentReason</td><td>@Model.OverrideTriageSegmentReason</td></tr>
+        <tr><td>Id</td><td>@Model.CreationDate</td></tr>
+        <tr><td>UrgentFinancialNeed</td><td>@Model.UrgentFinancialNeed</td></tr>
+        <tr><td>CaseType</td><td>@Model.CaseType</td></tr>
+        <tr><td>CaseOwnerComment</td><td>@Model.CaseOwnerComment</td></tr>
+
+    </tbody>
+</table>
+
+

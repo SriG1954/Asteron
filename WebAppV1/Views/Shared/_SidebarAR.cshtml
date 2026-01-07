@@ -1,0 +1,149 @@
+﻿<link href="~/css/style4.css" rel="stylesheet" />
+<link href="~/plugin/fontawesome-free/css/all.css" rel="stylesheet" />
+
+<nav id="sidebar">
+    <div class="sidebar-header">
+        @*<b>Menu</b>*@
+    </div>
+    <ul class="list-unstyled components" style="border-bottom:none;">
+        <li>
+            <a id="lnkHome" asp-action="Index" asp-controller="Able"><i class="fas fas fa-home"></i>Home</a>
+        </li>
+
+        @{
+            var _username = Context.Session.GetString("ABLEUserName");
+            if (_username!.Contains("Srinivasan Govintharaju"))
+            {
+                <li>
+                    <a id="viewEventsLink1" asp-action="ModelDetails" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Model</a>
+                </li>
+            }
+        }
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptAbleuser" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Able User</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptAbleusersallrole" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Able Users Role</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptActionsservice" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Action Services</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptCaseaction" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Case Action</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="Claimbenefitmv" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Claim Benefit </a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptClaimbenefitactuarialrec" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>CB Actuarial Rec</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptClaimBenefitactuarialrecl" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>CB Actuarial Rec LS</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptClaimbenefitgroup" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Claim Benefit Group</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptClaimbenefitreinsurance" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>CB Reinsurance</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptClaimbenefitw" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Claim Benefit WS</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptClaimcasedecipha" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Claim Case Decipha</a>
+        </li>
+
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptClaimexpense" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Claim Expense</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptClaimparticipant" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Claim Participant</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptClosedtaskreport" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Closed Task Report</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptCmpaction" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>CMP Actions</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptCmpgoaldatemovement" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>CMP GD Movements</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptCmpplanstatus" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>CMP Plan Status</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptCmpservice" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>CMP Service</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptCompliant" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Complaints</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptDocumentreport" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Document Report</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptEnquirycasereport" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Enquiry Case Report</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptHcrcompletednote" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>HCR Completed Notes</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptOpentask" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Open Task</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptOverrideriskreport" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Override Risk Report</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="Paymentsummarymv" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Payment Summary</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptPaymentsummaryl" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Payment Summary LS</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptPhoneenquiry" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Phone Enquiry</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptRecoveryrehabnote" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Recovery Rehab Note</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="Taskmv" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Task Report</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptTaskreportgroup" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>Task Report Group</a>
+        </li>
+
+        <li>
+            <a id="viewEventsLink1" asp-action="RptTaskreportreinsurance" asp-controller="AbleReports"><i class="fas fa-chart-bar"></i>TR Reinsurance</a>
+        </li>
+
+    </ul>
+</nav>

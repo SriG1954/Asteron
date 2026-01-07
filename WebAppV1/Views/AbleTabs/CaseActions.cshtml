@@ -1,0 +1,71 @@
+@using AppCoreV1.ABLEModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model List<CaseAction>
+
+@{
+    ViewData["Title"] = ViewBag.appName + " Claim Case Actions";
+    AppCoreV1.ABLEModels.Case _case = new Case
+            {
+                CaseNumber = @ViewData["CaseNumber"]!.ToString(),
+            };
+}
+<script src="~/js/ablereport.js"></script>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <partial name="_SidebarACT" model="@_case" />
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <div class="row">
+                            <div style="padding-left:10px;">
+                                <h4>@ViewBag.appName Claim @ViewData["CaseNumber"]!.ToString() Case Actions</h4>
+                                <a asp-action="Index" asp-controller="Able">Back to Home</a>
+                            </div>
+                            <div style="float:right;padding-top: 5px;padding-left:10px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    @using (Html.BeginForm(ViewBag.action as string, "AbleTabs", FormMethod.Get, new { @search = ViewBag.search as string, @id = ViewBag.id as string, @appId = ViewBag.appId }))
+                    {
+                    }
+
+                    <div class="card-body">
+                        <table id="tabldata" class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">ClaimNumber</th>
+                                    <th scope="col">CaseType</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">ActionedBy</th>
+                                    <th scope="col">ActionDate</th>
+                                    <th scope="col">View</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@Html.DisplayFor(modelItem => item.ClaimNumber)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Reason)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ActionedBy)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.ActionDate)</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_ModalPage" />

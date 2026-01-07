@@ -1,0 +1,54 @@
+
+@model AppCoreV1.ABLEModels.RptTaskreportreinsurance;
+
+
+<table id="tabldata" class="table">
+<thead class="thead-dark">
+<tr>
+<th scope="col">Parameter</th>
+<th scope="col">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Download</td>
+<td><a id="mydownload" asp-action="GetRptTaskreportreinsurance" asp-controller="AbleDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+</tr>
+<tr><td>Id</td><td>@Model.Id</td></tr>
+<tr><td>TaskCreatedByUser</td><td>@Model.TaskCreatedByUser</td></tr>
+<tr><td>TaskCreatedDate</td><td>@Model.TaskCreatedDate</td></tr>
+<tr><td>TaskCompletedByUser</td><td>@Model.TaskCompletedByUser</td></tr>
+<tr><td>TaskCompletedDate</td><td>@Model.TaskCompletedDate</td></tr>
+<tr><td>BenchmarkDays</td><td>@Model.BenchmarkDays</td></tr>
+<tr><td>BenchmarkDate</td><td>@Model.BenchmarkDate</td></tr>
+<tr><td>ProductName</td><td>@Model.ProductName</td></tr>
+<tr><td>BenefitNumber</td><td>@Model.BenefitNumber</td></tr>
+<tr><td>BenefitCode</td><td>@Model.BenefitCode</td></tr>
+<tr><td>BenefitDescription</td><td>@Model.BenefitDescription</td></tr>
+<tr><td>TaskCreatedByTeam</td><td>@Model.TaskCreatedByTeam</td></tr>
+<tr><td>TaskCompletedByTeam</td><td>@Model.TaskCompletedByTeam</td></tr>
+<tr><td>OriginalTaskTargetDate</td><td>@Model.OriginalTaskTargetDate</td></tr>
+<tr><td>LumpsumIpIndicator</td><td>@Model.LumpsumIpIndicator</td></tr>
+<tr><td>ClaimType</td><td>@Model.ClaimType</td></tr>
+<tr><td>ClassOfBusiness</td><td>@Model.ClassOfBusiness</td></tr>
+<tr><td>ProductCode</td><td>@Model.ProductCode</td></tr>
+<tr><td>TargetBenefitType</td><td>@Model.TargetBenefitType</td></tr>
+<tr><td>ClaimNumber</td><td>@Model.ClaimNumber</td></tr>
+<tr><td>CaseStatus</td><td>@Model.CaseStatus</td></tr>
+<tr><td>ClaimantName</td><td>@Model.ClaimantName</td></tr>
+<tr><td>CaseType</td><td>@Model.CaseType</td></tr>
+<tr><td>CaseManager</td><td>@Model.CaseManager</td></tr>
+<tr><td>ClaimTeam</td><td>@Model.ClaimTeam</td></tr>
+<tr><td>TaskProcessStep</td><td>@Model.TaskProcessStep</td></tr>
+<tr><td>TaskId</td><td>@Model.TaskId</td></tr>
+<tr><td>TaskCode</td><td>@Model.TaskCode</td></tr>
+<tr><td>TaskName</td><td>@Model.TaskName</td></tr>
+<tr><td>TaskDescription</td><td>@Model.TaskDescription</td></tr>
+<tr><td>TaskStatus</td><td>@Model.TaskStatus</td></tr>
+<tr><td>TaskAssignedToUser</td><td>@Model.TaskAssignedToUser</td></tr>
+<tr><td>TaskAssignedToRole</td><td>@Model.TaskAssignedToRole</td></tr>
+
+</tbody>
+</table>
+
+
