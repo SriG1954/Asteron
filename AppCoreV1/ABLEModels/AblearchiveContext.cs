@@ -16,7 +16,7 @@ public partial class AblearchiveContext : DbContext
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=claimscentral-dev-sql.wlife.com.au;Database=ABLEArchive;User ID=db_admin;Password=3bLGPRZK3jPfcuXeH28z;TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer("");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
