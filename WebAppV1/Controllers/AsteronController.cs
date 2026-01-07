@@ -91,12 +91,11 @@ namespace WebAppV1.Controllers
         private List<SelectListItem> GetSearchPolicys()
         {
             List<SelectListItem> ls = new List<SelectListItem>();
-            ls.Add(new SelectListItem() { Text = "Id", Value = "Id" });
-            ls.Add(new SelectListItem() { Text = "Accountnumber", Value = "Accountnumber" });
-            ls.Add(new SelectListItem() { Text = "Beanversion", Value = "Beanversion" });
-            ls.Add(new SelectListItem() { Text = "Cancellationdate", Value = "Cancellationdate" });
+            ls.Add(new SelectListItem() { Text = "Policynumber", Value = "Policynumber" });
             ls.Add(new SelectListItem() { Text = "Createtime", Value = "Createtime" });
-            ls.Add(new SelectListItem() { Text = "Createuserid", Value = "Createuserid" });
+            ls.Add(new SelectListItem() { Text = "Publicid", Value = "Publicid" });
+            ls.Add(new SelectListItem() { Text = "Policytype", Value = "Policytype" });
+            ls.Add(new SelectListItem() { Text = "Currency", Value = "Currency" });
             return ls;
         }
 
@@ -127,12 +126,13 @@ namespace WebAppV1.Controllers
         private List<SelectListItem> GetSearchNotes()
         {
             List<SelectListItem> ls = new List<SelectListItem>();
-            ls.Add(new SelectListItem() { Text = "Id", Value = "Id" });
-            ls.Add(new SelectListItem() { Text = "Activityid", Value = "Activityid" });
-            ls.Add(new SelectListItem() { Text = "Authorid", Value = "Authorid" });
-            ls.Add(new SelectListItem() { Text = "Authoringdate", Value = "Authoringdate" });
-            ls.Add(new SelectListItem() { Text = "Beanversion", Value = "Beanversion" });
+            ls.Add(new SelectListItem() { Text = "Claimid", Value = "Claimid" });
+            ls.Add(new SelectListItem() { Text = "Subject", Value = "Subject" });
+            ls.Add(new SelectListItem() { Text = "Topic", Value = "Topic" });
             ls.Add(new SelectListItem() { Text = "Body", Value = "Body" });
+            ls.Add(new SelectListItem() { Text = "Publicid", Value = "Publicid" });
+            ls.Add(new SelectListItem() { Text = "Retired", Value = "Retired" });
+
             return ls;
         }
 
@@ -163,12 +163,12 @@ namespace WebAppV1.Controllers
         private List<SelectListItem> GetSearchDocuments()
         {
             List<SelectListItem> ls = new List<SelectListItem>();
-            ls.Add(new SelectListItem() { Text = "Id", Value = "Id" });
-            ls.Add(new SelectListItem() { Text = "Author", Value = "Author" });
-            ls.Add(new SelectListItem() { Text = "Authordenorm", Value = "Authordenorm" });
-            ls.Add(new SelectListItem() { Text = "Beanversion", Value = "Beanversion" });
-            ls.Add(new SelectListItem() { Text = "Claimcontactid", Value = "Claimcontactid" });
             ls.Add(new SelectListItem() { Text = "Claimid", Value = "Claimid" });
+            ls.Add(new SelectListItem() { Text = "Docuid", Value = "Docuid" });
+            ls.Add(new SelectListItem() { Text = "Description", Value = "Description" });
+            ls.Add(new SelectListItem() { Text = "Mimetype", Value = "Mimetype" });
+            ls.Add(new SelectListItem() { Text = "Name", Value = "Name" });
+            ls.Add(new SelectListItem() { Text = "Publicid", Value = "Publicid" });
             return ls;
         }
 
@@ -199,12 +199,12 @@ namespace WebAppV1.Controllers
         private List<SelectListItem> GetSearchActivitys()
         {
             List<SelectListItem> ls = new List<SelectListItem>();
-            ls.Add(new SelectListItem() { Text = "Id", Value = "Id" });
-            ls.Add(new SelectListItem() { Text = "Activityclass", Value = "Activityclass" });
-            ls.Add(new SelectListItem() { Text = "Activitypatternid", Value = "Activitypatternid" });
-            ls.Add(new SelectListItem() { Text = "Assignedbyuserid", Value = "Assignedbyuserid" });
-            ls.Add(new SelectListItem() { Text = "Assignedgroupid", Value = "Assignedgroupid" });
-            ls.Add(new SelectListItem() { Text = "Assignedqueueid", Value = "Assignedqueueid" });
+            ls.Add(new SelectListItem() { Text = "Claimid", Value = "Claimid" });
+            ls.Add(new SelectListItem() { Text = "Subject", Value = "Subject" });
+            ls.Add(new SelectListItem() { Text = "Subtype", Value = "Subtype" });
+            ls.Add(new SelectListItem() { Text = "Description", Value = "Description" });
+            ls.Add(new SelectListItem() { Text = "Createtime", Value = "Createtime" });
+            ls.Add(new SelectListItem() { Text = "Publicid", Value = "Publicid" });
             return ls;
         }
 
@@ -235,12 +235,11 @@ namespace WebAppV1.Controllers
         private List<SelectListItem> GetSearchHistorys()
         {
             List<SelectListItem> ls = new List<SelectListItem>();
-            ls.Add(new SelectListItem() { Text = "Id", Value = "Id" });
-            ls.Add(new SelectListItem() { Text = "Beanversion", Value = "Beanversion" });
             ls.Add(new SelectListItem() { Text = "Claimid", Value = "Claimid" });
-            ls.Add(new SelectListItem() { Text = "Customtype", Value = "Customtype" });
-            ls.Add(new SelectListItem() { Text = "Description", Value = "Description" });
             ls.Add(new SelectListItem() { Text = "Eventtimestamp", Value = "Eventtimestamp" });
+            ls.Add(new SelectListItem() { Text = "Subtype", Value = "Subtype" });
+            ls.Add(new SelectListItem() { Text = "Description", Value = "Description" });
+            ls.Add(new SelectListItem() { Text = "Publicid", Value = "Publicid" });
             return ls;
         }
 
@@ -271,12 +270,12 @@ namespace WebAppV1.Controllers
         private List<SelectListItem> GetSearchContacts()
         {
             List<SelectListItem> ls = new List<SelectListItem>();
-            ls.Add(new SelectListItem() { Text = "Id", Value = "Id" });
-            ls.Add(new SelectListItem() { Text = "Addressbookuid", Value = "Addressbookuid" });
-            ls.Add(new SelectListItem() { Text = "Afterhours", Value = "Afterhours" });
-            ls.Add(new SelectListItem() { Text = "Attorneylicense", Value = "Attorneylicense" });
-            ls.Add(new SelectListItem() { Text = "AutopaymentallowedExt", Value = "AutopaymentallowedExt" });
-            ls.Add(new SelectListItem() { Text = "Autosync", Value = "Autosync" });
+            ls.Add(new SelectListItem() { Text = "Firstname", Value = "Firstname" });
+            ls.Add(new SelectListItem() { Text = "Lastname", Value = "Lastname" });
+            ls.Add(new SelectListItem() { Text = "Gender", Value = "Gender" });
+            ls.Add(new SelectListItem() { Text = "Dateofbirth", Value = "Dateofbirth" });
+            ls.Add(new SelectListItem() { Text = "Cellphone", Value = "Cellphone" });
+            ls.Add(new SelectListItem() { Text = "Emailaddress1", Value = "Emailaddress1" });
             return ls;
         }
 
@@ -307,12 +306,13 @@ namespace WebAppV1.Controllers
         private List<SelectListItem> GetSearchAddresss()
         {
             List<SelectListItem> ls = new List<SelectListItem>();
-            ls.Add(new SelectListItem() { Text = "Id", Value = "Id" });
             ls.Add(new SelectListItem() { Text = "Addressline1", Value = "Addressline1" });
             ls.Add(new SelectListItem() { Text = "Addressline2", Value = "Addressline2" });
-            ls.Add(new SelectListItem() { Text = "Addressline3", Value = "Addressline3" });
-            ls.Add(new SelectListItem() { Text = "Addresstype", Value = "Addresstype" });
-            ls.Add(new SelectListItem() { Text = "Batchgeocode", Value = "Batchgeocode" });
+            ls.Add(new SelectListItem() { Text = "City", Value = "City" });
+            ls.Add(new SelectListItem() { Text = "Country", Value = "Country" });
+            ls.Add(new SelectListItem() { Text = "Postalcode", Value = "Postalcode" });
+            ls.Add(new SelectListItem() { Text = "Publicid", Value = "Publicid" });
+
             return ls;
         }
 
@@ -343,12 +343,16 @@ namespace WebAppV1.Controllers
         private List<SelectListItem> GetSearchCoverages()
         {
             List<SelectListItem> ls = new List<SelectListItem>();
-            ls.Add(new SelectListItem() { Text = "Id", Value = "Id" });
-            ls.Add(new SelectListItem() { Text = "Beanversion", Value = "Beanversion" });
+            ls.Add(new SelectListItem() { Text = "Policyid", Value = "Policyid" });
             ls.Add(new SelectListItem() { Text = "Createtime", Value = "Createtime" });
-            ls.Add(new SelectListItem() { Text = "Createuserid", Value = "Createuserid" });
             ls.Add(new SelectListItem() { Text = "Currency", Value = "Currency" });
             ls.Add(new SelectListItem() { Text = "Effectivedate", Value = "Effectivedate" });
+            ls.Add(new SelectListItem() { Text = "Expirationdate", Value = "Expirationdate" });
+            ls.Add(new SelectListItem() { Text = "Riskunitid", Value = "Riskunitid" });
+            ls.Add(new SelectListItem() { Text = "Subtype", Value = "Subtype" });
+            ls.Add(new SelectListItem() { Text = "Type", Value = "Type" });
+            ls.Add(new SelectListItem() { Text = "Publicid", Value = "Publicid" });
+
             return ls;
         }
 
@@ -379,12 +383,13 @@ namespace WebAppV1.Controllers
         private List<SelectListItem> GetSearchIncidents()
         {
             List<SelectListItem> ls = new List<SelectListItem>();
-            ls.Add(new SelectListItem() { Text = "Id", Value = "Id" });
-            ls.Add(new SelectListItem() { Text = "Ambulanceused", Value = "Ambulanceused" });
-            ls.Add(new SelectListItem() { Text = "Beanversion", Value = "Beanversion" });
-            ls.Add(new SelectListItem() { Text = "ClaimanttypeExt", Value = "ClaimanttypeExt" });
             ls.Add(new SelectListItem() { Text = "Claimid", Value = "Claimid" });
             ls.Add(new SelectListItem() { Text = "Createtime", Value = "Createtime" });
+            ls.Add(new SelectListItem() { Text = "Description", Value = "Description" });
+            ls.Add(new SelectListItem() { Text = "Detailedinjurytype", Value = "Detailedinjurytype" });
+            ls.Add(new SelectListItem() { Text = "Generalinjurytype", Value = "Generalinjurytype" });
+            ls.Add(new SelectListItem() { Text = "Subtype", Value = "Subtype" });
+            ls.Add(new SelectListItem() { Text = "Publicid", Value = "Publicid" });
             return ls;
         }
 

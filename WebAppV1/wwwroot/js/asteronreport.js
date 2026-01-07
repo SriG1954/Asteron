@@ -205,3 +205,26 @@ function GetCoverage(id) {
         }
     });
 }
+
+function GetIncident(id) {
+    //-------------------------------------------
+    // Asteron Incident
+    //-------------------------------------------
+
+    $.ajax({
+        url: '/Asteron/GetIncident',
+        type: 'Post',
+        data: {
+            ID: id
+        },
+        cache: false,
+    }).done(function (result) {
+        //alert(result);
+        if (result != "NO") {
+            $('#modalTitle').html('Asteron Incident');
+            $('#SelectTargetId').empty();
+            $('#SelectTargetId').html(result);
+            $('#myModal').modal('show');
+        }
+    });
+}

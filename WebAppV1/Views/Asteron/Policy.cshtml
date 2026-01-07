@@ -10,7 +10,7 @@
     if (Model.HasNextPage) { nextpage = Model.PageIndex + 1; }
     if (Model.HasPreviousPage) { prevpage = Model.PageIndex - 1; }
 }
-<script src="~/js/ablereport.js"></script>
+<script src="~/js/asteronreport.js"></script>
 
 <div class="wrapper">
     <!-- Sidebar  -->
@@ -24,8 +24,8 @@
                         <div class="row">
                             <div style="padding-left:10px;">
                                 <h4>Asteron Policy</h4>
-                                <a asp-action="Index" asp-controller="FL">Back to Home</a>
-                                <a asp-action="GetPolicys" asp-controller="HelphubDownload" asp-route-column="@ViewBag.column" asp-route-search="@ViewBag.search" asp-route-pageIndex="@Model.PageIndex" class="btn btn-success">Download</a>
+                                <a asp-action="Index" asp-controller="Asteron">Back to Home</a>
+                                <a asp-action="GetPolicys" asp-controller="AsteronDownload" asp-route-column="@ViewBag.column" asp-route-search="@ViewBag.search" asp-route-pageIndex="@Model.PageIndex" class="btn btn-success">Download</a>
                             </div>
                             <div style="float:right;padding-top: 5px;padding-left:10px;">
                             </div>
@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    @using (Html.BeginForm(ViewBag.action as string, "Helphub", FormMethod.Get, new { @column = ViewBag.column as string, @search = ViewBag.search as string, @page = Model.PageIndex }))
+                    @using (Html.BeginForm(ViewBag.action as string, "Asteron", FormMethod.Get, new { @column = ViewBag.column as string, @search = ViewBag.search as string, @page = Model.PageIndex }))
                     {
                         <partial name="_FormSearch" />
                     }
@@ -42,38 +42,12 @@
                         <table id="tabldata" class="table">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col">Id</th>
-                                    <th scope="col">Accountnumber</th>
-                                    <th scope="col">Beanversion</th>
-                                    <th scope="col">Cancellationdate</th>
-                                    <th scope="col">Createtime</th>
-                                    <th scope="col">Createuserid</th>
-                                    <th scope="col">Currency</th>
-                                    <th scope="col">Effectivedate</th>
-                                    <th scope="col">Expirationdate</th>
-                                    <th scope="col">Foreigncoverage</th>
-                                    <th scope="col">Origeffectivedate</th>
-                                    <th scope="col">Otherinsurance</th>
                                     <th scope="col">Policynumber</th>
-                                    <th scope="col">Policytype</th>
-                                    <th scope="col">Producercode</th>
                                     <th scope="col">Publicid</th>
-                                    <th scope="col">Retired</th>
-                                    <th scope="col">Retroactivedate</th>
-                                    <th scope="col">Returntoworkprgm</th>
-                                    <th scope="col">ScBrand</th>
-                                    <th scope="col">ScGstexempt</th>
-                                    <th scope="col">ScGstregistered</th>
-                                    <th scope="col">ScIntermedtype</th>
-                                    <th scope="col">ScStampdutyexempt</th>
-                                    <th scope="col">ScUnderwritingcompany</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Totalproperties</th>
-                                    <th scope="col">Totalvehicles</th>
-                                    <th scope="col">Updatetime</th>
-                                    <th scope="col">Updateuserid</th>
-                                    <th scope="col">Validationlevel</th>
-                                    <th scope="col">Verified</th>
+                                    <th scope="col">Createtime</th>
+                                    <th scope="col">Currency</th>
+                                    <th scope="col">Policytype</th>
+
                                     <th scope="col">View</th>
                                 </tr>
                             </thead>
@@ -81,38 +55,12 @@
                                 @foreach (var item in Model)
                                 {
                                     <tr>
-                                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Accountnumber)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Beanversion)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Cancellationdate)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Createtime)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Createuserid)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Currency)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Effectivedate)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Expirationdate)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Foreigncoverage)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Origeffectivedate)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Otherinsurance)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Policynumber)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Policytype)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Producercode)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Publicid)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Retired)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Retroactivedate)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Returntoworkprgm)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.ScBrand)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.ScGstexempt)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.ScGstregistered)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.ScIntermedtype)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.ScStampdutyexempt)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.ScUnderwritingcompany)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Status)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Totalproperties)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Totalvehicles)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Updatetime)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Updateuserid)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Validationlevel)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Verified)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Createtime)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Currency)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Policytype)</td>
+
                                         <td><a class="btn btn-outline-secondary" onclick="return GetPolicy('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
 
                                     </tr>

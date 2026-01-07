@@ -24,7 +24,6 @@ namespace AppCoreV1.Repositories
             _logger = logger;
         }
 
-
         public async Task<PaginatedList<Actassignhistory>> SearchActassignhistory(string column, string search, int pageIndex = 1, int pageSize = 25)
         {
             PaginatedList<Actassignhistory> list = null!;
@@ -189,22 +188,24 @@ namespace AppCoreV1.Repositories
                 {
                     switch (column)
                     {
-                        case "Id":
-                            query = query.Where(c => c.Id!.ToString()!.Contains(search));
+                        case "Claimid":
+                            query = query.Where(c => c.Claimid!.ToString()!.Contains(search));
                             break;
-                        case "Activityclass":
-                            query = query.Where(c => c.Activityclass!.ToString()!.Contains(search));
+                        case "Subject":
+                            query = query.Where(c => c.Subject!.Contains(search));
                             break;
-                        case "Activitypatternid":
-                            query = query.Where(c => c.Activitypatternid!.ToString()!.Contains(search));
+                        case "Subtype":
+                            query = query.Where(c => c.Subtype!.ToString()!.Contains(search));
                             break;
-                        case "Assignedbyuserid":
-                            query = query.Where(c => c.Assignedbyuserid!.ToString()!.Contains(search));
+                        case "Description":
+                            query = query.Where(c => c.Description!.Contains(search));
                             break;
-                        case "Assignedgroupid":
-                            query = query.Where(c => c.Assignedgroupid!.ToString()!.Contains(search));
+                        case "Createtime":
+                            query = query.Where(c => c.Createtime!.ToString()!.Contains(search));
                             break;
-
+                        case "Publicid":
+                            query = query.Where(c => c.Publicid!.ToString()!.Contains(search));
+                            break;
 
                     }
                 }
@@ -572,22 +573,24 @@ namespace AppCoreV1.Repositories
                 {
                     switch (column)
                     {
-                        case "Id":
-                            query = query.Where(c => c.Id!.ToString()!.Contains(search));
-                            break;
                         case "Addressline1":
                             query = query.Where(c => c.Addressline1!.Contains(search));
                             break;
                         case "Addressline2":
                             query = query.Where(c => c.Addressline2!.Contains(search));
                             break;
-                        case "Addressline3":
-                            query = query.Where(c => c.Addressline3!.Contains(search));
+                        case "City":
+                            query = query.Where(c => c.City!.Contains(search));
                             break;
-                        case "Addresstype":
-                            query = query.Where(c => c.Addresstype!.ToString()!.Contains(search));
+                        case "Country":
+                            query = query.Where(c => c.Country!.ToString()!.Contains(search));
                             break;
-
+                        case "Postalcode":
+                            query = query.Where(c => c.Postalcode!.ToString()!.Contains(search));
+                            break;
+                        case "Publicid":
+                            query = query.Where(c => c.Publicid!.Contains(search));
+                            break;
 
                     }
                 }
@@ -3406,22 +3409,24 @@ namespace AppCoreV1.Repositories
                 {
                     switch (column)
                     {
-                        case "Id":
-                            query = query.Where(c => c.Id!.ToString()!.Contains(search));
+                        case "Firstname":
+                            query = query.Where(c => c.Firstname!.Contains(search));
                             break;
-                        case "Addressbookuid":
-                            query = query.Where(c => c.Addressbookuid!.ToString()!.Contains(search));
+                        case "Lastname":
+                            query = query.Where(c => c.Lastname!.Contains(search));
                             break;
-                        case "Afterhours":
-                            query = query.Where(c => c.Afterhours!.Contains(search));
+                        case "Gender":
+                            query = query.Where(c => c.Gender!.ToString()!.Contains(search));
                             break;
-                        case "Attorneylicense":
-                            query = query.Where(c => c.Attorneylicense!.Contains(search));
+                        case "Dateofbirth":
+                            query = query.Where(c => c.Dateofbirth!.ToString()!.Contains(search));
                             break;
-                        case "AutopaymentallowedExt":
-                            query = query.Where(c => c.AutopaymentallowedExt!.Contains(search));
+                        case "Cellphone":
+                            query = query.Where(c => c.Cellphone!.Contains(search));
                             break;
-
+                        case "Emailaddress1":
+                            query = query.Where(c => c.Emailaddress1!.Contains(search));
+                            break;
 
                     }
                 }
@@ -3621,23 +3626,33 @@ namespace AppCoreV1.Repositories
                 {
                     switch (column)
                     {
-                        case "Id":
-                            query = query.Where(c => c.Id!.ToString()!.Contains(search));
+                        case "Policyid":
+                            query = query.Where(c => c.Policyid!.ToString()!.Contains(search));
                             break;
-                        case "Beanversion":
-                            query = query.Where(c => c.Beanversion!.ToString()!.Contains(search));
+                        case "Effectivedate":
+                            query = query.Where(c => c.Effectivedate!.ToString()!.Contains(search));
                             break;
                         case "Createtime":
                             query = query.Where(c => c.Createtime!.ToString()!.Contains(search));
                             break;
-                        case "Createuserid":
-                            query = query.Where(c => c.Createuserid!.ToString()!.Contains(search));
+                        case "Expirationdate":
+                            query = query.Where(c => c.Expirationdate!.ToString()!.Contains(search));
                             break;
                         case "Currency":
                             query = query.Where(c => c.Currency!.ToString()!.Contains(search));
                             break;
-
-
+                        case "Riskunitid":
+                            query = query.Where(c => c.Riskunitid!.ToString()!.Contains(search));
+                            break;
+                        case "Subtype":
+                            query = query.Where(c => c.Subtype!.ToString()!.Contains(search));
+                            break;
+                        case "Type":
+                            query = query.Where(c => c.Type!.ToString()!.Contains(search));
+                            break;
+                        case "Publicid":
+                            query = query.Where(c => c.Publicid!.ToString()!.Contains(search));
+                            break;
                     }
                 }
 
@@ -3931,22 +3946,24 @@ namespace AppCoreV1.Repositories
                 {
                     switch (column)
                     {
-                        case "Id":
-                            query = query.Where(c => c.Id!.ToString()!.Contains(search));
+                        case "Claimid":
+                            query = query.Where(c => c.Claimid!.ToString()!.Contains(search));
                             break;
-                        case "Author":
-                            query = query.Where(c => c.Author!.Contains(search));
+                        case "Docuid":
+                            query = query.Where(c => c.Docuid!.Contains(search));
                             break;
-                        case "Authordenorm":
-                            query = query.Where(c => c.Authordenorm!.Contains(search));
+                        case "Description":
+                            query = query.Where(c => c.Description!.Contains(search));
                             break;
-                        case "Beanversion":
-                            query = query.Where(c => c.Beanversion!.ToString()!.Contains(search));
+                        case "Mimetype":
+                            query = query.Where(c => c.Mimetype!.Contains(search));
                             break;
-                        case "Claimcontactid":
-                            query = query.Where(c => c.Claimcontactid!.ToString()!.Contains(search));
+                        case "Name":
+                            query = query.Where(c => c.Name!.Contains(search));
                             break;
-
+                        case "Publicid":
+                            query = query.Where(c => c.Publicid!.ToString()!.Contains(search));
+                            break;
 
                     }
                 }
@@ -4916,17 +4933,17 @@ namespace AppCoreV1.Repositories
                 {
                     switch (column)
                     {
-                        case "Id":
-                            query = query.Where(c => c.Id!.ToString()!.Contains(search));
-                            break;
-                        case "Beanversion":
-                            query = query.Where(c => c.Beanversion!.ToString()!.Contains(search));
-                            break;
                         case "Claimid":
                             query = query.Where(c => c.Claimid!.ToString()!.Contains(search));
                             break;
-                        case "Customtype":
-                            query = query.Where(c => c.Customtype!.ToString()!.Contains(search));
+                        case "Eventtimestamp":
+                            query = query.Where(c => c.Eventtimestamp!.ToString()!.Contains(search));
+                            break;
+                        case "Subtype":
+                            query = query.Where(c => c.Subtype!.ToString()!.Contains(search));
+                            break;
+                        case "Publicid":
+                            query = query.Where(c => c.Publicid!.ToString()!.Contains(search));
                             break;
                         case "Description":
                             query = query.Where(c => c.Description!.Contains(search));
@@ -5033,22 +5050,27 @@ namespace AppCoreV1.Repositories
                 {
                     switch (column)
                     {
-                        case "Id":
-                            query = query.Where(c => c.Id!.ToString()!.Contains(search));
-                            break;
-                        case "Ambulanceused":
-                            query = query.Where(c => c.Ambulanceused!.Contains(search));
-                            break;
-                        case "Beanversion":
-                            query = query.Where(c => c.Beanversion!.ToString()!.Contains(search));
-                            break;
-                        case "ClaimanttypeExt":
-                            query = query.Where(c => c.ClaimanttypeExt!.ToString()!.Contains(search));
-                            break;
                         case "Claimid":
                             query = query.Where(c => c.Claimid!.ToString()!.Contains(search));
                             break;
-
+                        case "Createtime":
+                            query = query.Where(c => c.Createtime!.ToString()!.Contains(search));
+                            break;
+                        case "Description":
+                            query = query.Where(c => c.Description!.Contains(search));
+                            break;
+                        case "Detailedinjurytype":
+                            query = query.Where(c => c.Detailedinjurytype!.ToString()!.Contains(search));
+                            break;
+                        case "Generalinjurytype":
+                            query = query.Where(c => c.Generalinjurytype!.ToString()!.Contains(search));
+                            break;
+                        case "Subtype":
+                            query = query.Where(c => c.Subtype!.ToString()!.Contains(search));
+                            break;
+                        case "Publicid":
+                            query = query.Where(c => c.Publicid!.ToString()!.Contains(search));
+                            break;
 
                     }
                 }
@@ -5940,20 +5962,23 @@ namespace AppCoreV1.Repositories
                 {
                     switch (column)
                     {
-                        case "Id":
-                            query = query.Where(c => c.Id!.ToString()!.Contains(search));
+                        case "Claimid":
+                            query = query.Where(c => c.Claimid!.ToString()!.Contains(search));
                             break;
-                        case "Activityid":
-                            query = query.Where(c => c.Activityid!.ToString()!.Contains(search));
+                        case "Subject":
+                            query = query.Where(c => c.Subject!.Contains(search));
                             break;
-                        case "Authorid":
-                            query = query.Where(c => c.Authorid!.ToString()!.Contains(search));
+                        case "Topic":
+                            query = query.Where(c => c.Topic!.ToString()!.Contains(search));
                             break;
-                        case "Authoringdate":
-                            query = query.Where(c => c.Authoringdate!.ToString()!.Contains(search));
+                        case "Body":
+                            query = query.Where(c => c.Body!.ToString()!.Contains(search));
                             break;
-                        case "Beanversion":
-                            query = query.Where(c => c.Beanversion!.ToString()!.Contains(search));
+                        case "Publicid":
+                            query = query.Where(c => c.Publicid!.ToString()!.Contains(search));
+                            break;
+                        case "Retired":
+                            query = query.Where(c => c.Retired!.ToString()!.Contains(search));
                             break;
 
 
@@ -6070,22 +6095,21 @@ namespace AppCoreV1.Repositories
                 {
                     switch (column)
                     {
-                        case "Id":
-                            query = query.Where(c => c.Id!.ToString()!.Contains(search));
+                        case "Policynumber":
+                            query = query.Where(c => c.Policynumber!.Contains(search));
                             break;
-                        case "Accountnumber":
-                            query = query.Where(c => c.Accountnumber!.Contains(search));
-                            break;
-                        case "Beanversion":
-                            query = query.Where(c => c.Beanversion!.ToString()!.Contains(search));
-                            break;
-                        case "Cancellationdate":
-                            query = query.Where(c => c.Cancellationdate!.ToString()!.Contains(search));
+                        case "Publicid":
+                            query = query.Where(c => c.Publicid!.Contains(search));
                             break;
                         case "Createtime":
                             query = query.Where(c => c.Createtime!.ToString()!.Contains(search));
                             break;
-
+                        case "Currency":
+                            query = query.Where(c => c.Currency.ToString()!.Contains(search));
+                            break;
+                        case "Policytype":
+                            query = query.Where(c => c.Policytype.ToString()!.Contains(search));
+                            break;
 
                     }
                 }

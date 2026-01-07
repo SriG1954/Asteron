@@ -10,7 +10,7 @@
     if (Model.HasNextPage) { nextpage = Model.PageIndex + 1; }
     if (Model.HasPreviousPage) { prevpage = Model.PageIndex - 1; }
 }
-<script src="~/js/ablereport.js"></script>
+<script src="~/js/asteronreport.js"></script>
 
 <div class="wrapper">
     <!-- Sidebar  -->
@@ -24,8 +24,8 @@
                         <div class="row">
                             <div style="padding-left:10px;">
                                 <h4>Asteron Incident</h4>
-                                <a asp-action="Index" asp-controller="FL">Back to Home</a>
-                                <a asp-action="GetIncidents" asp-controller="HelphubDownload" asp-route-column="@ViewBag.column" asp-route-search="@ViewBag.search" asp-route-pageIndex="@Model.PageIndex" class="btn btn-success">Download</a>
+                                <a asp-action="Index" asp-controller="Asteron">Back to Home</a>
+                                <a asp-action="GetIncidents" asp-controller="AsteronDownload" asp-route-column="@ViewBag.column" asp-route-search="@ViewBag.search" asp-route-pageIndex="@Model.PageIndex" class="btn btn-success">Download</a>
                             </div>
                             <div style="float:right;padding-top: 5px;padding-left:10px;">
                             </div>
@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    @using (Html.BeginForm(ViewBag.action as string, "Helphub", FormMethod.Get, new { @column = ViewBag.column as string, @search = ViewBag.search as string, @page = Model.PageIndex }))
+                    @using (Html.BeginForm(ViewBag.action as string, "Asteron", FormMethod.Get, new { @column = ViewBag.column as string, @search = ViewBag.search as string, @page = Model.PageIndex }))
                     {
                         <partial name="_FormSearch" />
                     }
@@ -42,38 +42,13 @@
                         <table id="tabldata" class="table">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col">Id</th>
-                                    <th scope="col">Ambulanceused</th>
-                                    <th scope="col">Beanversion</th>
-                                    <th scope="col">ClaimanttypeExt</th>
                                     <th scope="col">Claimid</th>
                                     <th scope="col">Createtime</th>
-                                    <th scope="col">Createuserid</th>
                                     <th scope="col">Description</th>
                                     <th scope="col">Detailedinjurytype</th>
-                                    <th scope="col">Employmentdataid</th>
-                                    <th scope="col">FaultratingExt</th>
-                                    <th scope="col">FirstnoticeindicatorExt</th>
                                     <th scope="col">Generalinjurytype</th>
-                                    <th scope="col">HowreportedExt</th>
-                                    <th scope="col">LosscauseExt</th>
-                                    <th scope="col">Lostwages</th>
-                                    <th scope="col">PrimarybodyfunctionExt</th>
-                                    <th scope="col">Publicid</th>
-                                    <th scope="col">RehabilitationreferralindExt</th>
-                                    <th scope="col">ReportedbytypeExt</th>
-                                    <th scope="col">ReporteddateExt</th>
-                                    <th scope="col">ReportonlyExt</th>
-                                    <th scope="col">ResultofinjuryExt</th>
-                                    <th scope="col">Retired</th>
-                                    <th scope="col">ScClaimeventquestions</th>
-                                    <th scope="col">ScInjuryquestions</th>
-                                    <th scope="col">Severity</th>
-                                    <th scope="col">StatutorybenefitsExt</th>
-                                    <th scope="col">StatutorycareExtid</th>
                                     <th scope="col">Subtype</th>
-                                    <th scope="col">Updatetime</th>
-                                    <th scope="col">Updateuserid</th>
+                                    <th scope="col">Publicid</th>
                                     <th scope="col">View</th>
                                 </tr>
                             </thead>
@@ -81,38 +56,14 @@
                                 @foreach (var item in Model)
                                 {
                                     <tr>
-                                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Ambulanceused)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Beanversion)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.ClaimanttypeExt)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Claimid)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Createtime)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Createuserid)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Description)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Detailedinjurytype)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Employmentdataid)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.FaultratingExt)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.FirstnoticeindicatorExt)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Generalinjurytype)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.HowreportedExt)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.LosscauseExt)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Lostwages)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.PrimarybodyfunctionExt)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Publicid)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.RehabilitationreferralindExt)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.ReportedbytypeExt)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.ReporteddateExt)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.ReportonlyExt)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.ResultofinjuryExt)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Retired)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.ScClaimeventquestions)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.ScInjuryquestions)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Severity)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.StatutorybenefitsExt)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.StatutorycareExtid)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Subtype)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Updatetime)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Updateuserid)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Publicid)</td>
+                                     
                                         <td><a class="btn btn-outline-secondary" onclick="return GetIncident('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
 
                                     </tr>

@@ -10,7 +10,7 @@
     if (Model.HasNextPage) { nextpage = Model.PageIndex + 1; }
     if (Model.HasPreviousPage) { prevpage = Model.PageIndex - 1; }
 }
-<script src="~/js/ablereport.js"></script>
+<script src="~/js/asteronreport.js"></script>
 
 <div class="wrapper">
     <!-- Sidebar  -->
@@ -24,8 +24,8 @@
                         <div class="row">
                             <div style="padding-left:10px;">
                                 <h4>Asteron Coverage</h4>
-                                <a asp-action="Index" asp-controller="FL">Back to Home</a>
-                                <a asp-action="GetCoverages" asp-controller="HelphubDownload" asp-route-column="@ViewBag.column" asp-route-search="@ViewBag.search" asp-route-pageIndex="@Model.PageIndex" class="btn btn-success">Download</a>
+                                <a asp-action="Index" asp-controller="Asteron">Back to Home</a>
+                                <a asp-action="GetCoverages" asp-controller="AsteronDownload" asp-route-column="@ViewBag.column" asp-route-search="@ViewBag.search" asp-route-pageIndex="@Model.PageIndex" class="btn btn-success">Download</a>
                             </div>
                             <div style="float:right;padding-top: 5px;padding-left:10px;">
                             </div>
@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    @using (Html.BeginForm(ViewBag.action as string, "Helphub", FormMethod.Get, new { @column = ViewBag.column as string, @search = ViewBag.search as string, @page = Model.PageIndex }))
+                    @using (Html.BeginForm(ViewBag.action as string, "Asteron", FormMethod.Get, new { @column = ViewBag.column as string, @search = ViewBag.search as string, @page = Model.PageIndex }))
                     {
                         <partial name="_FormSearch" />
                     }
@@ -42,28 +42,15 @@
                         <table id="tabldata" class="table">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col">Id</th>
-                                    <th scope="col">Beanversion</th>
+                                    <th scope="col">Policyid</th>
                                     <th scope="col">Createtime</th>
-                                    <th scope="col">Createuserid</th>
                                     <th scope="col">Currency</th>
                                     <th scope="col">Effectivedate</th>
                                     <th scope="col">Expirationdate</th>
-                                    <th scope="col">OccupationExt</th>
-                                    <th scope="col">Policyid</th>
-                                    <th scope="col">PremiumstatusExt</th>
-                                    <th scope="col">Publicid</th>
-                                    <th scope="col">Retired</th>
                                     <th scope="col">Riskunitid</th>
-                                    <th scope="col">ScCoveragesourcekey</th>
-                                    <th scope="col">ScRawproduct</th>
-                                    <th scope="col">ScStatus</th>
                                     <th scope="col">Subtype</th>
-                                    <th scope="col">TermenddateExt</th>
-                                    <th scope="col">TermstartdateExt</th>
                                     <th scope="col">Type</th>
-                                    <th scope="col">Updatetime</th>
-                                    <th scope="col">Updateuserid</th>
+                                    <th scope="col">Publicid</th>
                                     <th scope="col">View</th>
                                 </tr>
                             </thead>
@@ -71,28 +58,15 @@
                                 @foreach (var item in Model)
                                 {
                                     <tr>
-                                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Beanversion)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Policyid)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Createtime)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Createuserid)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Currency)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Effectivedate)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Expirationdate)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.OccupationExt)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Policyid)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.PremiumstatusExt)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Publicid)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Retired)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Riskunitid)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.ScCoveragesourcekey)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.ScRawproduct)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.ScStatus)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Subtype)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.TermenddateExt)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.TermstartdateExt)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Type)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Updatetime)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Updateuserid)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Publicid)</td>
                                         <td><a class="btn btn-outline-secondary" onclick="return GetCoverage('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
 
                                     </tr>
