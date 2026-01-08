@@ -1948,6 +1948,166 @@ namespace AppCoreV1.Helper
             return data;
         }
 
+        public async Task<byte[]> GetComplaints(string column, string search, int pageIndex = 1, int pageSize = 25)
+        {
+            byte[] data = null!;
+            var items = await _context.SearchComplaint(column, search, pageIndex, pageSize);
+
+            using (var workbook = new XLWorkbook())
+            {
+                var worksheet = workbook.Worksheets.Add("Complaint");
+                var currentRow = 6;
+                worksheet.Cell(1, 1).Value = "Report Name: Helphub Complaint";
+                worksheet.Cell(2, 1).Value = "Report Date: " + DateTime.Now.ToString();
+                worksheet.Cell(3, 1).Value = "Number of Rows: " + items.Count.ToString();
+                worksheet.Cell(4, 1).Value = "Created By: User";
+                worksheet.Cell(5, 1).Value = "";
+
+
+                worksheet.Cell(currentRow, 1).Value = "Id";
+                worksheet.Cell(currentRow, 2).Value = "Assignedbyuserid";
+                worksheet.Cell(currentRow, 3).Value = "Assignedgroupid";
+                worksheet.Cell(currentRow, 4).Value = "Assigneduserid";
+                worksheet.Cell(currentRow, 5).Value = "Assignmentdate";
+                worksheet.Cell(currentRow, 6).Value = "Assignmentstatus";
+                worksheet.Cell(currentRow, 7).Value = "Beanversion";
+                worksheet.Cell(currentRow, 8).Value = "Claimid";
+                worksheet.Cell(currentRow, 9).Value = "Complainantexpectationdesc";
+                worksheet.Cell(currentRow, 10).Value = "ComplaintcategoryExtid";
+                worksheet.Cell(currentRow, 11).Value = "Complaintnumber";
+                worksheet.Cell(currentRow, 12).Value = "Contactid";
+                worksheet.Cell(currentRow, 13).Value = "Createtime";
+                worksheet.Cell(currentRow, 14).Value = "Createuserid";
+                worksheet.Cell(currentRow, 15).Value = "Description";
+                worksheet.Cell(currentRow, 16).Value = "Extendedresolutiondate";
+                worksheet.Cell(currentRow, 17).Value = "Howreported";
+                worksheet.Cell(currentRow, 18).Value = "Incidentdate";
+                worksheet.Cell(currentRow, 19).Value = "Iscostforactualamount";
+                worksheet.Cell(currentRow, 20).Value = "Mediadescription";
+                worksheet.Cell(currentRow, 21).Value = "Mediainvolvedflag";
+                worksheet.Cell(currentRow, 22).Value = "Previousgroupid";
+                worksheet.Cell(currentRow, 23).Value = "Previoususerid";
+                worksheet.Cell(currentRow, 24).Value = "Publicid";
+                worksheet.Cell(currentRow, 25).Value = "Receiveddate";
+                worksheet.Cell(currentRow, 26).Value = "Resolutiondate";
+                worksheet.Cell(currentRow, 27).Value = "Resolutiondescription";
+                worksheet.Cell(currentRow, 28).Value = "Retired";
+                worksheet.Cell(currentRow, 29).Value = "Status";
+                worksheet.Cell(currentRow, 30).Value = "Updatetime";
+                worksheet.Cell(currentRow, 31).Value = "Updateuserid";
+
+                foreach (var claim in items)
+                {
+                    currentRow++;
+                    worksheet.Cell(currentRow, 1).Value = claim.Id;
+                    worksheet.Cell(currentRow, 2).Value = claim.Assignedbyuserid;
+                    worksheet.Cell(currentRow, 3).Value = claim.Assignedgroupid;
+                    worksheet.Cell(currentRow, 4).Value = claim.Assigneduserid;
+                    worksheet.Cell(currentRow, 5).Value = claim.Assignmentdate;
+                    worksheet.Cell(currentRow, 6).Value = claim.Assignmentstatus;
+                    worksheet.Cell(currentRow, 7).Value = claim.Beanversion;
+                    worksheet.Cell(currentRow, 8).Value = claim.Claimid;
+                    worksheet.Cell(currentRow, 9).Value = claim.Complainantexpectationdesc;
+                    worksheet.Cell(currentRow, 10).Value = claim.ComplaintcategoryExtid;
+                    worksheet.Cell(currentRow, 11).Value = claim.Complaintnumber;
+                    worksheet.Cell(currentRow, 12).Value = claim.Contactid;
+                    worksheet.Cell(currentRow, 13).Value = claim.Createtime;
+                    worksheet.Cell(currentRow, 14).Value = claim.Createuserid;
+                    worksheet.Cell(currentRow, 15).Value = claim.Description;
+                    worksheet.Cell(currentRow, 16).Value = claim.Extendedresolutiondate;
+                    worksheet.Cell(currentRow, 17).Value = claim.Howreported;
+                    worksheet.Cell(currentRow, 18).Value = claim.Incidentdate;
+                    worksheet.Cell(currentRow, 19).Value = claim.Iscostforactualamount;
+                    worksheet.Cell(currentRow, 20).Value = claim.Mediadescription;
+                    worksheet.Cell(currentRow, 21).Value = claim.Mediainvolvedflag;
+                    worksheet.Cell(currentRow, 22).Value = claim.Previousgroupid;
+                    worksheet.Cell(currentRow, 23).Value = claim.Previoususerid;
+                    worksheet.Cell(currentRow, 24).Value = claim.Publicid;
+                    worksheet.Cell(currentRow, 25).Value = claim.Receiveddate;
+                    worksheet.Cell(currentRow, 26).Value = claim.Resolutiondate;
+                    worksheet.Cell(currentRow, 27).Value = claim.Resolutiondescription;
+                    worksheet.Cell(currentRow, 28).Value = claim.Retired;
+                    worksheet.Cell(currentRow, 29).Value = claim.Status;
+                    worksheet.Cell(currentRow, 30).Value = claim.Updatetime;
+                    worksheet.Cell(currentRow, 31).Value = claim.Updateuserid;
+                }
+
+
+                //worksheet.Columns().AdjustToContents();
+
+                using (var stream = new MemoryStream())
+                {
+                    workbook.SaveAs(stream);
+                    data = stream.ToArray();
+                }
+            }
+
+            return data;
+        }
+
+        public async Task<byte[]> GetComplaint(string id)
+        {
+            byte[] data = null!;
+            var claim = await _context.GetComplaint(id);
+            using (var workbook = new XLWorkbook())
+            {
+                var worksheet = workbook.Worksheets.Add("Complaint");
+                var currentRow = 6;
+                worksheet.Cell(1, 1).Value = "Report Name: Complaint";
+                worksheet.Cell(2, 1).Value = "Report Date: " + DateTime.Now.ToString();
+                worksheet.Cell(3, 1).Value = "Created By: User";
+                worksheet.Cell(4, 1).Value = "";
+
+                worksheet.Cell(currentRow, 1).Value = "Parameter";
+                worksheet.Cell(currentRow, 2).Value = "Value";
+
+
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Id"; worksheet.Cell(currentRow, 2).Value = claim.Id;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Assignedbyuserid"; worksheet.Cell(currentRow, 2).Value = claim.Assignedbyuserid;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Assignedgroupid"; worksheet.Cell(currentRow, 2).Value = claim.Assignedgroupid;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Assigneduserid"; worksheet.Cell(currentRow, 2).Value = claim.Assigneduserid;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Assignmentdate"; worksheet.Cell(currentRow, 2).Value = claim.Assignmentdate;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Assignmentstatus"; worksheet.Cell(currentRow, 2).Value = claim.Assignmentstatus;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Beanversion"; worksheet.Cell(currentRow, 2).Value = claim.Beanversion;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Claimid"; worksheet.Cell(currentRow, 2).Value = claim.Claimid;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Complainantexpectationdesc"; worksheet.Cell(currentRow, 2).Value = claim.Complainantexpectationdesc;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "ComplaintcategoryExtid"; worksheet.Cell(currentRow, 2).Value = claim.ComplaintcategoryExtid;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Complaintnumber"; worksheet.Cell(currentRow, 2).Value = claim.Complaintnumber;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Contactid"; worksheet.Cell(currentRow, 2).Value = claim.Contactid;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Createtime"; worksheet.Cell(currentRow, 2).Value = claim.Createtime;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Createuserid"; worksheet.Cell(currentRow, 2).Value = claim.Createuserid;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Description"; worksheet.Cell(currentRow, 2).Value = claim.Description;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Extendedresolutiondate"; worksheet.Cell(currentRow, 2).Value = claim.Extendedresolutiondate;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Howreported"; worksheet.Cell(currentRow, 2).Value = claim.Howreported;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Incidentdate"; worksheet.Cell(currentRow, 2).Value = claim.Incidentdate;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Iscostforactualamount"; worksheet.Cell(currentRow, 2).Value = claim.Iscostforactualamount;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Mediadescription"; worksheet.Cell(currentRow, 2).Value = claim.Mediadescription;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Mediainvolvedflag"; worksheet.Cell(currentRow, 2).Value = claim.Mediainvolvedflag;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Previousgroupid"; worksheet.Cell(currentRow, 2).Value = claim.Previousgroupid;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Previoususerid"; worksheet.Cell(currentRow, 2).Value = claim.Previoususerid;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Publicid"; worksheet.Cell(currentRow, 2).Value = claim.Publicid;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Receiveddate"; worksheet.Cell(currentRow, 2).Value = claim.Receiveddate;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Resolutiondate"; worksheet.Cell(currentRow, 2).Value = claim.Resolutiondate;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Resolutiondescription"; worksheet.Cell(currentRow, 2).Value = claim.Resolutiondescription;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Retired"; worksheet.Cell(currentRow, 2).Value = claim.Retired;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Status"; worksheet.Cell(currentRow, 2).Value = claim.Status;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Updatetime"; worksheet.Cell(currentRow, 2).Value = claim.Updatetime;
+                currentRow++; worksheet.Cell(currentRow, 1).Value = "Updateuserid"; worksheet.Cell(currentRow, 2).Value = claim.Updateuserid;
+
+
+
+                //worksheet.Columns().AdjustToContents();
+
+                using (var stream = new MemoryStream())
+                {
+                    workbook.SaveAs(stream);
+                    data = stream.ToArray();
+                }
+            }
+
+            return data;
+        }
+
         public void Dispose()
         {
             //throw new NotImplementedException();

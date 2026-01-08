@@ -1,10 +1,10 @@
 @using AppCoreV1.AsteronModels;
 @using AppCoreV1.Repositories;
 @using AppCoreV1.Helper;
-@model PaginatedList<Claim>
+@model PaginatedList<Complaint>
 
 @{
-    ViewData["Title"] = "Asteron Claim";
+    ViewData["Title"] = "Asteron Complaint";
     int prevpage = 0;
     int nextpage = 0;
     if (Model.HasNextPage) { nextpage = Model.PageIndex + 1; }
@@ -23,9 +23,9 @@
                     <div class="card-title">
                         <div class="row">
                             <div style="padding-left:10px;">
-                                <h4>Asteron Claim</h4>
+                                <h4>Asteron Complaint</h4>
                                 <a asp-action="Index" asp-controller="Asteron">Back to Home</a>
-                                <a asp-action="GetClaims" asp-controller="AsteronDownload" asp-route-column="@ViewBag.column" asp-route-search="@ViewBag.search" asp-route-pageIndex="@Model.PageIndex" class="btn btn-success">Download</a>
+                                <a asp-action="GetComplaints" asp-controller="AsteronDownload" asp-route-column="@ViewBag.column" asp-route-search="@ViewBag.search" asp-route-pageIndex="@Model.PageIndex" class="btn btn-success">Download</a>
                             </div>
                             <div style="float:right;padding-top: 5px;padding-left:10px;">
                             </div>
@@ -42,11 +42,13 @@
                         <table id="tabldata" class="table">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col">Claimnumber</th>
-                                    <th scope="col">PolicyId</th>
+                                    <th scope="col">Complaintnumber</th>
+                                    <th scope="col">Claimid</th>
                                     <th scope="col">Createtime</th>
-                                    <th scope="col">Closedate</th>
                                     <th scope="col">Description</th>
+                                    <th scope="col">Incidentdate</th>
+                                    <th scope="col">Resolutiondescription</th>
+
                                     <th scope="col">View</th>
                                 </tr>
                             </thead>
@@ -54,13 +56,13 @@
                                 @foreach (var item in Model)
                                 {
                                     <tr>
-                                        <td>@Html.DisplayFor(modelItem => item.Claimnumber)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Policyid)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Complaintnumber)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Claimid)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Createtime)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Closedate)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Description)</td>
-
-                                        <td><a class="btn btn-outline-secondary" onclick="return GetClaim('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+                                        <td>@Html.DisplayFor(modelItem => item.Incidentdate)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Resolutiondescription)</td>
+                                        <td><a class="btn btn-outline-secondary" onclick="return GetComplaint('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
 
                                     </tr>
                                 }
@@ -74,17 +76,17 @@
                             <ul class="pagination justify-content-center">
                                 @if (Model.TotalPages > 1)
                                 {
-                                    <li id="fpLink" class="page-item"><a class="page-link" href="./Claim?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=1&pageSize=25">First</a></li>
+                                    <li id="fpLink" class="page-item"><a class="page-link" href="./Complaint?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=1&pageSize=25">First</a></li>
                                     @if (prevpage > 0)
                                     {
-                                        <li id="ppLink" class="page-item"><a class="page-link" href="./Claim?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@prevpage&pageSize=25">Prev</a></li>
+                                        <li id="ppLink" class="page-item"><a class="page-link" href="./Complaint?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@prevpage&pageSize=25">Prev</a></li>
                                     }
-                                    <li id="cpLink" class="page-item"><a class="page-link active" href="./Claim?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@Model.PageIndex&pageSize=25">Page @Model.PageIndex of Pages @Model.TotalPages</a></li>
+                                    <li id="cpLink" class="page-item"><a class="page-link active" href="./Complaint?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@Model.PageIndex&pageSize=25">Page @Model.PageIndex of Pages @Model.TotalPages</a></li>
                                     @if (nextpage > 0)
                                     {
-                                        <li id="npLink" class="page-item"><a class="page-link" href="./Claim?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@nextpage&pageSize=25">Next</a></li>
+                                        <li id="npLink" class="page-item"><a class="page-link" href="./Complaint?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@nextpage&pageSize=25">Next</a></li>
                                     }
-                                    <li id="lpLink" class="page-item"><a class="page-link" href="./Claim?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@Model.TotalPages&pageSize=25">last</a></li>
+                                    <li id="lpLink" class="page-item"><a class="page-link" href="./Complaint?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@Model.TotalPages&pageSize=25">last</a></li>
                                 }
                             </ul>
                         </nav>

@@ -228,3 +228,26 @@ function GetIncident(id) {
         }
     });
 }
+
+function GetComplaint(id) {
+    //-------------------------------------------
+    // Asteron Complaint
+    //-------------------------------------------
+
+    $.ajax({
+        url: '/Asteron/GetComplaint',
+        type: 'Post',
+        data: {
+            ID: id
+        },
+        cache: false,
+    }).done(function (result) {
+        //alert(result);
+        if (result != "NO") {
+            $('#modalTitle').html('Asteron Complaint');
+            $('#SelectTargetId').empty();
+            $('#SelectTargetId').html(result);
+            $('#myModal').modal('show');
+        }
+    });
+}

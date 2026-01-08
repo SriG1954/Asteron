@@ -29,6 +29,16 @@ namespace WebAppV1.Controllers
             return View();
         }
 
+        public IActionResult Dashboard(string column, string search, int pageIndex = 1, int pageSize = 25)
+        {
+            ViewBag.column = column;
+            ViewBag.search = search;
+            ViewBag.PageNumber = pageIndex;
+            ViewData["Title"] = "Dashboard";
+
+            return View();
+        }
+
         public async Task<IActionResult> Claim(string column, string search, int pageIndex = 1, int pageSize = 25)
         {
             ViewBag.searchcolumns = GetSearchClaims();
@@ -58,9 +68,10 @@ namespace WebAppV1.Controllers
             List<SelectListItem> ls = new List<SelectListItem>();
             ls.Add(new SelectListItem() { Text = "Claimnumber", Value = "Claimnumber" });
             ls.Add(new SelectListItem() { Text = "Policyid", Value = "Policyid" });
-            ls.Add(new SelectListItem() { Text = "Publicid", Value = "Publicid" });
             ls.Add(new SelectListItem() { Text = "Createtime", Value = "Createtime" });
             ls.Add(new SelectListItem() { Text = "Closedate", Value = "Closedate" });
+            ls.Add(new SelectListItem() { Text = "Description", Value = "Description" });
+
             return ls;
         }
 
@@ -393,5 +404,40 @@ namespace WebAppV1.Controllers
             return ls;
         }
 
+        public async Task<IActionResult> Complaint(string column, string search, int pageIndex = 1, int pageSize = 25)
+        {
+            ViewBag.searchcolumns = GetSearchComplaints();
+            ViewBag.column = column;
+            ViewBag.search = search;
+            ViewBag.PageNumber = pageIndex;
+            ViewData["Title"] = "Complaints";
+
+            var list = await _context.SearchComplaint(column, search, pageIndex, pageSize);
+
+            return View(list);
+        }
+
+        // AbleReport controller Post method
+        [HttpPost]
+        public async Task<IActionResult> GetComplaint()
+        {
+            var id = Request.Form["ID"].ToString();
+            var report = await _context.GetComplaint(id);
+            return PartialView("../Asteron/ComplaintDetail", report);
+        }
+
+        // Search Columns
+
+        private List<SelectListItem> GetSearchComplaints()
+        {
+            List<SelectListItem> ls = new List<SelectListItem>();
+            ls.Add(new SelectListItem() { Text = "Complaintnumber", Value = "Complaintnumber" });
+            ls.Add(new SelectListItem() { Text = "Claimid", Value = "Claimid" });
+            ls.Add(new SelectListItem() { Text = "Createtime", Value = "Createtime" });
+            ls.Add(new SelectListItem() { Text = "Description", Value = "Description" });
+            ls.Add(new SelectListItem() { Text = "Incidentdate", Value = "Incidentdate" });
+            ls.Add(new SelectListItem() { Text = "Resolutiondescription", Value = "Resolutiondescription" });
+            return ls;
+        }
     }
 }

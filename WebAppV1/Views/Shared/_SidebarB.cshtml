@@ -37,10 +37,13 @@
             <a id="lnkAddress" asp-action="Address" asp-controller="Asteron"><i class="fas fa-address-card"></i>Address</a>
         </li>
        <li>
-            <a id="lnkBenefit" asp-action="Coverage" asp-controller="Asteron"><i class="fas fa fa-dollar"></i>Coverage</a>
+            <a id="lnkBenefit" asp-action="Coverage" asp-controller="Asteron"><i class="fas fa-dollar"></i>Coverage</a>
         </li>
         <li>
-            <a id="lnkParty" asp-action="Incident" asp-controller="Asteron"><i class="fas fa fa-phone"></i>Incident</a>
+            <a id="lnkParty" asp-action="Incident" asp-controller="Asteron"><i class="fas fa-phone"></i>Incident</a>
+        </li>
+        <li>
+            <a id="lnkTasks" asp-action="Complaint" asp-controller="Asteron"><i class="fas fa-comments"></i>Compliant</a>
         </li>
         @{
             var _rolename = Context.Session.GetString("ABLERoleName");

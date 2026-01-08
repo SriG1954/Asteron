@@ -1,0 +1,51 @@
+@model AppCoreV1.AsteronModels.Complaint;
+
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Download</td>
+            <td><a id="mydownload" asp-action="GetComplaint" asp-controller="AsteronDownload" asp-route-id="@Model.Id" class="btn btn-success">Download</a></td>
+        </tr>
+        <tr><td>Id</td><td>@Model.Id</td></tr>
+        <tr><td>Assignedbyuserid</td><td>@Model.Assignedbyuserid</td></tr>
+        <tr><td>Assignedgroupid</td><td>@Model.Assignedgroupid</td></tr>
+        <tr><td>Assigneduserid</td><td>@Model.Assigneduserid</td></tr>
+        <tr><td>Assignmentdate</td><td>@Model.Assignmentdate</td></tr>
+        <tr><td>Assignmentstatus</td><td>@Model.Assignmentstatus</td></tr>
+        <tr><td>Beanversion</td><td>@Model.Beanversion</td></tr>
+        <tr><td>Claimid</td><td>@Model.Claimid</td></tr>
+        <tr><td>Complainantexpectationdesc</td><td>@Model.Complainantexpectationdesc</td></tr>
+        <tr><td>ComplaintcategoryExtid</td><td>@Model.ComplaintcategoryExtid</td></tr>
+        <tr><td>Complaintnumber</td><td>@Model.Complaintnumber</td></tr>
+        <tr><td>Contactid</td><td>@Model.Contactid</td></tr>
+        <tr><td>Createtime</td><td>@Model.Createtime</td></tr>
+        <tr><td>Createuserid</td><td>@Model.Createuserid</td></tr>
+        <tr><td>Description</td><td>@Model.Description</td></tr>
+        <tr><td>Extendedresolutiondate</td><td>@Model.Extendedresolutiondate</td></tr>
+        <tr><td>Howreported</td><td>@Model.Howreported</td></tr>
+        <tr><td>Incidentdate</td><td>@Model.Incidentdate</td></tr>
+        <tr><td>Iscostforactualamount</td><td>@Model.Iscostforactualamount</td></tr>
+        <tr><td>Mediadescription</td><td>@Model.Mediadescription</td></tr>
+        <tr><td>Mediainvolvedflag</td><td>@Model.Mediainvolvedflag</td></tr>
+        <tr><td>Previousgroupid</td><td>@Model.Previousgroupid</td></tr>
+        <tr><td>Previoususerid</td><td>@Model.Previoususerid</td></tr>
+        <tr><td>Publicid</td><td>@Model.Publicid</td></tr>
+        <tr><td>Receiveddate</td><td>@Model.Receiveddate</td></tr>
+        <tr><td>Resolutiondate</td><td>@Model.Resolutiondate</td></tr>
+        <tr><td>Resolutiondescription</td><td>@Model.Resolutiondescription</td></tr>
+        <tr><td>Retired</td><td>@Model.Retired</td></tr>
+        <tr><td>Status</td><td>@Model.Status</td></tr>
+        <tr><td>Updatetime</td><td>@Model.Updatetime</td></tr>
+        <tr><td>Updateuserid</td><td>@Model.Updateuserid</td></tr>
+
+    </tbody>
+</table>
+
+

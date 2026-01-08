@@ -206,6 +206,23 @@ namespace WebAppV1.Controllers
             return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
         }
 
+        public async Task<FileResult> GetComplaints(string column, string search, int pageIndex = 1, int pageSize = 25)
+        {
+            byte[] data = null!;
+            data = await _context.GetComplaints(column, search, pageIndex, pageSize);
 
+            string filename = "Complaints" + search + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+            return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+        }
+
+        // Details Download
+        public async Task<FileResult> GetComplaint(string id)
+        {
+            byte[] data = null!;
+            data = await _context.GetComplaint(id);
+
+            string filename = "Complaint" + id + DateTime.Now.ToString("ddMMyyyyHHss") + ".xlsx";
+            return File(data, System.Net.Mime.MediaTypeNames.Application.Octet, filename);
+        }
     }
 }

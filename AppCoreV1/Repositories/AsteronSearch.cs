@@ -1048,8 +1048,8 @@ namespace AppCoreV1.Repositories
                         case "Policyid":
                             query = query.Where(c => c.Policyid!.ToString()!.Contains(search));
                             break;
-                        case "Publicid":
-                            query = query.Where(c => c.Publicid!.Contains(search));
+                        case "Description":
+                            query = query.Where(c => c.Description!.Contains(search));
                             break;
                         case "Createtime":
                             query = query.Where(c => c.Createtime!.ToString()!.Contains(search));
@@ -2688,22 +2688,24 @@ namespace AppCoreV1.Repositories
                 {
                     switch (column)
                     {
-                        case "Id":
-                            query = query.Where(c => c.Id!.ToString()!.Contains(search));
+                        case "Complaintnumber":
+                            query = query.Where(c => c.Complaintnumber!.ToString()!.Contains(search));
                             break;
-                        case "Assignedbyuserid":
-                            query = query.Where(c => c.Assignedbyuserid!.ToString()!.Contains(search));
+                        case "Claimid":
+                            query = query.Where(c => c.Claimid!.ToString()!.Contains(search));
                             break;
-                        case "Assignedgroupid":
-                            query = query.Where(c => c.Assignedgroupid!.ToString()!.Contains(search));
+                        case "Createtime":
+                            query = query.Where(c => c.Createtime!.ToString()!.Contains(search));
                             break;
-                        case "Assigneduserid":
-                            query = query.Where(c => c.Assigneduserid!.ToString()!.Contains(search));
+                        case "Description":
+                            query = query.Where(c => c.Description!.Contains(search));
                             break;
-                        case "Assignmentdate":
-                            query = query.Where(c => c.Assignmentdate!.ToString()!.Contains(search));
+                        case "Incidentdate":
+                            query = query.Where(c => c.Incidentdate!.ToString()!.Contains(search));
                             break;
-
+                        case "Resolutiondescription":
+                            query = query.Where(c => c.Resolutiondescription!.Contains(search));
+                            break;
 
                     }
                 }

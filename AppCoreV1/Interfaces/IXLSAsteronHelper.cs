@@ -28,6 +28,7 @@ namespace AppCoreV1.Interfaces
         Task<byte[]> GetCoverage(string id);
         Task<byte[]> GetIncidents(string column, string search, int pageIndex = 1, int pageSize = 25);
         Task<byte[]> GetIncident(string id);
-
+        Task<byte[]> GetComplaints(string column, string search, int pageIndex = 1, int pageSize = 25);
+        Task<byte[]> GetComplaint(string id);
     }
 }
