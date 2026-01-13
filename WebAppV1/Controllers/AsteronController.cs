@@ -56,6 +56,8 @@ namespace WebAppV1.Controllers
         {
             ViewData["Title"] = "Claim Links";
             var claim = await _context.GetClaim(id);
+            ViewData["Claim"] = claim;
+
             string claimid = claim.Id.ToString()!;
             var activityLinks = await _context.GetClaimDetails(claimid);
 
@@ -229,7 +231,9 @@ namespace WebAppV1.Controllers
         public async Task<IActionResult> ActivityLinks(string id)
         {
             ViewData["Title"] = "Activity Links";
-            var activityLinks = await _context.GetActivityDetails(id);
+            var activity = await _context.GetActivity(id);
+            string claimid = activity.Claimid.ToString()!;
+            var activityLinks = await _context.GetClaimDetails(claimid);
 
             return View(activityLinks);
         }
@@ -270,6 +274,16 @@ namespace WebAppV1.Controllers
             return View(list);
         }
 
+        public async Task<IActionResult> HistoryLinks(string id)
+        {
+            ViewData["Title"] = "History Links";
+            var history = await _context.GetHistory(id);
+            string claimid = history.Claimid.ToString()!;
+            var activityLinks = await _context.GetClaimDetails(claimid);
+
+            return View(activityLinks);
+        }
+
         // AbleReport controller Post method
         [HttpPost]
         public async Task<IActionResult> GetHistory()
@@ -303,6 +317,18 @@ namespace WebAppV1.Controllers
             var list = await _context.SearchContact(column, search, pageIndex, pageSize);
 
             return View(list);
+        }
+
+        public async Task<IActionResult> ContactLinks(string id)
+        {
+            ViewData["Title"] = "Contact Links";
+
+            var contact = await _context.GetClaimcontactByContactId(id);
+
+            string claimid = contact.Claimid.ToString()!;
+            var activityLinks = await _context.GetClaimDetails(claimid);
+
+            return View(activityLinks);
         }
 
         // AbleReport controller Post method
@@ -418,6 +444,16 @@ namespace WebAppV1.Controllers
             return View(list);
         }
 
+        public async Task<IActionResult> IncidentLinks(string id)
+        {
+            ViewData["Title"] = "Claim Links";
+            var incident = await _context.GetIncident(id);
+            string claimid = incident.Claimid.ToString()!;
+            var activityLinks = await _context.GetClaimDetails(claimid);
+
+            return View(activityLinks);
+        }
+
         // AbleReport controller Post method
         [HttpPost]
         public async Task<IActionResult> GetIncident()
@@ -453,6 +489,16 @@ namespace WebAppV1.Controllers
             var list = await _context.SearchComplaint(column, search, pageIndex, pageSize);
 
             return View(list);
+        }
+
+        public async Task<IActionResult> ComplaintLinks(string id)
+        {
+            ViewData["Title"] = "Complaint Links";
+            var complaint = await _context.GetComplaint(id);
+            string claimid = complaint.Claimid.ToString()!;
+            var activityLinks = await _context.GetClaimDetails(claimid);
+
+            return View(activityLinks);
         }
 
         // AbleReport controller Post method

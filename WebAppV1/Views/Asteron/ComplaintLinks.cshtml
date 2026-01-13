@@ -4,8 +4,7 @@
 @model ActivityLinks
 
 @{
-    ViewData["Title"] = "Asteron Claim Links";
-    AppCoreV1.AsteronModels.Claim _claim = (AppCoreV1.AsteronModels.Claim)ViewData["Claim"]!;
+    ViewData["Title"] = "Asteron Activity Links";
 }
 <script src="~/js/asteronreport.js"></script>
 
@@ -20,8 +19,8 @@
                     <div class="card-title">
                         <div class="row">
                             <div style="padding-left:10px;">
-                                <h4>Asteron Claim Links</h4>
-                                <a asp-action="Claim" asp-controller="Asteron">Back to Claim</a>
+                                <h4>Asteron Activity Links</h4>
+                                <a asp-action="Activity" asp-controller="Asteron">Back to Activity</a>
                             </div>
                             <div style="float:right;padding-top: 5px;padding-left:10px;">
                             </div>
@@ -30,20 +29,6 @@
                 </div>
 
                 <div id="tbltabsearch">
-
-                    <table id="tabldata" class="table">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">Entity</th>
-                                <th scope="col">CLAIM</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>ClaimId</td><td>@_claim.Id</td></tr>
-                            <tr><td>Claimnumber</td><td>@_claim.Claimnumber</td></tr>
-
-                        </tbody>
-                    </table>
                     <div class="card-body">
 
                         <div class="accordion" id="accordionExample">
@@ -107,45 +92,6 @@
                                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <partial name="../Asteron/_AddressList" model="@Model.AddressList" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        <b>Activities Details</b>
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <partial name="../Asteron/_ActivityList" model="@Model.ActivityList" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFive">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                        <b>Notes Details</b>
-                                    </button>
-                                </h2>
-                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <partial name="../Asteron/_NoteList" model="@Model.NoteList" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingSix">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                        <b>Incident Details</b>
-                                    </button>
-                                </h2>
-                                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <partial name="../Asteron/_IncidentList" model="@Model.IncidentList" />
                                     </div>
                                 </div>
                             </div>

@@ -43,7 +43,7 @@ namespace AppCoreV1.Interfaces
 
         Task<PaginatedList<Claimcontact>> SearchClaimcontact(string column, string search, int pageIndex = 1, int pageSize = 25);
         Task<Claimcontact> GetClaimcontact(string id);
-
+        Task<Claimcontact> GetClaimcontactByContactId(string id);
         Task<PaginatedList<Claimcontactrole>> SearchClaimcontactrole(string column, string search, int pageIndex = 1, int pageSize = 25);
         Task<Claimcontactrole> GetClaimcontactrole(string id);
 
@@ -194,8 +194,6 @@ namespace AppCoreV1.Interfaces
         Task<PaginatedList<Usersetting>> SearchUsersetting(string column, string search, int pageIndex = 1, int pageSize = 25);
         Task<Usersetting> GetUsersetting(string id);
 
-        Task<ActivityLinks> GetActivityDetails(string activityid);
         Task<ActivityLinks> GetClaimDetails(string claimid);
-        Task<ActivityLinks> GetNoteDetails(string noteid);
     }
 }

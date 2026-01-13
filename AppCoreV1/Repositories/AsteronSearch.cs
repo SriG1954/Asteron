@@ -1559,6 +1559,48 @@ namespace AppCoreV1.Repositories
             return item;
         }
 
+        public async Task<Claimcontact> GetClaimcontactByContactId(string id)
+        {
+            Claimcontact item = null!;
+            try
+            {
+                var c = await _context.Claimcontacts.FirstOrDefaultAsync(m => m.Contactid == Convert.ToDecimal(id));
+                if (c != null)
+                {
+                    item = new Claimcontact
+                    {
+                        Id = c.Id,
+                        Beanversion = c.Beanversion,
+                        Claimantflag = c.Claimantflag,
+                        Claimid = c.Claimid,
+                        Contactid = c.Contactid,
+                        Contactnamedenorm = c.Contactnamedenorm,
+                        Contactprohibited = c.Contactprohibited,
+                        Createtime = c.Createtime,
+                        Createuserid = c.Createuserid,
+                        Personfirstnamedenorm = c.Personfirstnamedenorm,
+                        Personlastnamedenorm = c.Personlastnamedenorm,
+                        Publicid = c.Publicid,
+                        Retired = c.Retired,
+                        Updatetime = c.Updatetime,
+                        Updateuserid = c.Updateuserid,
+                    };
+                }
+                else
+                {
+                    item = new Claimcontact();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.ToString());
+                item = new Claimcontact();
+            }
+
+            return item;
+        }
+
         public async Task<PaginatedList<Claimcontactrole>> SearchClaimcontactrole(string column, string search, int pageIndex = 1, int pageSize = 25)
         {
             PaginatedList<Claimcontactrole> list = null!;
@@ -7125,32 +7167,6 @@ namespace AppCoreV1.Repositories
             return policylist;
         }
 
-        public async Task<ActivityLinks> GetActivityDetails(string activityid)
-        {
-            ActivityLinks link = new ActivityLinks();
-
-            try
-            {
-                // get activity
-                var activity = await GetActivity(activityid);
-                string claimid = activity.Claimid.ToString()!;
-
-                link.ActivityList = await GetClaimActivityList(claimid);
-                link.ClaimList = await GetClaimList(claimid);
-                link.PolicyList = await GetClaimPolicyList(claimid);
-                link.ContactList = await GetClaimContactsList(claimid);
-                link.DocumentList = await GetClaimDocumentsList(claimid);
-                link.AddressList = await GetClaimAddressList(claimid);
-            }
-
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.ToString());
-            }
-
-            return link;
-        }
-
         public async Task<ActivityLinks> GetClaimDetails(string claimid)
         {
             ActivityLinks link = new ActivityLinks();
@@ -7174,32 +7190,5 @@ namespace AppCoreV1.Repositories
 
             return link;
         }
-
-        public async Task<ActivityLinks> GetNoteDetails(string noteid)
-        {
-            ActivityLinks link = new ActivityLinks();
-
-            try
-            {
-                // get activity
-                var note = await GetNote(noteid);
-                string claimid = note.Claimid.ToString()!;
-
-                link.ActivityList = await GetClaimActivityList(claimid);
-                link.ClaimList = await GetClaimList(claimid);
-                link.PolicyList = await GetClaimPolicyList(claimid);
-                link.ContactList = await GetClaimContactsList(claimid);
-                link.DocumentList = await GetClaimDocumentsList(claimid);
-                link.AddressList = await GetClaimAddressList(claimid);
-            }
-
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.ToString());
-            }
-
-            return link;
-        }
-
     }
 }

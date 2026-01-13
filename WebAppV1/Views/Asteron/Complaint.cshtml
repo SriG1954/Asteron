@@ -62,8 +62,17 @@
                                         <td>@Html.DisplayFor(modelItem => item.Description)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Incidentdate)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Resolutiondescription)</td>
-                                        <td><a class="btn btn-outline-secondary" onclick="return GetComplaint('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
 
+                                        <td>
+                                            <div class="d-flex gap-2">
+                                                <a class="btn btn-outline-secondary" onclick="return GetComplaint('@item.Id')">
+                                                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                                </a>
+                                                <a asp-action="ComplaintLinks" asp-controller="Asteron" asp-route-id="@item.Id" class="btn btn-outline-secondary">
+                                                    <i class="fa fa-network-wired" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </td>
                                     </tr>
                                 }
                             </tbody>
