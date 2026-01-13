@@ -1,0 +1,34 @@
+@using AppCoreV1.AsteronModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model List<Policy>;
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Policynumber</th>
+            <th scope="col">Publicid</th>
+            <th scope="col">Createtime</th>
+            <th scope="col">Currency</th>
+            <th scope="col">Policytype</th>
+
+            <th scope="col">View</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Policynumber)</td>
+                <td>@Html.DisplayFor(modelItem => item.Publicid)</td>
+                <td>@Html.DisplayFor(modelItem => item.Createtime)</td>
+                <td>@Html.DisplayFor(modelItem => item.Currency)</td>
+                <td>@Html.DisplayFor(modelItem => item.Policytype)</td>
+
+                <td><a class="btn btn-outline-secondary" onclick="return GetPolicy('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+

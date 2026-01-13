@@ -1,0 +1,33 @@
+@using AppCoreV1.AsteronModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model List<Claim>;
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Claimnumber</th>
+            <th scope="col">PolicyId</th>
+            <th scope="col">Createtime</th>
+            <th scope="col">Closedate</th>
+            <th scope="col">Description</th>
+            <th scope="col">View</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Claimnumber)</td>
+                <td>@Html.DisplayFor(modelItem => item.Policyid)</td>
+                <td>@Html.DisplayFor(modelItem => item.Createtime)</td>
+                <td>@Html.DisplayFor(modelItem => item.Closedate)</td>
+                <td>@Html.DisplayFor(modelItem => item.Description)</td>
+
+                <td><a class="btn btn-outline-secondary" onclick="return GetClaim('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+

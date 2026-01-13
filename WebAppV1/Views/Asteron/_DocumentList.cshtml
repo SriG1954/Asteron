@@ -1,0 +1,36 @@
+@using AppCoreV1.AsteronModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model List<Document>;
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Claimid</th>
+            <th scope="col">Docuid</th>
+            <th scope="col">Description</th>
+            <th scope="col">Mimetype</th>
+            <th scope="col">Name</th>
+            <th scope="col">Publicid</th>
+
+            <th scope="col">View</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Claimid)</td>
+                <td>@Html.DisplayFor(modelItem => item.Docuid)</td>
+                <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                <td>@Html.DisplayFor(modelItem => item.Mimetype)</td>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Publicid)</td>
+
+                <td><a class="btn btn-outline-secondary" onclick="return GetDocument('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+

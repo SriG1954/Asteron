@@ -62,7 +62,17 @@
                                         <td>@Html.DisplayFor(modelItem => item.Body)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Publicid)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Retired)</td>
-                                        <td><a class="btn btn-outline-secondary" onclick="return GetNote('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+
+                                        <td>
+                                            <div class="d-flex gap-2">
+                                                <a class="btn btn-outline-secondary" onclick="return GetNote('@item.Id')">
+                                                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                                </a>
+                                                <a asp-action="NoteLinks" asp-controller="Asteron" asp-route-id="@item.Id" class="btn btn-outline-secondary">
+                                                    <i class="fa fa-network-wired" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </td>
 
                                     </tr>
                                 }

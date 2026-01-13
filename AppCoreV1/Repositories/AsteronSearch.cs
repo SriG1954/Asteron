@@ -2,10 +2,12 @@
 using AppCoreV1.Data;
 using AppCoreV1.Helper;
 using AppCoreV1.Interfaces;
+using DocumentFormat.OpenXml.Office2010.Excel;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -125,16 +127,16 @@ namespace AppCoreV1.Repositories
             return item;
         }
 
-        public async Task<PaginatedList<Activity>> SearchActivity(string column, string search, int pageIndex = 1, int pageSize = 25)
+        public async Task<PaginatedList<AsteronModels.Activity>> SearchActivity(string column, string search, int pageIndex = 1, int pageSize = 25)
         {
-            PaginatedList<Activity> list = null!;
+            PaginatedList<AsteronModels.Activity> list = null!;
             search = HttpUtility.UrlDecode(search);
 
             try
             {
                 var query = from c in _context.Activities
                             orderby c.Id ascending
-                            select new Activity
+                            select new AsteronModels.Activity
                             {
                                 Id = c.Id,
                                 Activityclass = c.Activityclass,
@@ -210,7 +212,7 @@ namespace AppCoreV1.Repositories
                     }
                 }
 
-                list = await PaginatedList<Activity>.CreateAsync(query, pageIndex, pageSize);
+                list = await PaginatedList<AsteronModels.Activity>.CreateAsync(query, pageIndex, pageSize);
             }
             catch (Exception ex)
             {
@@ -219,15 +221,15 @@ namespace AppCoreV1.Repositories
             return list;
         }
 
-        public async Task<Activity> GetActivity(string id)
+        public async Task<AsteronModels.Activity> GetActivity(string id)
         {
-            Activity item = null!;
+            AsteronModels.Activity item = null!;
             try
             {
                 var c = await _context.Activities.FirstOrDefaultAsync(m => m.Id == Convert.ToDecimal(id));
                 if (c != null)
                 {
-                    item = new Activity
+                    item = new AsteronModels.Activity
                     {
                         Id = c.Id,
                         Activityclass = c.Activityclass,
@@ -279,14 +281,14 @@ namespace AppCoreV1.Repositories
                 }
                 else
                 {
-                    item = new Activity();
+                    item = new AsteronModels.Activity();
                 }
 
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex.ToString());
-                item = new Activity();
+                item = new AsteronModels.Activity();
             }
 
             return item;
@@ -1042,6 +1044,9 @@ namespace AppCoreV1.Repositories
                 {
                     switch (column)
                     {
+                        case "Id":
+                            query = query.Where(c => c.Id!.ToString()!.Contains(search));
+                            break;
                         case "Claimnumber":
                             query = query.Where(c => c.Claimnumber!.Contains(search));
                             break;
@@ -6993,5 +6998,208 @@ namespace AppCoreV1.Repositories
 
             return item;
         }
+
+        public async Task<List<Claim>> GetClaimList(string claimid)
+        {
+            List<Claim> claimslist = new List<Claim>();
+
+            // get claimcontacts
+            var claims = await SearchClaim("Id", claimid.ToString()!, 1, 10);
+
+            foreach (var claim in claims)
+            {
+                claimslist.Add(claim);
+            }
+
+            return claimslist;
+        }
+
+        public async Task<List<AsteronModels.Activity>> GetClaimActivityList(string claimid)
+        {
+            List<AsteronModels.Activity> activities = new List<AsteronModels.Activity>();
+
+            // get claimcontacts
+            var claimactivities = await SearchActivity("Claimid", claimid.ToString()!, 1, 10);
+
+            foreach (var activity in claimactivities)
+            {
+                activities.Add(activity);
+            }
+
+            return activities;
+        }
+
+        public async Task<List<Address>> GetClaimAddressList(string claimid)
+        {
+            List<Address> addresses = new List<Address>();
+
+            // get claimcontacts
+            var claimcontacts = await SearchClaimcontact("Claimid", claimid.ToString()!, 1, 10);
+
+            foreach (var contact in claimcontacts)
+            {
+                var address = await SearchAddress("Contactid", contact.Contactid.ToString()!, 1, 10);
+                foreach (var address2 in address)
+                {
+                    addresses.Add(address2);
+                }
+            }
+
+            return addresses;
+        }
+
+        public async Task<List<Contact>> GetClaimContactsList(string claimid) 
+        {
+            List<Contact> contacts = new List<Contact>();
+
+            // get claimcontacts
+            var claimcontacts = await SearchClaimcontact("Claimid", claimid.ToString()!, 1, 10);
+
+            foreach (var claimcontact in claimcontacts) 
+            {
+                var contact = await GetContact(claimcontact.Contactid.ToString()!);
+                contacts.Add(contact);
+            }
+
+            return contacts;
+        }
+
+        public async Task<List<Document>> GetClaimDocumentsList(string claimid)
+        {
+            List<Document> documents = new List<Document>();
+
+            // get claimcontacts
+            var claimdocs = await SearchDocument("Claimid", claimid.ToString()!, 1, 10);
+
+            foreach (var document in claimdocs)
+            {
+                documents.Add(document);
+            }
+
+            return documents;
+        }
+
+        public async Task<List<Incident>> GetClaimIncidentList(string claimid)
+        {
+            List<Incident> incidents = new List<Incident>();
+
+            // get claimcontacts
+            var claimincidents = await SearchIncident("Claimid", claimid.ToString()!, 1, 10);
+
+            foreach (var incident in claimincidents)
+            {
+                incidents.Add(incident);
+            }
+
+            return incidents;
+        }
+
+        public async Task<List<Note>> GetClaimNotesList(string claimid)
+        {
+            List<Note> notes = new List<Note>();
+
+            // get claimcontacts
+            var claimnotes = await SearchNote("Claimid", claimid.ToString()!, 1, 10);
+
+            foreach (var note in claimnotes)
+            {
+                notes.Add(note);
+            }
+
+            return notes;
+        }
+
+        public async Task<List<Policy>> GetClaimPolicyList(string claimid)
+        {
+            List<Policy> policylist = new List<Policy>();
+
+            // get claimcontacts
+            var claimlist = await GetClaimList(claimid);
+
+            foreach (var claim in claimlist)
+            {
+                var policy = await GetPolicy(claim.Policyid!.ToString()!);
+                policylist.Add(policy);
+            }
+
+            return policylist;
+        }
+
+        public async Task<ActivityLinks> GetActivityDetails(string activityid)
+        {
+            ActivityLinks link = new ActivityLinks();
+
+            try
+            {
+                // get activity
+                var activity = await GetActivity(activityid);
+                string claimid = activity.Claimid.ToString()!;
+
+                link.ActivityList = await GetClaimActivityList(claimid);
+                link.ClaimList = await GetClaimList(claimid);
+                link.PolicyList = await GetClaimPolicyList(claimid);
+                link.ContactList = await GetClaimContactsList(claimid);
+                link.DocumentList = await GetClaimDocumentsList(claimid);
+                link.AddressList = await GetClaimAddressList(claimid);
+            }
+
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.ToString());
+            }
+
+            return link;
+        }
+
+        public async Task<ActivityLinks> GetClaimDetails(string claimid)
+        {
+            ActivityLinks link = new ActivityLinks();
+
+            try
+            {
+                link.ActivityList = await GetClaimActivityList(claimid);
+                link.ClaimList = await GetClaimList(claimid);
+                link.PolicyList = await GetClaimPolicyList(claimid);
+                link.ContactList = await GetClaimContactsList(claimid);
+                link.DocumentList = await GetClaimDocumentsList(claimid);
+                link.AddressList = await GetClaimAddressList(claimid);
+                link.NoteList = await GetClaimNotesList(claimid);
+                link.IncidentList = await GetClaimIncidentList(claimid);
+            }
+
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.ToString());
+            }
+
+            return link;
+        }
+
+        public async Task<ActivityLinks> GetNoteDetails(string noteid)
+        {
+            ActivityLinks link = new ActivityLinks();
+
+            try
+            {
+                // get activity
+                var note = await GetNote(noteid);
+                string claimid = note.Claimid.ToString()!;
+
+                link.ActivityList = await GetClaimActivityList(claimid);
+                link.ClaimList = await GetClaimList(claimid);
+                link.PolicyList = await GetClaimPolicyList(claimid);
+                link.ContactList = await GetClaimContactsList(claimid);
+                link.DocumentList = await GetClaimDocumentsList(claimid);
+                link.AddressList = await GetClaimAddressList(claimid);
+            }
+
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.ToString());
+            }
+
+            return link;
+        }
+
     }
 }

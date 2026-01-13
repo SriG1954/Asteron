@@ -1,0 +1,36 @@
+@using AppCoreV1.AsteronModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model List<Note>;
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Claimid</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Topic</th>
+            <th scope="col">Body</th>
+            <th scope="col">Publicid</th>
+            <th scope="col">Retired</th>
+            <th scope="col">View</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Claimid)</td>
+                <td>@Html.DisplayFor(modelItem => item.Subject)</td>
+                <td>@Html.DisplayFor(modelItem => item.Topic)</td>
+                <td>@Html.DisplayFor(modelItem => item.Body)</td>
+                <td>@Html.DisplayFor(modelItem => item.Publicid)</td>
+                <td>@Html.DisplayFor(modelItem => item.Retired)</td>
+                <td><a class="btn btn-outline-secondary" onclick="return GetNote('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+

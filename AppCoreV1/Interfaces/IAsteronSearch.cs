@@ -1,10 +1,5 @@
 ﻿using AppCoreV1.AsteronModels;
 using AppCoreV1.Helper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AppCoreV1.Interfaces
 {
@@ -199,5 +194,8 @@ namespace AppCoreV1.Interfaces
         Task<PaginatedList<Usersetting>> SearchUsersetting(string column, string search, int pageIndex = 1, int pageSize = 25);
         Task<Usersetting> GetUsersetting(string id);
 
+        Task<ActivityLinks> GetActivityDetails(string activityid);
+        Task<ActivityLinks> GetClaimDetails(string claimid);
+        Task<ActivityLinks> GetNoteDetails(string noteid);
     }
 }

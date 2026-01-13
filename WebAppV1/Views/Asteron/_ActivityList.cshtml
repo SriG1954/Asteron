@@ -1,0 +1,46 @@
+@using AppCoreV1.AsteronModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model List<Activity>;
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Claimid</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Subtype</th>
+            <th scope="col">Description</th>
+            <th scope="col">Createtime</th>
+            <th scope="col">Publicid</th>
+
+            <th scope="col">View</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Claimid)</td>
+                <td>@Html.DisplayFor(modelItem => item.Subject)</td>
+                <td>@Html.DisplayFor(modelItem => item.Subtype)</td>
+                <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                <td>@Html.DisplayFor(modelItem => item.Createtime)</td>
+                <td>@Html.DisplayFor(modelItem => item.Publicid)</td>
+
+
+                <td>
+                    <div class="d-flex gap-2">
+                        <a class="btn btn-outline-secondary" onclick="return GetActivity('@item.Id')">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        </a>
+                        <a asp-action="ActivityLinks" asp-controller="Asteron" asp-route-id="@item.Id" class="btn btn-outline-secondary">
+                            <i class="fa fa-network-wired" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+

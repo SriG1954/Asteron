@@ -97,3 +97,18 @@ public partial class Activity
 
     public long? Validationlevel { get; set; }
 }
+
+public partial class ActivityLinks
+{
+    public List<Activity> ActivityList { get; set; } = default!;
+    public List<Claim> ClaimList { get; set; } = default!;
+    public List<Contact> ContactList { get; set; } = default!;
+    public List<Address> AddressList { get; set; } = default!;
+    public List<Policy> PolicyList { get; set; } = default!;
+    public List<Document> DocumentList { get; set; } = default!;
+    public List<Note> NoteList { get; set; } = default!;
+    public List<Incident> IncidentList { get; set; } = default!;
+    public List<History> HistoryList { get; set; } = default!;
+    //public List<Matter> MatterList { get; set; } = default!;
+
+}

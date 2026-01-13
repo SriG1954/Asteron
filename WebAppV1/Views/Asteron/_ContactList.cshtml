@@ -1,0 +1,36 @@
+@using AppCoreV1.AsteronModels;
+@using AppCoreV1.Repositories;
+@using AppCoreV1.Helper;
+@model List<Contact>;
+
+<table id="tabldata" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Firstname</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Dateofbirth</th>
+            <th scope="col">Cellphone</th>
+            <th scope="col">Emailaddress1</th>
+
+            <th scope="col">View</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Firstname)</td>
+                <td>@Html.DisplayFor(modelItem => item.Lastname)</td>
+                <td>@Html.DisplayFor(modelItem => item.Gender)</td>
+                <td>@Html.DisplayFor(modelItem => item.Dateofbirth)</td>
+                <td>@Html.DisplayFor(modelItem => item.Cellphone)</td>
+                <td>@Html.DisplayFor(modelItem => item.Emailaddress1)</td>
+                <td><a class="btn btn-outline-secondary" onclick="return GetContact('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+

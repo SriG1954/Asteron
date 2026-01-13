@@ -60,15 +60,22 @@
                                         <td>@Html.DisplayFor(modelItem => item.Closedate)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Description)</td>
 
-                                        <td><a class="btn btn-outline-secondary" onclick="return GetClaim('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
-
+                                        <td>
+                                            <div class="d-flex gap-2">
+                                                <a class="btn btn-outline-secondary" onclick="return GetClaim('@item.Id')">
+                                                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                                </a>
+                                                <a asp-action="ClaimLinks" asp-controller="Asteron" asp-route-id="@item.Id" class="btn btn-outline-secondary">
+                                                    <i class="fa fa-network-wired" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </td>
                                     </tr>
                                 }
                             </tbody>
                         </table>
-
-
                     </div>
+
                     <div class="card-footer">
                         <nav aria-label="...">
                             <ul class="pagination justify-content-center">

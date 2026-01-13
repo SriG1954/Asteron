@@ -52,6 +52,16 @@ namespace WebAppV1.Controllers
             return View(list);
         }
 
+        public async Task<IActionResult> ClaimLinks(string id)
+        {
+            ViewData["Title"] = "Claim Links";
+            var claim = await _context.GetClaim(id);
+            string claimid = claim.Id.ToString()!;
+            var activityLinks = await _context.GetClaimDetails(claimid);
+
+            return View(activityLinks);
+        }
+
         // AbleReport controller Post method
         [HttpPost]
         public async Task<IActionResult> GetClaim()
@@ -123,6 +133,16 @@ namespace WebAppV1.Controllers
             return View(list);
         }
 
+        public async Task<IActionResult> NoteLinks(string id)
+        {
+            ViewData["Title"] = "Note Links";
+            var note = await _context.GetNote(id);
+            string claimid = note.Claimid.ToString()!;
+            var activityLinks = await _context.GetClaimDetails(claimid);
+
+            return View(activityLinks);
+        }
+
         // AbleReport controller Post method
         [HttpPost]
         public async Task<IActionResult> GetNote()
@@ -160,6 +180,16 @@ namespace WebAppV1.Controllers
             return View(list);
         }
 
+        public async Task<IActionResult> DocumentLinks(string id)
+        {
+            ViewData["Title"] = "Claim Links";
+            var document = await _context.GetDocument(id);
+            string claimid = document.Claimid.ToString()!;
+            var activityLinks = await _context.GetClaimDetails(claimid);
+
+            return View(activityLinks);
+        }
+
         // AbleReport controller Post method
         [HttpPost]
         public async Task<IActionResult> GetDocument()
@@ -194,6 +224,14 @@ namespace WebAppV1.Controllers
             var list = await _context.SearchActivity(column, search, pageIndex, pageSize);
 
             return View(list);
+        }
+
+        public async Task<IActionResult> ActivityLinks(string id)
+        {
+            ViewData["Title"] = "Activity Links";
+            var activityLinks = await _context.GetActivityDetails(id);
+
+            return View(activityLinks);
         }
 
         // AbleReport controller Post method

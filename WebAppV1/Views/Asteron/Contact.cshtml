@@ -62,7 +62,17 @@
                                         <td>@Html.DisplayFor(modelItem => item.Dateofbirth)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Cellphone)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Emailaddress1)</td>
-                                        <td><a class="btn btn-outline-secondary" onclick="return GetContact('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+
+                                        <td>
+                                            <div class="d-flex gap-2">
+                                                <a class="btn btn-outline-secondary" onclick="return GetContact('@item.Id')">
+                                                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                                </a>
+                                                <a asp-action="ContactLinks" asp-controller="Asteron" asp-route-id="@item.Id" class="btn btn-outline-secondary">
+                                                    <i class="fa fa-network-wired" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </td>
 
                                     </tr>
                                 }
