@@ -5,6 +5,7 @@
 
 @{
     ViewData["Title"] = "Asteron Incident Links";
+    AppCoreV1.AsteronModels.Incident _incident = (AppCoreV1.AsteronModels.Incident)ViewData["Incident"]!;
 }
 <script src="~/js/asteronreport.js"></script>
 
@@ -29,6 +30,31 @@
                 </div>
 
                 <div id="tbltabsearch">
+
+                    <table id="tabldata" class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Entity</th>
+                                <th scope="col">INCIDENT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>IncidentId</td>
+                                <td>
+                                    <div class="d-flex gap-2">
+                                        @_incident.Id
+                                        <a class="btn btn-outline-secondary" onclick="return GetIncident('@_incident.Id')">
+                                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr><td>ClaimId</td><td>@_incident.Claimid</td></tr>
+
+                        </tbody>
+                    </table>
+
                     <div class="card-body">
 
                         <div class="accordion" id="accordionExample">

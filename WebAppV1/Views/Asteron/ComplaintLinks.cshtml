@@ -4,7 +4,8 @@
 @model ActivityLinks
 
 @{
-    ViewData["Title"] = "Asteron Activity Links";
+    ViewData["Title"] = "Asteron Compliant Links";
+    AppCoreV1.AsteronModels.Complaint _complaint = (AppCoreV1.AsteronModels.Complaint)ViewData["Complaint"]!;
 }
 <script src="~/js/asteronreport.js"></script>
 
@@ -29,6 +30,31 @@
                 </div>
 
                 <div id="tbltabsearch">
+
+                    <table id="tabldata" class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Entity</th>
+                                <th scope="col">COMPLAINT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CompliantId</td>
+                                <td>
+                                    <div class="d-flex gap-2">
+                                        @_complaint.Id
+                                        <a class="btn btn-outline-secondary" onclick="return GetComplaint('@_complaint.Id')">
+                                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr><td>ClaimId</td><td>@_complaint.Claimid</td></tr>
+
+                        </tbody>
+                    </table>
+
                     <div class="card-body">
 
                         <div class="accordion" id="accordionExample">

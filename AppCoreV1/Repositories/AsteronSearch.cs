@@ -575,6 +575,9 @@ namespace AppCoreV1.Repositories
                 {
                     switch (column)
                     {
+                        case "Id":
+                            query = query.Where(c => c.Id!.ToString().Contains(search));
+                            break;
                         case "Addressline1":
                             query = query.Where(c => c.Addressline1!.Contains(search));
                             break;
@@ -656,6 +659,29 @@ namespace AppCoreV1.Repositories
             }
 
             return item;
+        }
+
+        public async Task<List<Address>> GetClaimAddress(long claimid)
+        {
+            List<Address> addresses = new List<Address>();
+
+            try
+            {
+                var query = from c in _context.Claims
+                            join cc in _context.Claimcontacts on c.Id equals cc.Claimid
+                            join Contact in _context.Contacts on cc.Contactid equals Contact.Id
+                            join address in _context.Addresses on Contact.Primaryaddressid equals address.Id
+                            where c.Id == claimid
+                            select address;
+
+                addresses = await query.Distinct().ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.ToString());
+            }
+
+            return addresses;
         }
 
         public async Task<PaginatedList<Allocatedclaimnumber>> SearchAllocatedclaimnumber(string column, string search, int pageIndex = 1, int pageSize = 25)
@@ -7075,17 +7101,7 @@ namespace AppCoreV1.Repositories
         {
             List<Address> addresses = new List<Address>();
 
-            // get claimcontacts
-            var claimcontacts = await SearchClaimcontact("Claimid", claimid.ToString()!, 1, 10);
-
-            foreach (var contact in claimcontacts)
-            {
-                var address = await SearchAddress("Contactid", contact.Contactid.ToString()!, 1, 10);
-                foreach (var address2 in address)
-                {
-                    addresses.Add(address2);
-                }
-            }
+            addresses = await GetClaimAddress(Convert.ToInt64(claimid));
 
             return addresses;
         }
@@ -7095,7 +7111,7 @@ namespace AppCoreV1.Repositories
             List<Contact> contacts = new List<Contact>();
 
             // get claimcontacts
-            var claimcontacts = await SearchClaimcontact("Claimid", claimid.ToString()!, 1, 10);
+            var claimcontacts = await SearchClaimcontact("Claimid", claimid.ToString()!, 1, 1000);
 
             foreach (var claimcontact in claimcontacts) 
             {
@@ -7111,7 +7127,7 @@ namespace AppCoreV1.Repositories
             List<Document> documents = new List<Document>();
 
             // get claimcontacts
-            var claimdocs = await SearchDocument("Claimid", claimid.ToString()!, 1, 10);
+            var claimdocs = await SearchDocument("Claimid", claimid.ToString()!, 1, 1000);
 
             foreach (var document in claimdocs)
             {
@@ -7126,7 +7142,7 @@ namespace AppCoreV1.Repositories
             List<Incident> incidents = new List<Incident>();
 
             // get claimcontacts
-            var claimincidents = await SearchIncident("Claimid", claimid.ToString()!, 1, 10);
+            var claimincidents = await SearchIncident("Claimid", claimid.ToString()!, 1, 1000);
 
             foreach (var incident in claimincidents)
             {
@@ -7141,7 +7157,7 @@ namespace AppCoreV1.Repositories
             List<Note> notes = new List<Note>();
 
             // get claimcontacts
-            var claimnotes = await SearchNote("Claimid", claimid.ToString()!, 1, 10);
+            var claimnotes = await SearchNote("Claimid", claimid.ToString()!, 1, 1000);
 
             foreach (var note in claimnotes)
             {

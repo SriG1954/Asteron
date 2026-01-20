@@ -139,6 +139,7 @@ namespace WebAppV1.Controllers
         {
             ViewData["Title"] = "Note Links";
             var note = await _context.GetNote(id);
+            ViewData["Note"] = note;
             string claimid = note.Claimid.ToString()!;
             var activityLinks = await _context.GetClaimDetails(claimid);
 
@@ -186,6 +187,8 @@ namespace WebAppV1.Controllers
         {
             ViewData["Title"] = "Claim Links";
             var document = await _context.GetDocument(id);
+            ViewData["Document"] = document;
+
             string claimid = document.Claimid.ToString()!;
             var activityLinks = await _context.GetClaimDetails(claimid);
 
@@ -232,6 +235,7 @@ namespace WebAppV1.Controllers
         {
             ViewData["Title"] = "Activity Links";
             var activity = await _context.GetActivity(id);
+            ViewData["Activity"] = activity;
             string claimid = activity.Claimid.ToString()!;
             var activityLinks = await _context.GetClaimDetails(claimid);
 
@@ -278,6 +282,7 @@ namespace WebAppV1.Controllers
         {
             ViewData["Title"] = "History Links";
             var history = await _context.GetHistory(id);
+            ViewData["History"] = history;
             string claimid = history.Claimid.ToString()!;
             var activityLinks = await _context.GetClaimDetails(claimid);
 
@@ -322,10 +327,11 @@ namespace WebAppV1.Controllers
         public async Task<IActionResult> ContactLinks(string id)
         {
             ViewData["Title"] = "Contact Links";
+            var claimcontact = await _context.GetClaimcontactByContactId(id);
+            var contact = await _context.GetContact(id);
+            ViewData["Contact"] = contact;
 
-            var contact = await _context.GetClaimcontactByContactId(id);
-
-            string claimid = contact.Claimid.ToString()!;
+            string claimid = claimcontact.Claimid.ToString()!;
             var activityLinks = await _context.GetClaimDetails(claimid);
 
             return View(activityLinks);
@@ -448,6 +454,8 @@ namespace WebAppV1.Controllers
         {
             ViewData["Title"] = "Claim Links";
             var incident = await _context.GetIncident(id);
+            ViewData["Incident"] = incident;
+
             string claimid = incident.Claimid.ToString()!;
             var activityLinks = await _context.GetClaimDetails(claimid);
 
@@ -495,6 +503,8 @@ namespace WebAppV1.Controllers
         {
             ViewData["Title"] = "Complaint Links";
             var complaint = await _context.GetComplaint(id);
+            ViewData["Complaint"] = complaint;
+
             string claimid = complaint.Claimid.ToString()!;
             var activityLinks = await _context.GetClaimDetails(claimid);
 

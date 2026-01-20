@@ -19,7 +19,7 @@ namespace AppCoreV1.Interfaces
 
         Task<PaginatedList<Address>> SearchAddress(string column, string search, int pageIndex = 1, int pageSize = 25);
         Task<Address> GetAddress(string id);
-
+        Task<List<Address>> GetClaimAddress(long claimid);
         Task<PaginatedList<Allocatedclaimnumber>> SearchAllocatedclaimnumber(string column, string search, int pageIndex = 1, int pageSize = 25);
         Task<Allocatedclaimnumber> GetAllocatedclaimnumber(string id);
 

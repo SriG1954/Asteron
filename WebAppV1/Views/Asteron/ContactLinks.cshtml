@@ -5,6 +5,7 @@
 
 @{
     ViewData["Title"] = "Asteron Contact Links";
+    AppCoreV1.AsteronModels.Contact _claim = (AppCoreV1.AsteronModels.Contact)ViewData["Contact"]!;
 }
 <script src="~/js/asteronreport.js"></script>
 
@@ -29,6 +30,21 @@
                 </div>
 
                 <div id="tbltabsearch">
+
+                    <table id="tabldata" class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Entity</th>
+                                <th scope="col">CONTACT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>ContactId</td><td>@_claim.Id</td></tr>
+                            <tr><td>Name</td><td>@_claim.Firstname @_claim.Lastname</td></tr>
+
+                        </tbody>
+                    </table>
+
                     <div class="card-body">
 
                         <div class="accordion" id="accordionExample">

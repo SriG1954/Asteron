@@ -4,7 +4,8 @@
 @model ActivityLinks
 
 @{
-    ViewData["Title"] = "Asteron Activity Links";
+    ViewData["Title"] = "Asteron History Links";
+    AppCoreV1.AsteronModels.History _claim = (AppCoreV1.AsteronModels.History)ViewData["History"]!;
 }
 <script src="~/js/asteronreport.js"></script>
 
@@ -29,6 +30,21 @@
                 </div>
 
                 <div id="tbltabsearch">
+
+                    <table id="tabldata" class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Entity</th>
+                                <th scope="col">HISTORY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>HistoryId</td><td>@_claim.Id</td></tr>
+                            <tr><td>ClaimId</td><td>@_claim.Claimid</td></tr>
+
+                        </tbody>
+                    </table>
+
                     <div class="card-body">
 
                         <div class="accordion" id="accordionExample">
