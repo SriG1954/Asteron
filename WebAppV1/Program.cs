@@ -19,14 +19,19 @@ var config = new ConfigurationBuilder()
 //string encriptedString = config.GetConnectionString("ABLEConnection") ?? string.Empty;
 //string _connectionString = AESSecurity.Decrypt(encriptedString);
 
-string _connectionString = config.GetConnectionString("AsteronConnection") ?? string.Empty;
+string _ableConnectionString = config.GetConnectionString("ABLEConnection") ?? string.Empty;
+string _asteronConnectionString = config.GetConnectionString("AsteronConnection") ?? string.Empty;
+
+//string _connectionString2 = AESSecurity.Encrypt(_connectionString);
+//string _connectionString3 = AESSecurity.Decrypt(_connectionString2);
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Configure Serilog
 var logger = new LoggerConfiguration().WriteTo
     .MSSqlServer(
-                    connectionString: _connectionString,
+                    connectionString: _ableConnectionString,
                     sinkOptions: new MSSqlServerSinkOptions
                     {
                         TableName = "FLLogs",
@@ -53,10 +58,10 @@ builder.Services.AddSession(options =>
 });
 
 // add ABLE connection
-builder.Services.AddDbContext<AbleDBContext>(options => options.UseSqlServer(_connectionString, sqlServerOptions => sqlServerOptions.CommandTimeout(120)));
+builder.Services.AddDbContext<AbleDBContext>(options => options.UseSqlServer(_ableConnectionString, sqlServerOptions => sqlServerOptions.CommandTimeout(120)));
 
 // add Asteron connection
-builder.Services.AddDbContext<AsteronDbContext>(options => options.UseSqlServer(_connectionString, sqlServerOptions => sqlServerOptions.CommandTimeout(120)));
+builder.Services.AddDbContext<AsteronDbContext>(options => options.UseSqlServer(_asteronConnectionString, sqlServerOptions => sqlServerOptions.CommandTimeout(120)));
 
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddTransient<IPageHelper, PageHelper>();

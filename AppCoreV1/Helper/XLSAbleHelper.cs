@@ -322,7 +322,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -490,7 +490,7 @@ namespace AppCoreV1.Helper
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "IarDescription"; worksheet.Cell(currentRow, 2).Value = claim.IarDescription;
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "Application"; worksheet.Cell(currentRow, 2).Value = GetAppName(claim.ApplicationId);
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -629,7 +629,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -713,7 +713,7 @@ namespace AppCoreV1.Helper
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "Application"; worksheet.Cell(currentRow, 2).Value = GetAppName(claim.ApplicationId);
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -823,7 +823,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -892,7 +892,7 @@ namespace AppCoreV1.Helper
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "Application"; worksheet.Cell(currentRow, 2).Value = GetAppName(claim.ApplicationId);
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -951,7 +951,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -995,7 +995,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -1055,7 +1055,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -1100,7 +1100,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -1209,7 +1209,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -1278,7 +1278,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -1335,7 +1335,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -1376,7 +1376,7 @@ namespace AppCoreV1.Helper
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "ClaimType"; worksheet.Cell(currentRow, 2).Value = claim.ClaimType;
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "Application"; worksheet.Cell(currentRow, 2).Value = GetAppName(claim.ApplicationId);
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -1636,7 +1636,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -1781,7 +1781,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -2043,7 +2043,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -2189,7 +2189,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -2469,7 +2469,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -2624,7 +2624,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -2904,7 +2904,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -3059,7 +3059,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -3351,7 +3351,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -3512,7 +3512,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -3562,7 +3562,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -3602,7 +3602,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -3681,7 +3681,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -3735,7 +3735,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -3833,7 +3833,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -3897,7 +3897,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -3999,7 +3999,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -4065,7 +4065,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -4185,7 +4185,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -4260,7 +4260,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -4316,7 +4316,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -4359,7 +4359,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -4425,7 +4425,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -4473,7 +4473,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -4539,7 +4539,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -4587,7 +4587,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -4745,7 +4745,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -4839,7 +4839,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -4901,7 +4901,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -4945,7 +4945,7 @@ namespace AppCoreV1.Helper
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "ClaimType"; worksheet.Cell(currentRow, 2).Value = claim.ClaimType;
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "Application"; worksheet.Cell(currentRow, 2).Value = GetAppName(claim.ApplicationId);
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -5029,7 +5029,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -5086,7 +5086,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -5136,7 +5136,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -5176,7 +5176,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -5278,7 +5278,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -5344,7 +5344,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -5396,7 +5396,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -5437,7 +5437,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -5574,7 +5574,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -5657,7 +5657,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -5727,7 +5727,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -5777,7 +5777,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -5827,7 +5827,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -5867,7 +5867,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -5967,7 +5967,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -6032,7 +6032,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -6132,7 +6132,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -6197,7 +6197,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -6291,7 +6291,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -6352,7 +6352,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -6456,7 +6456,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -6520,7 +6520,7 @@ namespace AppCoreV1.Helper
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "PartyName"; worksheet.Cell(currentRow, 2).Value = claim.PartyName;
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "Application"; worksheet.Cell(currentRow, 2).Value = GetAppName(claim.ApplicationId);
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -6584,7 +6584,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -6630,7 +6630,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -6701,7 +6701,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -6751,7 +6751,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -6840,7 +6840,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -6899,7 +6899,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -6963,7 +6963,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -7008,7 +7008,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -7216,7 +7216,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -7332,7 +7332,7 @@ namespace AppCoreV1.Helper
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "AnyAllStatus"; worksheet.Cell(currentRow, 2).Value = claim.AnyAllStatus;
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "Application"; worksheet.Cell(currentRow, 2).Value = GetAppName(claim.ApplicationId);
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -7412,7 +7412,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -7464,7 +7464,7 @@ namespace AppCoreV1.Helper
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "UpdatedBy"; worksheet.Cell(currentRow, 2).Value = claim.UpdatedBy;
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "Application"; worksheet.Cell(currentRow, 2).Value = GetAppName(claim.ApplicationId);
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -7564,7 +7564,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -7626,7 +7626,7 @@ namespace AppCoreV1.Helper
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "ClaimNumber"; worksheet.Cell(currentRow, 2).Value = claim.ClaimNumber;
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "Application"; worksheet.Cell(currentRow, 2).Value = GetAppName(claim.ApplicationId);
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -7715,7 +7715,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -7774,7 +7774,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -7827,7 +7827,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -7866,7 +7866,7 @@ namespace AppCoreV1.Helper
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "Pid"; worksheet.Cell(currentRow, 2).Value = claim.Pid;
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "Application"; worksheet.Cell(currentRow, 2).Value = GetAppName(claim.ApplicationId);
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -7949,7 +7949,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -8003,7 +8003,7 @@ namespace AppCoreV1.Helper
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "FileType"; worksheet.Cell(currentRow, 2).Value = claim.FileType;
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "ClaimNumber"; worksheet.Cell(currentRow, 2).Value = claim.ClaimNumber;
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -8064,7 +8064,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -8109,7 +8109,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -8224,7 +8224,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -8296,7 +8296,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -8381,7 +8381,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -8438,7 +8438,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -8514,7 +8514,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -8565,7 +8565,7 @@ namespace AppCoreV1.Helper
                 currentRow++; worksheet.Cell(currentRow, 1).Value = "Application"; worksheet.Cell(currentRow, 2).Value = GetAppName(claim.ApplicationId);
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -8636,7 +8636,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -8686,7 +8686,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -8771,7 +8771,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -8828,7 +8828,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -8885,7 +8885,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -8928,7 +8928,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -8993,7 +8993,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -9040,7 +9040,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -9096,7 +9096,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -9139,7 +9139,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -9209,7 +9209,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -9259,7 +9259,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -9309,7 +9309,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -9349,7 +9349,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -9396,7 +9396,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -9434,7 +9434,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -9479,7 +9479,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -9516,7 +9516,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -9561,7 +9561,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -9598,7 +9598,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -9643,7 +9643,7 @@ namespace AppCoreV1.Helper
                 }
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {
@@ -9680,7 +9680,7 @@ namespace AppCoreV1.Helper
 
 
 
-                worksheet.Columns().AdjustToContents();
+                //worksheet.Columns().AdjustToContents();
 
                 using (var stream = new MemoryStream())
                 {

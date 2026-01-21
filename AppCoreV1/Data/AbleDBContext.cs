@@ -19,8 +19,10 @@ public partial class AbleDBContext : DbContext
         : base(options)
     {
         _configuration = configuration;
-        string encriptedString = _configuration.GetConnectionString("ABLEConnection") ?? string.Empty;
-        connectionString = AESSecurity.Decrypt(encriptedString);
+        //string encriptedString = _configuration.GetConnectionString("ABLEConnection") ?? string.Empty;
+        //connectionString = AESSecurity.Decrypt(encriptedString);
+
+        connectionString = _configuration.GetConnectionString("ABLEConnection") ?? string.Empty;
     }
 
     public virtual DbSet<SiteLog> SiteLogs { get; set; }
