@@ -1,115 +1,118 @@
-﻿<link href="~/css/style4.css" rel="stylesheet" />
-<script src="~/js/ablesearch.js"></script>
-
-<style>
-    .content-image {
-        font-size: 90px;
-        text-align: center;
-        background-color: #F2F4F4;
-    }
-</style>
-
-@{
+﻿@{
     ViewData["Title"] = "Asteron";
 }
 
-<div class="wrapper">
-    <!-- Sidebar  -->
-    <partial name="_SidebarB" />
-    <!-- Page Content  -->
-    <div id="content">
-        <div class="container-fluid">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">
-                        <h2>Asteron Portal</h2>
-                        <p>Resolution Life Portal for Asteron Claims</p>
-                    </div>
-                    <div class="container">
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="card content-image">
-                                    <a id="lnkDashboard" asp-action="Dashboard" asp-controller="Asteron"><i class="fa fa-tachometer-alt-fast" aria-hidden="true"></i><h5>Dashboard</h5></a>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card content-image">
-                                    <a id="lnkClaims" asp-action="Claim" asp-controller="Asteron"><i class="fa fa-wheelchair" aria-hidden="true"></i><h5>Claims</h5></a>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card content-image">
-                                    <a id="viewEventsLink" asp-action="Policy" asp-controller="Asteron"><i class="fa fas fa-award" aria-hidden="true"></i><h5>Policies</h5></a>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card content-image">
-                                    <a id="viewEventsLink" asp-action="Note" asp-controller="Asteron"><i class="fa fas fa-file-alt" aria-hidden="true"></i><h5>Notes</h5></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="card content-image">
-                                    <a id="viewEventsLink" asp-action="Document" asp-controller="Asteron"><i class="fa fa-solid fa-file" aria-hidden="true"></i><h5>Documents</h5></a>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card content-image">
-                                    <a id="viewEventsLink" asp-action="Activity" asp-controller="Asteron"><i class="fa fas fa-tasks" aria-hidden="true"></i><h5>Activities</h5></a>
-                                </div>
-                            </div>
+<div class="container-fluid px-4">
+    <h3 class="mt-2">Asteron Portal</h3>
+    <p class="text-muted mb-4">Resolution Life Portal for Asteron Claims</p>
 
-                            <div class="col-md-3">
-                                <div class="card content-image">
-                                    <a id="viewEventsLink" asp-action="History" asp-controller="Asteron"><i class="fa fa-stethoscope" aria-hidden="true"></i><h5>History</h5></a>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card content-image">
-                                    <a id="viewEventsLink" asp-action="Contact" asp-controller="Asteron"><i class="fa fa-user-friends" aria-hidden="true"></i><h5>Contacts</h5></a>
-                                </div>
-                            </div>                          
-                        </div>
-                    </div>
-                    <br />
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="card content-image">
-                                    <a id="viewEventsLink" asp-action="Address" asp-controller="Asteron"><i class="fa fa-solid fa-gear" aria-hidden="true"></i><h5>Address</h5></a>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card content-image">
-                                    <a id="viewEventsLink" asp-action="Coverage" asp-controller="Asteron"><i class="fas fa-dollar" aria-hidden="true"></i><h5>Coverage</h5></a>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card content-image">
-                                    <a id="viewEventsLink" asp-action="Incident" asp-controller="Asteron"><i class="fas fa-phone" aria-hidden="true"></i><h5>Incidents</h5></a>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card content-image">
-                                    <a id="viewEventsLink" asp-action="Complaint" asp-controller="Asteron"><i class="fas fa-comments" aria-hidden="true"></i><h5>Complaints</h5></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="row g-3 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4">
+        <div class="col">
+            <div class="dashboard-tile p-3">
+                <a href="@Url.Action("Dashboard", "Asteron")" class="tile-link">
+                    <i class="bi bi-speedometer2"></i>
+                    <h5>Dashboard</h5>
+                </a>
+            </div>
+        </div>
 
+        <div class="col">
+            <div class="dashboard-tile p-3">
+                <a href="@Url.Action("Claim", "Asteron")" class="tile-link">
+                    <i class="bi bi-briefcase"></i>
+                    <h5>Claims</h5>
+                </a>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="dashboard-tile p-3">
+                <a href="@Url.Action("Policy", "Asteron")" class="tile-link">
+                    <i class="bi bi-file-earmark-text"></i>
+                    <h5>Policies</h5>
+                </a>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="dashboard-tile p-3">
+                <a href="@Url.Action("Note", "Asteron")" class="tile-link">
+                    <i class="bi bi-journal-text"></i>
+                    <h5>Notes</h5>
+                </a>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="dashboard-tile p-3">
+                <a href="@Url.Action("Document", "Asteron")" class="tile-link">
+                    <i class="bi bi-folder2-open"></i>
+                    <h5>Documents</h5>
+                </a>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="dashboard-tile p-3">
+                <a href="@Url.Action("Activity", "Asteron")" class="tile-link">
+                    <i class="bi bi-check2-square"></i>
+                    <h5>Activities</h5>
+                </a>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="dashboard-tile p-3">
+                <a href="@Url.Action("History", "Asteron")" class="tile-link">
+                    <i class="bi bi-clock-history"></i>
+                    <h5>History</h5>
+                </a>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="dashboard-tile p-3">
+                <a href="@Url.Action("Contact", "Asteron")" class="tile-link">
+                    <i class="bi bi-people"></i>
+                    <h5>Contacts</h5>
+                </a>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="dashboard-tile p-3">
+                <a href="@Url.Action("Address", "Asteron")" class="tile-link">
+                    <i class="bi bi-geo-alt"></i>
+                    <h5>Address</h5>
+                </a>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="dashboard-tile p-3">
+                <a href="@Url.Action("Coverage", "Asteron")" class="tile-link">
+                    <i class="bi bi-shield-check"></i>
+                    <h5>Coverage</h5>
+                </a>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="dashboard-tile p-3">
+                <a href="@Url.Action("Incident", "Asteron")" class="tile-link">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    <h5>Incidents</h5>
+                </a>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="dashboard-tile p-3">
+                <a href="@Url.Action("Complaint", "Asteron")" class="tile-link">
+                    <i class="bi bi-chat-dots"></i>
+                    <h5>Complaints</h5>
+                </a>
             </div>
         </div>
     </div>
 </div>
-
-<partial name="_ModalPage" />
-

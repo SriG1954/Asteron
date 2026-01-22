@@ -13,8 +13,6 @@
 <script src="~/js/ablereport.js"></script>
 
 <div class="wrapper">
-    <!-- Sidebar  -->
-    <partial name="_SidebarA" />
     <!-- Page Content  -->
     <div id="content">
         <div class="container-fluid">
@@ -61,7 +59,7 @@
                                         <td>@Html.DisplayFor(modelItem => item.SumInsured)</td>
                                         <td>@Html.DisplayFor(modelItem => item.AdjustmentTypeName)</td>
                                         <td>@Html.DisplayFor(modelItem => item.BenefitStartDate)</td>
-                                        <td><a class="btn btn-outline-secondary" onclick="return GetBenefit('@item.Id', '@ViewBag.appId')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+                                        <td><a class="btn btn-outline-secondary" onclick="return GetBenefit('@item.Id', '@ViewBag.appId')"><i class="bi bi-info-circle" aria-hidden="true"></i></a></td>
 
                                     </tr>
                                 }

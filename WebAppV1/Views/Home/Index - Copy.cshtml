@@ -1,0 +1,57 @@
+﻿<link href="~/css/style4.css" rel="stylesheet" />
+<script src="~/js/mysearch.js"></script>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="wrapper">
+@*     <!-- Sidebar -->
+    <partial name="_SidebarS" />
+ *@
+    <!-- Page Content -->
+    <div id="content">
+        <div class="container-fluid">
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-white border-0">
+                    <div class="card-title">
+                        <h2>RLA Claims Archival Portal</h2>
+                        <p>Resolution Life – Secure Access to Archived Claims Data</p>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row g-4 justify-content-center">
+
+                            <!-- ABLE -->
+                            <div class="col-md-3 justify-content-center">
+                                <div class="dashboard-tile">
+                                    <a asp-action="Index" asp-controller="Able">
+                                        <i class="fa fa-desktop" aria-hidden="true"></i>
+                                        <h5>ABLE</h5>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- ASTERON -->
+                            <div class="col-md-3 justify-content-center">
+                                <div class="dashboard-tile">
+                                    <a asp-action="Index" asp-controller="Asteron">
+                                        <i class="fa fa-desktop" aria-hidden="true"></i>
+                                        <h5>ASTERON</h5>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_ModalPage" />

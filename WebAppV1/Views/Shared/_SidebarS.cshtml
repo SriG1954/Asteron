@@ -1,35 +1,13 @@
-﻿<link href="~/css/style4.css" rel="stylesheet" />
+﻿@* SidebarS – Clean Blazor-style sidebar *@
+@{
+    Layout = null;
+}
+
+<!-- Required styles -->
+<link href="~/css/style4.css" rel="stylesheet" />
 <link href="~/plugin/fontawesome-free/css/all.css" rel="stylesheet" />
 
-<nav id="sidebar">
-    <div class="sidebar-header">
-    </div>
-
-    <ul class="list-unstyled components" style="border-bottom:none;">
-        <li>
-            <a><i class="fas fa-table"></i>Claims Portal</a>
-        </li>
-        <li>
-            <a id="viewEventsLink1" asp-action="Claim" asp-controller="Able"><i class="fas fa-globe"></i>ABLE</a>
-        </li>
-        <li>
-            <a id="viewEventsLink1" asp-action="Claim" asp-controller="Orion"><i class="fas fa-globe"></i>ORION</a>
-        </li>
-
-  @*       <li>
-            <a id="viewEventsLink1" asp-action="Index" asp-controller="PAYG"><i class="fas fa-wheelchair"></i>PAYG</a>
-        </li>
-        <li>
-            <a id="viewEventsLink1" asp-action="Index" asp-controller="Emails"><i class="fas fa-envelope"></i>Emails</a>
-        </li>
-        <li>
-            <a id="viewEventsLink1" asp-action="Index" asp-controller="ErrorLogs"><i class="fas fa-history"></i>Logs</a>
-        </li>
-        <li>
-            <a id="viewEventsLink1" asp-action="Index" asp-controller="FigIssues"><i class="fas fa-bug"></i>Issues</a>
-        </li>
-        <li>
-            <a id="viewEventsLink1" asp-action="Index" asp-controller="Services"><i class="fas fa-cogs"></i>Services</a>
-        </li> *@
-    </ul>
+<nav class="navmenu d-flex flex-column">
+    <a class="nav-link" href="@Url.Action("Index", "Able")"><i class="bi bi-display me-2"></i><span>Able</span></a>
+    <a class="nav-link" href="@Url.Action("Index", "Asteron")"><i class="bi bi-display me-2"></i><span>Asteron</span></a>
 </nav>

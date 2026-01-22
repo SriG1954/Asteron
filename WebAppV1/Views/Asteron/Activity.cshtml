@@ -13,8 +13,6 @@
 <script src="~/js/asteronreport.js"></script>
 
 <div class="wrapper">
-    <!-- Sidebar  -->
-    <partial name="_SidebarB" />
     <!-- Page Content  -->
     <div id="content">
         <div class="container-fluid">
@@ -67,10 +65,10 @@
                                         <td>
                                             <div class="d-flex gap-2">
                                                 <a class="btn btn-outline-secondary" onclick="return GetActivity('@item.Id')">
-                                                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                                    <i class="bi bi-info-circle" aria-hidden="true"></i>
                                                 </a>
                                                 <a asp-action="ActivityLinks" asp-controller="Asteron" asp-route-id="@item.Id" class="btn btn-outline-secondary">
-                                                    <i class="fa fa-network-wired" aria-hidden="true"></i>
+                                                    <i class="bi bi-diagram-3" aria-hidden="true"></i>
                                                 </a>
                                             </div>
                                         </td>

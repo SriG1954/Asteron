@@ -13,8 +13,6 @@
 <script src="~/js/ablereport.js"></script>
 
 <div class="wrapper">
-    <!-- Sidebar  -->
-    <partial name="_SidebarA" />
     <!-- Page Content  -->
     <div id="content">
         <div class="container-fluid">
@@ -65,7 +63,7 @@
                                         <td>@Html.DisplayFor(modelItem => item.ClaimStatus)</td>
                                         <!--<td><a class="btn btn-outline-secondary" onclick="return GetClaimbenefitmv('@item.Id')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>-->
                                         <!--<td><a class="btn btn-outline-secondary" asp-action="ClaimHub" asp-controller="AbleTabs" asp-route-search="@item.ClaimNumber" asp-route-appid="@ViewBag.appId"><i class="fa fa-info-circle"></i></a></td>-->
-                                        <td><a class="btn btn-outline-secondary" asp-action="ClaimHub" asp-controller="AbleTabs" asp-route-search="@item.Id" asp-route-appid="@ViewBag.appId"><i class="fa fa-info-circle"></i></a></td>
+                                        <td><a class="btn btn-outline-secondary" asp-action="ClaimHub" asp-controller="AbleTabs" asp-route-search="@item.Id" asp-route-appid="@ViewBag.appId"><i class="bi bi-info-circle"></i></a></td>
 
                                     </tr>
                                 }

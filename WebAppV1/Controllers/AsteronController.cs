@@ -26,6 +26,7 @@ namespace WebAppV1.Controllers
 
         public IActionResult Index()
         {
+            ViewData["SidebarPartial"] = "_SidebarB";
             return View();
         }
 
@@ -35,6 +36,7 @@ namespace WebAppV1.Controllers
             ViewBag.search = search;
             ViewBag.PageNumber = pageIndex;
             ViewData["Title"] = "Dashboard";
+            ViewData["SidebarPartial"] = "_SidebarB";
 
             return View();
         }
@@ -46,6 +48,7 @@ namespace WebAppV1.Controllers
             ViewBag.search = search;
             ViewBag.PageNumber = pageIndex;
             ViewData["Title"] = "Claims";
+            ViewData["SidebarPartial"] = "_SidebarB";
 
             var list = await _context.SearchClaim(column, search, pageIndex, pageSize);
 
@@ -55,6 +58,8 @@ namespace WebAppV1.Controllers
         public async Task<IActionResult> ClaimLinks(string id)
         {
             ViewData["Title"] = "Claim Links";
+            ViewData["SidebarPartial"] = "_SidebarB";
+
             var claim = await _context.GetClaim(id);
             ViewData["Claim"] = claim;
 
@@ -94,6 +99,7 @@ namespace WebAppV1.Controllers
             ViewBag.search = search;
             ViewBag.PageNumber = pageIndex;
             ViewData["Title"] = "Policys";
+            ViewData["SidebarPartial"] = "_SidebarB";
 
             var list = await _context.SearchPolicy(column, search, pageIndex, pageSize);
 
@@ -129,6 +135,7 @@ namespace WebAppV1.Controllers
             ViewBag.search = search;
             ViewBag.PageNumber = pageIndex;
             ViewData["Title"] = "Notes";
+            ViewData["SidebarPartial"] = "_SidebarB";
 
             var list = await _context.SearchNote(column, search, pageIndex, pageSize);
 
@@ -138,6 +145,8 @@ namespace WebAppV1.Controllers
         public async Task<IActionResult> NoteLinks(string id)
         {
             ViewData["Title"] = "Note Links";
+            ViewData["SidebarPartial"] = "_SidebarB";
+
             var note = await _context.GetNote(id);
             ViewData["Note"] = note;
             string claimid = note.Claimid.ToString()!;
@@ -177,6 +186,7 @@ namespace WebAppV1.Controllers
             ViewBag.search = search;
             ViewBag.PageNumber = pageIndex;
             ViewData["Title"] = "Documents";
+            ViewData["SidebarPartial"] = "_SidebarB";
 
             var list = await _context.SearchDocument(column, search, pageIndex, pageSize);
 
@@ -186,6 +196,8 @@ namespace WebAppV1.Controllers
         public async Task<IActionResult> DocumentLinks(string id)
         {
             ViewData["Title"] = "Claim Links";
+            ViewData["SidebarPartial"] = "_SidebarB";
+
             var document = await _context.GetDocument(id);
             ViewData["Document"] = document;
 
@@ -225,6 +237,7 @@ namespace WebAppV1.Controllers
             ViewBag.search = search;
             ViewBag.PageNumber = pageIndex;
             ViewData["Title"] = "Activitys";
+            ViewData["SidebarPartial"] = "_SidebarB";
 
             var list = await _context.SearchActivity(column, search, pageIndex, pageSize);
 
@@ -234,6 +247,8 @@ namespace WebAppV1.Controllers
         public async Task<IActionResult> ActivityLinks(string id)
         {
             ViewData["Title"] = "Activity Links";
+            ViewData["SidebarPartial"] = "_SidebarB";
+
             var activity = await _context.GetActivity(id);
             ViewData["Activity"] = activity;
             string claimid = activity.Claimid.ToString()!;
@@ -272,6 +287,7 @@ namespace WebAppV1.Controllers
             ViewBag.search = search;
             ViewBag.PageNumber = pageIndex;
             ViewData["Title"] = "Historys";
+            ViewData["SidebarPartial"] = "_SidebarB";
 
             var list = await _context.SearchHistory(column, search, pageIndex, pageSize);
 
@@ -281,6 +297,8 @@ namespace WebAppV1.Controllers
         public async Task<IActionResult> HistoryLinks(string id)
         {
             ViewData["Title"] = "History Links";
+            ViewData["SidebarPartial"] = "_SidebarB";
+
             var history = await _context.GetHistory(id);
             ViewData["History"] = history;
             string claimid = history.Claimid.ToString()!;
@@ -318,6 +336,7 @@ namespace WebAppV1.Controllers
             ViewBag.search = search;
             ViewBag.PageNumber = pageIndex;
             ViewData["Title"] = "Contacts";
+            ViewData["SidebarPartial"] = "_SidebarB";
 
             var list = await _context.SearchContact(column, search, pageIndex, pageSize);
 
@@ -327,6 +346,8 @@ namespace WebAppV1.Controllers
         public async Task<IActionResult> ContactLinks(string id)
         {
             ViewData["Title"] = "Contact Links";
+            ViewData["SidebarPartial"] = "_SidebarB";
+
             var claimcontact = await _context.GetClaimcontactByContactId(id);
             var contact = await _context.GetContact(id);
             ViewData["Contact"] = contact;
@@ -367,6 +388,7 @@ namespace WebAppV1.Controllers
             ViewBag.search = search;
             ViewBag.PageNumber = pageIndex;
             ViewData["Title"] = "Addresss";
+            ViewData["SidebarPartial"] = "_SidebarB";
 
             var list = await _context.SearchAddress(column, search, pageIndex, pageSize);
 
@@ -404,6 +426,7 @@ namespace WebAppV1.Controllers
             ViewBag.search = search;
             ViewBag.PageNumber = pageIndex;
             ViewData["Title"] = "Coverages";
+            ViewData["SidebarPartial"] = "_SidebarB";
 
             var list = await _context.SearchCoverage(column, search, pageIndex, pageSize);
 
@@ -444,6 +467,7 @@ namespace WebAppV1.Controllers
             ViewBag.search = search;
             ViewBag.PageNumber = pageIndex;
             ViewData["Title"] = "Incidents";
+            ViewData["SidebarPartial"] = "_SidebarB";
 
             var list = await _context.SearchIncident(column, search, pageIndex, pageSize);
 
@@ -453,6 +477,8 @@ namespace WebAppV1.Controllers
         public async Task<IActionResult> IncidentLinks(string id)
         {
             ViewData["Title"] = "Claim Links";
+            ViewData["SidebarPartial"] = "_SidebarB";
+
             var incident = await _context.GetIncident(id);
             ViewData["Incident"] = incident;
 
@@ -493,6 +519,7 @@ namespace WebAppV1.Controllers
             ViewBag.search = search;
             ViewBag.PageNumber = pageIndex;
             ViewData["Title"] = "Complaints";
+            ViewData["SidebarPartial"] = "_SidebarB";
 
             var list = await _context.SearchComplaint(column, search, pageIndex, pageSize);
 
@@ -502,6 +529,8 @@ namespace WebAppV1.Controllers
         public async Task<IActionResult> ComplaintLinks(string id)
         {
             ViewData["Title"] = "Complaint Links";
+            ViewData["SidebarPartial"] = "_SidebarB";
+
             var complaint = await _context.GetComplaint(id);
             ViewData["Complaint"] = complaint;
 

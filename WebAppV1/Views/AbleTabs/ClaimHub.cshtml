@@ -4,7 +4,9 @@
 @model AppCoreV1.ABLEModels.Claimbenefitmv;
 
 @{
-    ViewData["Title"] = ViewBag.appName + " Claim Hub";
+
+    //ViewData["Title"] = $"{@ViewBag.appName} Claim Hub";
+    //string casedetails = $"{@ViewBag.appName} Claim {@ViewData["CaseNumber"]?.ToString()} Case Detail";
     AppCoreV1.ABLEModels.Case _case = new Case
     {
         CaseNumber = Model.ClaimNumber,
@@ -13,8 +15,6 @@
 <script src="~/js/ablereport.js"></script>
 
 <div class="wrapper">
-    <!-- Sidebar  -->
-    <partial name="_SidebarACT" model="@_case" />
     <!-- Page Content  -->
     <div id="content">
         <div class="container-fluid">
@@ -23,7 +23,7 @@
                     <div class="card-title">
                         <div class="row">
                             <div style="padding-left:10px;">
-                                <h4>@ViewBag.appName Claim @ViewData["CaseNumber"]!.ToString() Case Detail</h4>
+                               @*  <h4>@ViewBag.appName Claim @ViewData["CaseNumber"]!.ToString() Case Detail</h4> *@
                                 <a asp-action="Index" asp-controller="Able">Back to Home</a>
                             </div>
                             <div style="float:right;padding-top: 5px;padding-left:10px;">

@@ -45,6 +45,7 @@ namespace WebAppV1.Controllers
 
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "Able Claim Benefit";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchClaimbenefitmvD(column, search, column1, search1, pageIndex, pageSize, staffFlag);
 
@@ -110,6 +111,7 @@ namespace WebAppV1.Controllers
 
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "Able Claim Benefit Report";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchClaimbenefitmvD(column, search, column1, search1, pageIndex, pageSize, staffFlag);
 
@@ -214,6 +216,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "Able Payment Summarym Report";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 int applicationflag = 1;
                 ViewBag.applicationflag = applicationflag;
@@ -286,6 +289,8 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Task Report";
+                ViewData["SidebarPartial"] = "_SidebarAR";
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -332,6 +337,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "Able Users Report";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptAbleuser(column, search, pageIndex, pageSize);
 
@@ -375,6 +381,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "Able Users All Roles Report";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptAbleusersallrole(column, search, pageIndex, pageSize);
 
@@ -425,6 +432,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "Able Actions Services Report";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptActionsservice(column, search, pageIndex, pageSize, staffFlag);
 
@@ -489,6 +497,8 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Case Actions Report";
+                ViewData["SidebarPartial"] = "_SidebarAR";
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -542,6 +552,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptClaimbenefitactuarialrecs";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptClaimbenefitactuarialrec(column, search, pageIndex, pageSize, staffFlag);
 
@@ -593,6 +604,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptClaimBenefitactuarialrecls";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptClaimBenefitactuarialrecl(column, search, pageIndex, pageSize, staffFlag);
 
@@ -644,6 +656,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptClaimbenefitgroups";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptClaimbenefitgroup(column, search, pageIndex, pageSize, staffFlag);
 
@@ -694,6 +707,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptClaimbenefitreinsurances";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptClaimbenefitreinsurance(column, search, pageIndex, pageSize, staffFlag);
 
@@ -744,6 +758,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptClaimbenefitws";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptClaimbenefitw(column, search, pageIndex, pageSize, staffFlag);
 
@@ -794,6 +809,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptClaimcasedeciphas";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptClaimcasedecipha(column, search, pageIndex, pageSize, staffFlag);
 
@@ -844,6 +860,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptClaimexpenses";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptClaimexpense(column, search, pageIndex, pageSize, staffFlag);
 
@@ -894,6 +911,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptClaimparticipants";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptClaimparticipant(column, search, pageIndex, pageSize, staffFlag);
 
@@ -944,6 +962,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptClosedtaskreports";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptClosedtaskreport(column, search, pageIndex, pageSize, staffFlag);
 
@@ -994,6 +1013,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptCmpactions";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptCmpaction(column, search, pageIndex, pageSize, staffFlag);
 
@@ -1045,6 +1065,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptCmpgoaldatemovements";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptCmpgoaldatemovement(column, search, pageIndex, pageSize, staffFlag);
 
@@ -1095,6 +1116,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptCmpplanstatuss";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptCmpplanstatus(column, search, pageIndex, pageSize, staffFlag);
 
@@ -1145,6 +1167,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptCmpservices";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptCmpservice(column, search, pageIndex, pageSize, staffFlag);
 
@@ -1195,6 +1218,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptCompliants";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptCompliant(column, search, pageIndex, pageSize, staffFlag);
 
@@ -1259,6 +1283,8 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " RptDocumentreports";
+                ViewData["SidebarPartial"] = "_SidebarAR";
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -1316,6 +1342,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptEnquirycasereports";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptEnquirycasereport(column, search, pageIndex, pageSize);
 
@@ -1366,6 +1393,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptHcrcompletednotes";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptHcrcompletednote(column, search, pageIndex, pageSize, staffFlag);
 
@@ -1416,6 +1444,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptOpentasks";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptOpentask(column, search, pageIndex, pageSize, staffFlag);
 
@@ -1466,6 +1495,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptOverrideriskreports";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptOverrideriskreport(column, search, pageIndex, pageSize, staffFlag);
 
@@ -1516,6 +1546,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptPaymentsummaryls";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptPaymentsummaryl(column, search, pageIndex, pageSize, staffFlag);
 
@@ -1566,6 +1597,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptPhoneenquirys";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptPhoneenquiry(column, search, pageIndex, pageSize, staffFlag);
 
@@ -1616,6 +1648,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptRecoveryrehabnotes";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptRecoveryrehabnote(column, search, pageIndex, pageSize, staffFlag);
 
@@ -1667,6 +1700,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptTaskreportgroups";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptTaskreportgroup(column, search, pageIndex, pageSize, staffFlag);
 
@@ -1717,6 +1751,7 @@ namespace WebAppV1.Controllers
                 ViewBag.search = search;
                 ViewBag.PageNumber = pageIndex;
                 ViewData["Title"] = "RptTaskreportreinsurances";
+                ViewData["SidebarPartial"] = "_SidebarAR";
 
                 var list = await _context.SearchRptTaskreportreinsurance(column, search, pageIndex, pageSize, staffFlag);
 

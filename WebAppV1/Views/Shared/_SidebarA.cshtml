@@ -1,96 +1,34 @@
-﻿<link href="~/css/style4.css" rel="stylesheet" />
+﻿@* ASTERON Sidebar (SidebarB) *@
+@using Microsoft.AspNetCore.Http
+
 <link href="~/plugin/fontawesome-free/css/all.css" rel="stylesheet" />
 
-<nav id="sidebar">
-    <div class="sidebar-header">
-        @*<b>Menu</b>*@
-    </div>
-    <ul class="list-unstyled components" style="border-bottom:none;">
-        <li>
-            <a id="lnkHome" asp-action="Index" asp-controller="Able"><i class="fas fa-home"></i>Home</a>
-        </li>
-        <li>
-            <a id="lnkHome" asp-action="Index" asp-controller="Asteron"><i class="fa-solid fa-desktop"></i>Asteron</a>
-        </li>
-        <li>
-            <a id="lnkHome" asp-action="Architecture" asp-controller="Able"><i class="fas fa-building"></i>Architecture</a>
-        </li>
-        <li>
-            <a id="lnkDashboard" asp-action="Dashboard" asp-controller="Able"><i class="fas fa-tachometer-alt-fast"></i>Dashboard</a>
-        </li>
-        <li>
-            <a id="lnkClaims" asp-action="Claim" asp-controller="Able"><i class="fas fa-wheelchair"></i>Claims</a>
-        </li>
-        <li>
-            <a id="lnkBenefit" asp-action="Benefit" asp-controller="Able"><i class="fas fa fa-dollar"></i>Benefits</a>
-        </li>
-        <li>
-            <a id="lnkPayment" asp-action="Paymentsummarymv" asp-controller="Able"><i class="fa fa-credit-card"></i>Payments</a>
-        </li>
-        <li>
-            <a id="lnkPayment" asp-action="PaymentSummarySheet" asp-controller="Able"><i class="fa fa-credit-card"></i>PS Sheet</a>
-        </li>
-        <li>
-            <a id="lnkContacts" asp-action="Policy" asp-controller="Able"><i class="fas fa-award"></i>Policies</a>
-        </li>
-        <li>
-            <a id="lnkParty" asp-action="Contact" asp-controller="Able"><i class="fas fa fa-phone"></i>Phone Enquiries</a>
-        </li>
-        <li>
-            <a id="lnkParty" asp-action="MedicalCode" asp-controller="Able"><i class="fas fa-stethoscope"></i>Medical</a>
-        </li>
-        <li>
-            <a id="lnkParty" asp-action="Party" asp-controller="Able"><i class="fas fa-user-friends"></i>Parties</a>
-        </li>
-        <li>
-            <a id="lnkAddress" asp-action="PartyAddress" asp-controller="Able"><i class="fas fa-address-card"></i>Address</a>
-        </li>
-        <li>
-            <a id="lnkDocuments" asp-action="RptDocumentreport" asp-controller="AbleReports"><i class="fa-solid fa-file"></i>Documents MV</a>
-        </li>
-        <li>
-            <a id="lnkDocuments" asp-action="Documents" asp-controller="Able"><i class="fa-solid fa-file"></i>Documents</a>
-        </li>
-        <li>
-            <a id="lnkTasks" asp-action="Taskmv" asp-controller="AbleReports"><i class="fas fa-tasks"></i>Task MV</a>
-        </li>
-        <li>
-            <a id="lnkTasks" asp-action="Tasks" asp-controller="Able"><i class="fas fa-tasks"></i>Tasks</a>
-        </li>
-        <li>
-            <a id="lnkActions" asp-action="RptCaseaction" asp-controller="AbleReports"><i class="fa-solid fa-gear"></i>Actions MV</a>
-        </li>
-        <li>
-            <a id="lnkNotes" asp-action="Note1" asp-controller="Able"><i class="fas fa-file-alt"></i>Notes</a>
-        </li>
-        <li>
-            <a id="lnkReports" asp-action="Index" asp-controller="AbleREports"><i class="fas fa-chart-bar"></i>Reports</a>
-        </li>
+<nav class="navmenu d-flex flex-column">
+    <a class="nav-link" id="lnkDashboard" asp-action="Dashboard" asp-controller="Able"><i class="fas fa-tachometer-alt-fast"></i>Dashboard</a>
+    <a class="nav-link" id="lnkClaims" asp-action="Claim" asp-controller="Able"><i class="fas fa-wheelchair"></i>Claims</a>
+    <a class="nav-link" id="lnkBenefit" asp-action="Benefit" asp-controller="Able"><i class="fas fa fa-dollar"></i>Benefits</a>
+    <a class="nav-link" id="lnkPayment" asp-action="Paymentsummarymv" asp-controller="Able"><i class="fa fa-credit-card"></i>Payments</a>
+    <a class="nav-link" id="lnkPayment" asp-action="PaymentSummarySheet" asp-controller="Able"><i class="fa fa-credit-card"></i>PS Sheet</a>
+    <a class="nav-link" id="lnkContacts" asp-action="Policy" asp-controller="Able"><i class="fas fa-award"></i>Policies</a>
+    <a class="nav-link" id="lnkParty" asp-action="Contact" asp-controller="Able"><i class="fas fa fa-phone"></i>Phone Enquiries</a>
+    <a class="nav-link" id="lnkParty" asp-action="MedicalCode" asp-controller="Able"><i class="fas fa-stethoscope"></i>Medical</a>
+    <a class="nav-link" id="lnkParty" asp-action="Party" asp-controller="Able"><i class="fas fa-user-friends"></i>Parties</a>
+    <a class="nav-link" id="lnkAddress" asp-action="PartyAddress" asp-controller="Able"><i class="fas fa-address-card"></i>Address</a>
+    <a class="nav-link" id="lnkDocuments" asp-action="RptDocumentreport" asp-controller="AbleReports"><i class="fa-solid fa-file"></i>Documents MV</a>
+    <a class="nav-link" id="lnkDocuments" asp-action="Documents" asp-controller="Able"><i class="fa-solid fa-file"></i>Documents</a>
+    <a class="nav-link" id="lnkTasks" asp-action="Taskmv" asp-controller="AbleReports"><i class="fas fa-tasks"></i>Task MV</a>
+    <a class="nav-link" id="lnkTasks" asp-action="Tasks" asp-controller="Able"><i class="fas fa-tasks"></i>Tasks</a>
+    <a class="nav-link" id="lnkActions" asp-action="RptCaseaction" asp-controller="AbleReports"><i class="fa-solid fa-gear"></i>Actions MV</a>
+    <a class="nav-link" id="lnkNotes" asp-action="Note1" asp-controller="Able"><i class="fas fa-file-alt"></i>Notes</a>
+    <a class="nav-link" id="lnkReports" asp-action="Index" asp-controller="AbleREports"><i class="fas fa-chart-bar"></i>Reports</a>
 
-        @*
-        <li>
-            <a id="lnkExports" asp-action="ReportRequest" asp-controller="AbleExportRequest"><i class="fas fa-chart-bar"></i>Export Requests</a>
-        </li>
-        <li>
-            <a id="lnkExports" asp-action="Index" asp-controller="AbleExport"><i class="fas fa-chart-bar"></i>Exports</a>
-        </li>
-         <li>
-            <a id="lnkExports" asp-action="Index" asp-controller="AbleEmails"><i class="fas fa-chart-bar"></i>Emails</a>
-        </li>
-        *@
-
-        @{
-            var _rolename = Context.Session.GetString("ABLERoleName");
-
-            if(_rolename == "super")
-            {
-                <li>
-                    <a id="lnkExports" asp-action="Index" asp-controller="AbleLogs"><i class="fas fa-chart-bar"></i>Logs</a>
-                </li>
-                <li>
-                    <a id="lnkExports" asp-action="Index" asp-controller="AbleUsers"><i class="fas fa-chart-bar"></i>Site Users</a>
-                </li>
-            }
+     @{
+        // Preserve your role-based additions
+        var _rolename = Context.Session.GetString("ABLERoleName");
+        if (_rolename == "admin")
+        {
+            <a class="nav-link" id="lnkExports" asp-action="Index" asp-controller="AbleLogs"><i class="fas fa-chart-bar"></i>Logs</a>
+            <a class="nav-link" id="lnkExports" asp-action="Index" asp-controller="AbleUsers"><i class="fas fa-chart-bar"></i>Site Users</a>
         }
-    </ul>
+    }
 </nav>

@@ -13,8 +13,6 @@
 <script src="~/js/ablereport.js"></script>
 
 <div class="wrapper">
-    <!-- Sidebar  -->
-    <partial name="_SidebarA" />
     <!-- Page Content  -->
     <div id="content">
         <div class="container-fluid">
@@ -59,7 +57,7 @@
                                         <td>@Html.DisplayFor(modelItem => item.CreatedBy)</td>
                                         <td>@Html.DisplayFor(modelItem => item.DocumentType)</td>
                                         <td>@Html.DisplayFor(modelItem => item.Status)</td>
-                                        <td><a class="btn btn-outline-secondary" onclick="return GetNote1('@item.Id', '@ViewBag.appId')"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
+                                        <td><a class="btn btn-outline-secondary" onclick="return GetNote1('@item.Id', '@ViewBag.appId')"><i class="bi bi-info-circle" aria-hidden="true"></i></a></td>
 
                                     </tr>
                                 }

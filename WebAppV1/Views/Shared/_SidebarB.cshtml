@@ -1,62 +1,18 @@
-﻿<link href="~/css/style4.css" rel="stylesheet" />
-<link href="~/plugin/fontawesome-free/css/all.css" rel="stylesheet" />
+﻿
+@* ASTERON Sidebar (SidebarB) *@
+@using Microsoft.AspNetCore.Http
 
-<nav id="sidebar">
-    <div class="sidebar-header">
-        @*<b>Menu</b>*@
-    </div>
-    <ul class="list-unstyled components" style="border-bottom:none;">
-        <li>
-            <a id="lnkHome" asp-action="Index" asp-controller="Able"><i class="fas fa-home"></i>Home</a>
-        </li>
-        <li>
-            <a id="lnkDashboard" asp-action="Dashboard" asp-controller="Asteron"><i class="fas fa-tachometer-alt-fast"></i>Dashboard</a>
-        </li>
-        <li>
-            <a id="lnkClaims" asp-action="Claim" asp-controller="Asteron"><i class="fas fa-wheelchair"></i>Claims</a>
-        </li>
-        <li>
-            <a id="lnkContacts" asp-action="Policy" asp-controller="Asteron"><i class="fas fa-award"></i>Policies</a>
-        </li>
-        <li>
-            <a id="lnkNotes" asp-action="Note" asp-controller="Asteron"><i class="fas fa-file-alt"></i>Notes</a>
-        </li>
-        <li>
-            <a id="lnkDocuments" asp-action="Document" asp-controller="Asteron"><i class="fa-solid fa-file"></i>Documents</a>
-        </li>
-        <li>
-            <a id="lnkTasks" asp-action="Activity" asp-controller="Asteron"><i class="fas fa-tasks"></i>Activities</a>
-        </li>
-        <li>
-            <a id="lnkParty" asp-action="History" asp-controller="Asteron"><i class="fas fa-stethoscope"></i>History</a>
-        </li>
-        <li>
-            <a id="lnkParty" asp-action="Contact" asp-controller="Asteron"><i class="fas fa-user-friends"></i>Contacts</a>
-        </li>
-        <li>
-            <a id="lnkAddress" asp-action="Address" asp-controller="Asteron"><i class="fas fa-address-card"></i>Address</a>
-        </li>
-       <li>
-            <a id="lnkBenefit" asp-action="Coverage" asp-controller="Asteron"><i class="fas fa-dollar"></i>Coverage</a>
-        </li>
-        <li>
-            <a id="lnkParty" asp-action="Incident" asp-controller="Asteron"><i class="fas fa-phone"></i>Incident</a>
-        </li>
-        <li>
-            <a id="lnkTasks" asp-action="Complaint" asp-controller="Asteron"><i class="fas fa-comments"></i>Compliant</a>
-        </li>
-        @{
-            var _rolename = Context.Session.GetString("ABLERoleName");
-
-            if(_rolename == "super")
-            {
-                <li>
-                    <a id="lnkExports" asp-action="Index" asp-controller="AbleLogs"><i class="fas fa-chart-bar"></i>Logs</a>
-                </li>
-                <li>
-                    <a id="lnkExports" asp-action="Index" asp-controller="AbleUsers"><i class="fas fa-chart-bar"></i>Site Users</a>
-                </li>
-            }
-        }
-    </ul>
+<nav class="navmenu d-flex flex-column">
+    <a class="nav-link" href="@Url.Action("Dashboard","Asteron")"><i class="bi bi-speedometer2"></i><span>Dashboard</span></a>
+    <a class="nav-link" href="@Url.Action("Claim","Asteron")"><i class="bi bi-briefcase"></i><span>Claims</span></a>
+    <a class="nav-link" href="@Url.Action("Policy","Asteron")"><i class="bi bi-file-earmark-text"></i><span>Policies</span></a>
+    <a class="nav-link" href="@Url.Action("Note","Asteron")"><i class="bi bi-journal-text"></i><span>Notes</span></a>
+    <a class="nav-link" href="@Url.Action("Document","Asteron")"><i class="bi bi-folder2-open"></i><span>Documents</span></a>
+    <a class="nav-link" href="@Url.Action("Activity","Asteron")"><i class="bi bi-check2-square"></i><span>Activities</span></a>
+    <a class="nav-link" href="@Url.Action("History","Asteron")"><i class="bi bi-clock-history"></i><span>History</span></a>
+    <a class="nav-link" href="@Url.Action("Contact","Asteron")"><i class="bi bi-people"></i><span>Contacts</span></a>
+    <a class="nav-link" href="@Url.Action("Address","Asteron")"><i class="bi bi-geo-alt"></i><span>Address</span></a>
+    <a class="nav-link" href="@Url.Action("Coverage","Asteron")"><i class="bi bi-shield-check"></i><span>Coverage</span></a>
+    <a class="nav-link" href="@Url.Action("Incident","Asteron")"><i class="bi bi-exclamation-triangle"></i><span>Incident</span></a>
+    <a class="nav-link" href="@Url.Action("Complaint","Asteron")"><i class="bi bi-chat-dots"></i><span>Complaint</span></a>
 </nav>

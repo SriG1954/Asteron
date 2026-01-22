@@ -137,7 +137,7 @@ app.UseCookiePolicy(new CookiePolicyOptions
 });
 
 // use middleware to validate login user
-//app.UseMiddleware<ValidateABLELoginUser>();
+app.UseMiddleware<ValidateABLELoginUser>();
 
 app.MapControllerRoute(
     name: "default",

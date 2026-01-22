@@ -36,6 +36,8 @@ namespace WebAppV1.Controllers
         {
             try
             {
+                ViewData["SidebarPartial"] = "_SidebarACT";
+
                 if (search == "CaseDetail")
                 {
                     return RedirectToAction("CaseDetail", "AbleTabs", id);
@@ -155,6 +157,8 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Claim Hub";
+                ViewData["SidebarPartial"] = "_SidebarACT";
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 

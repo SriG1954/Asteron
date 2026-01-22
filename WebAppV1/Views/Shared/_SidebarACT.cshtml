@@ -1,69 +1,24 @@
-﻿@model AppCoreV1.ABLEModels.Case;
+﻿@* ABLE Sidebar (SidebarACT) *@
+@using Microsoft.AspNetCore.Http
 
-<link href="~/css/style4.css" rel="stylesheet" />
 <link href="~/plugin/fontawesome-free/css/all.css" rel="stylesheet" />
 
-<nav id="sidebar">
-    <div class="sidebar-header">
-        @*<b>Menu</b>*@
-    </div>
-    <ul class="list-unstyled components" style="border-bottom:none;">
-        <li>
-            <a id="lnkHome" asp-action="Index" asp-controller="Able"><i class="fas fas fa-home"></i>Home</a>
-        </li>
-        <li>
-            <a id="lnlClaimHub" asp-action="ClaimHub" asp-controller="AbleTabs" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Claim Hub</a>
-        </li>
-        <li>
-            <a id="noteslink" asp-action="GeneralClaim" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>General Claim</a>
-        </li>
-        <li>
-            <a id="noteslink" asp-action="CoverageSearch" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Coverages</a>
-        </li>
-        <li>
-            <a id="noteslink" asp-action="MedicalCode" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Medical</a>
-        </li>
-        <li>
-            <a id="lnkCMPServices" asp-action="CMP" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>CMP</a>
-        </li>
-        <li>
-            <a id="lnkTask" asp-action="Tasks" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Tasks</a>
-        </li>
-         <li>
-            <a id="noteslink" asp-action="Documents" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Documents</a>
-        </li>
-        <li>
-            <a id="linkPhoneEnquiries" asp-action="Contact" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Phone Enquiries</a>
-        </li>
-       @*  <li>
-            <a id="noteslink" asp-action="NotesExtDocument" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber"><i class="fas fa-tachometer-alt-fast"></i>Notes1</a>
-        </li> *@
-        <li>
-            <a id="noteslink" asp-action="Notes" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast" asp-route-appid="@ViewBag.appId"></i>Notes</a>
-        </li> 
-        <li>
-            <a id="noteslink" asp-action="NotesEform" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Eforms</a>
-        </li>
-        <li>
-            <a id="noteslink" asp-action="OutstandingRequest" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Requirements</a>
-        </li>
-         <li>
-            <a id="noteslink" asp-action="ClaimOccupation" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Occupation</a>
-        </li>
-        <li>
-            <a id="noteslink" asp-action="WorkStatus" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>WorkStatus</a>
-        </li>
-        @*<li>
-            <a id="noteslink" asp-action="Notes" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber"><i class="fas fa-tachometer-alt-fast"></i>Linked Cases</a>
-        </li> *@
-        <li>
-            <a id="noteslink" asp-action="CaseActions" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Case Actions</a>
-        </li>
-        <li>
-            <a id="noteslink" asp-action="CaseHistory" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Case History</a>
-        </li>
-        <li>
-            <a id="noteslink" asp-action="CaseValidation" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Validations</a>
-        </li>
-    </ul>
+<nav class="navmenu d-flex flex-column">
+    <a class="nav-link" id="lnkHome" asp-action="Index" asp-controller="Able"><i class="fas fas fa-home"></i>Home</a>
+    <a class="nav-link" id="lnlClaimHub" asp-action="ClaimHub" asp-controller="AbleTabs" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Claim Hub</a>
+    <a class="nav-link" id="noteslink" asp-action="GeneralClaim" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>General Claim</a>
+    <a class="nav-link" id="noteslink" asp-action="CoverageSearch" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Coverages</a>
+    <a class="nav-link" id="noteslink" asp-action="MedicalCode" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Medical</a>
+    <a class="nav-link" id="lnkCMPServices" asp-action="CMP" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>CMP</a>
+    <a class="nav-link" id="lnkTask" asp-action="Tasks" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Tasks</a>
+    <a class="nav-link" id="noteslink" asp-action="Documents" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Documents</a>
+    <a class="nav-link" id="linkPhoneEnquiries" asp-action="Contact" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Phone Enquiries</a>
+    <a class="nav-link" id="noteslink" asp-action="Notes" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast" asp-route-appid="@ViewBag.appId"></i>Notes</a>
+    <a class="nav-link" id="noteslink" asp-action="NotesEform" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Eforms</a>
+    <a class="nav-link" id="noteslink" asp-action="OutstandingRequest" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Requirements</a>
+    <a class="nav-link" id="noteslink" asp-action="ClaimOccupation" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Occupation</a>
+    <a class="nav-link" id="noteslink" asp-action="WorkStatus" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>WorkStatus</a>
+    <a class="nav-link" id="noteslink" asp-action="CaseActions" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Case Actions</a>
+    <a class="nav-link" id="noteslink" asp-action="CaseHistory" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Case History</a>
+    <a class="nav-link" id="noteslink" asp-action="CaseValidation" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Validations</a>
 </nav>

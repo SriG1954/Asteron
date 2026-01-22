@@ -22,6 +22,7 @@ namespace WebAppV1.Controllers
             string loginuser = HttpContext.User.Identity?.Name ?? string.Empty;
 
             ViewData["Title"] = "Home";
+            ViewData["SidebarPartial"] = "_SidebarS";
 
             try
             {
@@ -63,7 +64,13 @@ namespace WebAppV1.Controllers
 
         public IActionResult FAQ()
         {
-            ViewData["Title"] = "Home";
+            ViewData["Title"] = "FAQ";
+            return View();
+        }
+
+        public IActionResult ContactUs()
+        {
+            ViewData["Title"] = "ContactUs";
             return View();
         }
 

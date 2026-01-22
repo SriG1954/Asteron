@@ -26,6 +26,8 @@ namespace WebAppV1.Controllers
 
         public IActionResult Index()
         {
+            ViewData["SidebarPartial"] = "_SidebarA";
+
             return View();
         }
 
@@ -65,6 +67,8 @@ namespace WebAppV1.Controllers
 
         public IActionResult Architecture()
         {
+            ViewData["SidebarPartial"] = "_SidebarA";
+
             return View();
         }
 
@@ -75,6 +79,7 @@ namespace WebAppV1.Controllers
             ViewBag.search = search;
             ViewBag.PageNumber = pageIndex;
             ViewData["Title"] = "Dashboard";
+            ViewData["SidebarPartial"] = "_SidebarA";
 
             return View();
         }
@@ -112,6 +117,8 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Claim";
+                ViewData["SidebarPartial"] = "_SidebarA";
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -198,6 +205,8 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Partys";
+                ViewData["SidebarPartial"] = "_SidebarA";
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -265,6 +274,8 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Party Address";
+                ViewData["SidebarPartial"] = "_SidebarA";
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -334,6 +345,8 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Policies";
+                ViewData["SidebarPartial"] = "_SidebarA";
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -402,6 +415,8 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Benefits";
+                ViewData["SidebarPartial"] = "_SidebarA";
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -470,6 +485,8 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Notes";
+                ViewData["SidebarPartial"] = "_SidebarA";
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -537,6 +554,8 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Payment Summarym Report";
+                ViewData["SidebarPartial"] = "_SidebarA";
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -611,6 +630,8 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Documents";
+                ViewData["SidebarPartial"] = "_SidebarA";
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
                 var list = await _context.SearchDocumentA(column, search, pageIndex, pageSize, staffFlag, appId);
@@ -673,6 +694,8 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Paument Summary";
+                ViewData["SidebarPartial"] = "_SidebarA";
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -709,6 +732,8 @@ namespace WebAppV1.Controllers
             }
 
             ViewData["Title"] = appName + " Contacts";
+            ViewData["SidebarPartial"] = "_SidebarA";
+
             ViewBag.appName = appName;
             ViewBag.appId = appId;
 
@@ -770,6 +795,8 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Medical Codes";
+                ViewData["SidebarPartial"] = "_SidebarA";
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -851,6 +878,8 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Claim Tasks";
+                ViewData["SidebarPartial"] = "_SidebarA";
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 

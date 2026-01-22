@@ -1,36 +1,38 @@
-﻿<header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                <img src="~/images/resolution_logo.svg" alt="ResolutionLife" />
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home" aria-hidden="true"></i>&nbsp;Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About"><i class="fas fa-info" aria-hidden="true"></i>&nbsp;About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="FAQ"><i class="fas fa-question" aria-hidden="true"></i>&nbsp;FAQs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ContactUs"><i class="fas fa-address-book" aria-hidden="true"></i>&nbsp;ContactUs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="fas fa-fingerprint"></i>&nbsp;Privacy</a>
-                    </li>
-                </ul>
-                @{
-                    var _username = Context.Session.GetString("ABLEUserName");
-                }
-                <p class="nav navbar-text"><i class="fas fa-user"></i>&nbsp;Hello, @User.Identity?.Name @_username</p>
-            </div>
+﻿@using Microsoft.AspNetCore.Http
+@{
+    var _username = Context.Session.GetString("ABLEUserName");
+    var displayName = $"{User?.Identity?.Name} {_username}";
+}
+
+<header class="top-row navbar navbar-expand bg-body border-bottom sticky-top header-dark">
+    <div class="container-fluid px-4 d-flex align-items-center">
+
+        <!-- Sidebar Toggle -->
+        <button id="sidebarToggle" class="btn btn-sm btn-outline-secondary me-2"
+                type="button" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+        </button>
+
+
+        <!-- Logo + Title -->
+        <div class="d-flex align-items-center gap-2" id="brandSection">
+            <img src="~/images/rlalogo-colour.png"
+                 alt="Resolution Life"
+                 class="brand-logo" />
+
+            @* <span class="fw-semibold fs-5 text-light">
+                Claims Archival
+            </span> *@
         </div>
-    </nav>
+
+
+        <!-- Right-side items -->
+        <div class="d-flex align-items-center gap-3">
+            <span class="text-muted">Hello, @displayName</span>
+
+            <a class="nav-link p-0" href="@Url.Action("About", "Home")">About</a>
+            <a class="nav-link p-0" href="@Url.Action("ContactUs", "Home")">Contact</a>
+        </div>
+
+    </div>
 </header>
