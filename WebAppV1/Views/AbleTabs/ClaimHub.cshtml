@@ -4,13 +4,7 @@
 @model AppCoreV1.ABLEModels.Claimbenefitmv;
 
 @{
-
-    //ViewData["Title"] = $"{@ViewBag.appName} Claim Hub";
-    //string casedetails = $"{@ViewBag.appName} Claim {@ViewData["CaseNumber"]?.ToString()} Case Detail";
-    AppCoreV1.ABLEModels.Case _case = new Case
-    {
-        CaseNumber = Model.ClaimNumber,
-    };
+    ViewData["Title"] = $"{@ViewBag.appName} Claim Hub";
 }
 <script src="~/js/ablereport.js"></script>
 

@@ -4,8 +4,8 @@
 <link href="~/plugin/fontawesome-free/css/all.css" rel="stylesheet" />
 
 <nav class="navmenu d-flex flex-column">
-    <a class="nav-link" id="lnkHome" asp-action="Index" asp-controller="Able"><i class="fas fas fa-home"></i>Home</a>
-    <a class="nav-link" id="lnlClaimHub" asp-action="ClaimHub" asp-controller="AbleTabs" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Claim Hub</a>
+    <a class="nav-link" id="lnkHome" asp-action="Index" asp-controller="Able"><i class="fas fas fa-home"></i>Able</a>
+    @* <a class="nav-link" id="lnlClaimHub" asp-action="ClaimHub" asp-controller="AbleTabs" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Claim Hub</a> *@
     <a class="nav-link" id="noteslink" asp-action="GeneralClaim" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>General Claim</a>
     <a class="nav-link" id="noteslink" asp-action="CoverageSearch" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Coverages</a>
     <a class="nav-link" id="noteslink" asp-action="MedicalCode" asp-controller="AbleTabs" asp-route-column="CaseNumber" asp-route-search="@Model.CaseNumber" asp-route-appid="@ViewBag.appId"><i class="fas fa-tachometer-alt-fast"></i>Medical</a>

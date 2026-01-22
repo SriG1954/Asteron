@@ -4,7 +4,9 @@
     {
         ViewData["Title"] = "ClaimHub";
     };
+
     var title = $"{ViewData["Title"]?.ToString()}-Claims Archival";
+    var sidebarPartial = ViewData["SidebarPartial"] as string ?? "_SidebarS";
 }
 
 <!DOCTYPE html>
@@ -43,7 +45,20 @@
                 </a>
             </nav>
 
-            @await Html.PartialAsync(ViewData["SidebarPartial"] as string ?? "_SidebarS")
+            @{
+                // Render the sidebar partial view
+                if(sidebarPartial == "_SidebarACT")
+                {
+                    // Pass the case model to the partial if needed, or set ViewData as required
+                    var caseModel = ViewData["Case"];
+                    @await Html.PartialAsync(sidebarPartial, caseModel)
+                }
+                else 
+                {
+                    @await Html.PartialAsync(sidebarPartial)
+                }
+                // @await Html.PartialAsync(ViewData["SidebarPartial"] as string ?? "_SidebarS")
+            }
 
         </aside>
 

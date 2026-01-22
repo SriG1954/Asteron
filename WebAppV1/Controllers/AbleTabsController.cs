@@ -159,6 +159,12 @@ namespace WebAppV1.Controllers
                 ViewData["Title"] = appName + " Claim Hub";
                 ViewData["SidebarPartial"] = "_SidebarACT";
 
+                AppCoreV1.ABLEModels.Case _case = new Case
+                {
+                    CaseNumber = list.ClaimNumber,
+                };
+                ViewData["Case"] = _case;
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -232,6 +238,9 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Claim Hub";
+                ViewData["SidebarPartial"] = "_SidebarACT";
+                ViewData["Case"] = _case;
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -259,6 +268,7 @@ namespace WebAppV1.Controllers
         {
             try
             {
+                AppCoreV1.ABLEModels.Case _case = await _context.GetCaseByClaimNo(search, appId);
                 //ViewBag.column = column;
                 ViewBag.search = search;
                 ViewData["CaseNumber"] = search;
@@ -277,6 +287,9 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Coverage";
+                ViewData["SidebarPartial"] = "_SidebarACT";
+                ViewData["Case"] = _case;
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -323,6 +336,10 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Medical Codes";
+                AppCoreV1.ABLEModels.Case _case = await _context.GetCaseByClaimNo(search, appId);
+                ViewData["SidebarPartial"] = "_SidebarACT";
+                ViewData["Case"] = _case;
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -372,6 +389,10 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Claim Notes External Document";
+                AppCoreV1.ABLEModels.Case _case = await _context.GetCaseByClaimNo(search, appId);
+                ViewData["SidebarPartial"] = "_SidebarACT";
+                ViewData["Case"] = _case;
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -409,6 +430,10 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Claim Notes Eform";
+                AppCoreV1.ABLEModels.Case _case = await _context.GetCaseByClaimNo(search, appId);
+                ViewData["SidebarPartial"] = "_SidebarACT";
+                ViewData["Case"] = _case;
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -446,6 +471,10 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Claim Case History";
+                AppCoreV1.ABLEModels.Case _case = await _context.GetCaseByClaimNo(search, appId);
+                ViewData["SidebarPartial"] = "_SidebarACT";
+                ViewData["Case"] = _case;
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -493,6 +522,10 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Claim Tasks";
+                AppCoreV1.ABLEModels.Case _case = await _context.GetCaseByClaimNo(search, appId);
+                ViewData["SidebarPartial"] = "_SidebarACT";
+                ViewData["Case"] = _case;
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -540,6 +573,10 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Documents";
+                AppCoreV1.ABLEModels.Case _case = await _context.GetCaseByClaimNo(search, appId);
+                ViewData["SidebarPartial"] = "_SidebarACT";
+                ViewData["Case"] = _case;
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -601,6 +638,10 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Claim Case Actions";
+                AppCoreV1.ABLEModels.Case _case = await _context.GetCaseByClaimNo(search, appId);
+                ViewData["SidebarPartial"] = "_SidebarACT";
+                ViewData["Case"] = _case;
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -640,6 +681,10 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Claim Phone Enquiries";
+                AppCoreV1.ABLEModels.Case _case = await _context.GetCaseByClaimNo(search, appId);
+                ViewData["SidebarPartial"] = "_SidebarACT";
+                ViewData["Case"] = _case;
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -735,6 +780,10 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Claim Case Validation";
+                AppCoreV1.ABLEModels.Case _case = await _context.GetCaseByClaimNo(search, appId);
+                ViewData["SidebarPartial"] = "_SidebarACT";
+                ViewData["Case"] = _case;
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -780,6 +829,10 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Outstanding Requests";
+                AppCoreV1.ABLEModels.Case _case = await _context.GetCaseByClaimNo(search, appId);
+                ViewData["SidebarPartial"] = "_SidebarACT";
+                ViewData["Case"] = _case;
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -897,6 +950,10 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Occupation";
+                AppCoreV1.ABLEModels.Case _case = await _context.GetCaseByClaimNo(search, appId);
+                ViewData["SidebarPartial"] = "_SidebarACT";
+                ViewData["Case"] = _case;
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -972,6 +1029,9 @@ namespace WebAppV1.Controllers
 
                 var result = await _context.GetTabCMP(search, appId);
                 ViewData["CaseNumber"] = search;
+                AppCoreV1.ABLEModels.Case _case = await _context.GetCaseByClaimNo(search, appId);
+                ViewData["SidebarPartial"] = "_SidebarACT";
+                ViewData["Case"] = _case;
 
                 return View(result);
             }
@@ -1035,6 +1095,10 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Claim Workstatus";
+                AppCoreV1.ABLEModels.Case _case = await _context.GetCaseByClaimNo(search, appId);
+                ViewData["SidebarPartial"] = "_SidebarACT";
+                ViewData["Case"] = _case;
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
@@ -1082,6 +1146,10 @@ namespace WebAppV1.Controllers
                 }
 
                 ViewData["Title"] = appName + " Notes";
+                AppCoreV1.ABLEModels.Case _case = await _context.GetCaseByClaimNo(search, appId);
+                ViewData["SidebarPartial"] = "_SidebarACT";
+                ViewData["Case"] = _case;
+
                 ViewBag.appName = appName;
                 ViewBag.appId = appId;
 
