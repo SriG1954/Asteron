@@ -1,4 +1,4 @@
-
+﻿
 /* Base (keep existing small adjustments) */
 html {
     font-size: 14px;
@@ -113,7 +113,7 @@ body {
     flex-direction: column;
 }
 
-/* Top row (like Blazor�s top bar) */
+/* Top row (like Blazor’s top bar) */
 .top-row {
     height: var(--toprow-h);
 }
@@ -143,6 +143,12 @@ body {
     background-color: #f2f2f2 !important;
 }
 
+    /* Black links in header */
+    .header-light .header-link {
+        color: #000 !important;
+        font-weight: 500;
+    }
+
     /* Ensure text is readable */
     .header-light .navbar-brand,
     .header-light span,
@@ -150,7 +156,38 @@ body {
         color: #2a2a2a !important;
     }
 
-/* Dashboard tiles (you had these�kept and slightly refined) */
+
+/* Horizontal gradient header (starting from top-left → top-right) */
+.header-hgradientold {
+    background: linear-gradient( 90deg, #fefefe 0%, /* lightest at the top-left */
+    #f2f2f2 40%, /* soft grey midpoint */
+    #e3e3e3 100% /* slightly darker at top-right */
+    ) !important;
+    /* Height clarity for gradient visibility */
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+
+.header-hgradient {
+    background: linear-gradient( 90deg, #ffffff 0%, #f0f0f0 30%, #d9d9d9 100% ) !important;
+}
+
+    /* Improve text readability on gradient */
+    .header-hgradient .navbar-brand,
+    .header-hgradient span,
+    .header-hgradient a {
+        color: #111 !important; /* bright black */
+        font-weight: 500;
+    }
+
+        .header-hgradient a:hover {
+            color: #000 !important;
+            text-decoration: underline;
+        }
+
+/* Dashboard tiles (you had these—kept and slightly refined) */
 .dashboard-tile {
     height: 180px;
     display: flex;

@@ -1,38 +1,70 @@
-﻿<link href="~/css/style4.css" rel="stylesheet" />
-<script src="~/js/mysearch.js"></script>
-
-<style>
-    .content-image {
-        font-size: 90px;
-        text-align: center;
-        background-color: #F2F4F4;
-    }
-</style>
+﻿@{
+    ViewData["Title"] = "Contact Us";
+}
 
 <div class="wrapper">
-    <!-- Page Content  -->
     <div id="content">
-        <div class="container-fluid">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">
-                        <h2>Contact Us</h2>
-                    </div>
-                    <div class="container">
-                    </div>
+        <div class="container-fluid py-3">
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-light border-bottom">
+                    <h2 class="mb-0">Contact Us</h2>
                 </div>
+
                 <div class="card-body">
-                    <div class="container">
-                        <div class="container col-md-12">
-                            <partial name="_GoogleMap" />
-                        </div>
+
+                    <p class="text-muted mb-4">
+                        For assistance related to the Claims Archival Portal — system access, claim lookups,
+                        report extraction, or data enquiries — please reach out to the ARS Team.
+                    </p>
+
+                    <ul class="list-group list-group-flush mb-4">
+
+                        <li class="list-group-item">
+                            <i class="bi bi-person-vcard me-2"></i>
+                            <strong>Team Owner:</strong>
+                            <span class="fw-semibold">Godwin Madapa</span> — Manager, CoreTech and Archival Repository Services (ARS)
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="bi bi-code-square me-2"></i>
+                            <strong>Technical Contact & Developer:</strong>
+                            <span class="fw-semibold">Srinivasan Govintharaju</span> — responsible for the
+                            application design, technical development, and future enhancements.
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="bi bi-envelope-paper me-2"></i>
+                            <strong>Functional Support:</strong>
+                            For enquiries about archived data retrieval, reporting, or business clarifications,
+                            contact the CoreTech support representatives.
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="bi bi-file-earmark-excel me-2"></i>
+                            <strong>Export & Data Requests:</strong>
+                            CoreTech team assists with structured XLS extracts, audit requests, and compliance‑aligned
+                            data retrieval.
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="bi bi-info-circle me-2"></i>
+                            <strong>General Enquiries:</strong>
+                            For non‑technical questions or onboarding, please connect with your CoreTech liaison.
+                        </li>
+
+                    </ul>
+
+                    <!-- Google Map -->
+                    <div class="col-md-12">
+                        <partial name="_GoogleMap" />
                     </div>
 
                 </div>
             </div>
+
         </div>
     </div>
 </div>
 
 <partial name="_ModalPage" />
-

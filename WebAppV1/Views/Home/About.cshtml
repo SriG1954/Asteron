@@ -1,29 +1,73 @@
-﻿<link href="~/css/style4.css" rel="stylesheet" />
-<script src="~/js/mysearch.js"></script>
-
-<style>
-    .content-image {
-        font-size: 90px;
-        text-align: center;
-        background-color: #F2F4F4;
-    }
-</style>
+﻿@{
+    ViewData["Title"] = "About";
+}
 
 <div class="wrapper">
-    <!-- Page Content  -->
     <div id="content">
-        <div class="container-fluid">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">
-                        <h2>About Claims Archival</h2>
-                    </div>
-                    <div class="container">
-                    </div>
+        <div class="container-fluid py-3">
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-light border-bottom">
+                    <h2 class="mb-0">About Claims Archival</h2>
                 </div>
+
                 <div class="card-body">
-                    <div class="container">
-                    </div>
+
+                    <p class="text-muted mb-4">
+                        The Claims Archival Portal provides a unified, secure, and high‑performance platform
+                        for viewing and retrieving archived claims from multiple enterprise systems including
+                        <strong>ABLE</strong>, <strong>ORION</strong>, and <strong>ASTERON</strong>.
+                    </p>
+
+                    <ul class="list-group list-group-flush">
+
+                        <li class="list-group-item">
+                            <i class="bi bi-archive me-2"></i>
+                            <strong>Multi‑System Archival Support</strong> — Query and retrieve historical
+                            claims and related business entities across ABLE, ORION, and ASTERON platforms.
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="bi bi-search me-2"></i>
+                            <strong>Advanced Search Capabilities</strong> — Offers optimized search for claims,
+                            policy details, payments, notes, addresses, parties, tasks, and case history.
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="bi bi-lightning-charge me-2"></i>
+                            <strong>High‑Performance Retrieval</strong> — Engineered to handle large volumes
+                            of archived data with minimal latency using efficient indexing and query design.
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="bi bi-shield-check me-2"></i>
+                            <strong>Secure Enterprise Access</strong> — Aligned with corporate data governance,
+                            audit controls, and secure authenticated access.
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="bi bi-file-earmark-excel me-2"></i>
+                            <strong>Structured Data Export</strong> — Supports exporting claim‑level and
+                            entity‑level data to clean <strong>XLS</strong> files for audit, reviews, analysis,
+                            and reporting.
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="bi bi-people-fill me-2"></i>
+                            <strong>Owned by RLA CoreTech Team</strong> — Managed and governed by the
+                            <strong>CoreTech</strong> team, led by
+                            <strong>Godwin Madapa</strong>.
+                        </li>
+
+                        <li class="list-group-item">
+                            <i class="bi bi-person-workspace me-2"></i>
+                            <strong>Developed by:</strong>
+                            <span class="fw-semibold">Srinivasan Govintharaju</span> — designed with focus on
+                            stability, scalability, and long‑term maintainability.
+                        </li>
+
+                    </ul>
+
                 </div>
             </div>
         </div>
@@ -31,4 +75,3 @@
 </div>
 
 <partial name="_ModalPage" />
-
