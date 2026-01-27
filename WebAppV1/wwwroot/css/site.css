@@ -156,22 +156,12 @@ body {
         color: #2a2a2a !important;
     }
 
-
-/* Horizontal gradient header (starting from top-left → top-right) */
-.header-hgradientold {
-    background: linear-gradient( 90deg, #fefefe 0%, /* lightest at the top-left */
-    #f2f2f2 40%, /* soft grey midpoint */
-    #e3e3e3 100% /* slightly darker at top-right */
-    ) !important;
-    /* Height clarity for gradient visibility */
+.header-hgradient {
+    background: linear-gradient( 90deg, #ffffff 0%, #f0f0f0 30%, #d9d9d9 100% ) !important;
     min-height: 60px;
     display: flex;
     align-items: center;
-}
-
-
-.header-hgradient {
-    background: linear-gradient( 90deg, #ffffff 0%, #f0f0f0 30%, #d9d9d9 100% ) !important;
+    padding: 0 16px;
 }
 
     /* Improve text readability on gradient */
@@ -186,6 +176,17 @@ body {
             color: #000 !important;
             text-decoration: underline;
         }
+
+    /* Thick blue underline ALWAYS visible */
+    .header-hgradient::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 4px;
+        background-color: #0078D4; /* Fluent blue */
+    }
 
 /* Dashboard tiles (you had these—kept and slightly refined) */
 .dashboard-tile {
@@ -222,4 +223,148 @@ body {
         font-weight: 600;
         letter-spacing: .5px;
         margin-top: 6px;
+    }
+
+/* Card container with elegant rounded corners */
+.pro-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 18px 22px;
+    border: 1px solid #e1e7ef;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.04), 0 6px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Modern Fluent-style inputs */
+.pro-input {
+    border-radius: 10px !important;
+    padding: 10px 12px;
+    border: 1px solid #b7d3ee !important; /* Light appealing blue border */
+    background-color: #ffffff !important;
+    transition: all .18s ease;
+    font-size: 0.95rem;
+}
+
+    /* Hover effect improves sense of interaction */
+    .pro-input:hover {
+        border-color: #86bbea !important;
+    }
+
+    /* Modern Fluent focus ring */
+    .pro-input:focus {
+        border-color: #0078D4 !important; /* Fluent blue focus */
+        box-shadow: 0 0 0 3px rgba(0, 120, 212, .22) !important;
+        background-color: #ffffff !important;
+    }
+
+/* Fluent-styled buttons */
+.pro-btn,
+.pro-btn-outline {
+    border-radius: 10px !important;
+    padding: 10px;
+    font-weight: 600;
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+    /* Subtle lift effect on hover */
+    .pro-btn:hover,
+    .pro-btn-outline:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 3px 8px rgba(0,0,0,.15);
+    }
+
+/* Outline button for Reset */
+.pro-btn-outline {
+    border: 1px solid #bfc7d1 !important;
+    color: #374151 !important;
+}
+
+    .pro-btn-outline:hover {
+        background-color: #f2f4f7 !important;
+    }
+
+/* Wrapper spacing fix since labels removed */
+.pro-input-wrap {
+    width: 100%;
+}
+
+/* ------------------------------
+   Table Styling
+------------------------------ */
+.table-card {
+    border-radius: 14px;
+}
+
+.modern-table thead {
+    background: #f1f5f9;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.modern-table th {
+    padding: 14px;
+    font-weight: 600;
+    color: #334155;
+    border-bottom: none !important;
+}
+
+.modern-table td {
+    padding: 12px 14px;
+    color: #1e293b;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.modern-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* ------------------------------
+   Pagination
+------------------------------ */
+.elegant-pagination .page-link {
+    border-radius: 8px;
+    margin: 0 4px;
+    border: 1px solid #d1d5db;
+    color: #334155;
+}
+
+    .elegant-pagination .page-link:hover {
+        background-color: #e2e8f0;
+    }
+
+.elegant-pagination .active .page-link {
+    background-color: #3b82f6 !important;
+    border-color: #2563eb !important;
+    color: white !important;
+}
+
+/* ------------------------------
+   Search Box Card
+------------------------------ */
+.search-card {
+    border-radius: 14px;
+}
+
+
+/* Compact, elegant title bar */
+.page-header {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 10px 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Title styling */
+.page-title {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+/* Back link */
+.link-normal {
+    color: #2563eb;
+    font-weight: 500;
+}
+
+    .link-normal:hover {
+        text-decoration: underline;
     }

@@ -21,7 +21,7 @@ namespace AppCoreV1.Helper
             {
                 var worksheet = workbook.Worksheets.Add("Claim");
                 var currentRow = 6;
-                worksheet.Cell(1, 1).Value = "Report Name: Helphub Claim";
+                worksheet.Cell(1, 1).Value = "Report Name: Asteron Claim";
                 worksheet.Cell(2, 1).Value = "Report Date: " + DateTime.Now.ToString();
                 worksheet.Cell(3, 1).Value = "Number of Rows: " + items.Count.ToString();
                 worksheet.Cell(4, 1).Value = "Created By: User";
@@ -301,7 +301,7 @@ namespace AppCoreV1.Helper
             {
                 var worksheet = workbook.Worksheets.Add("Policy");
                 var currentRow = 6;
-                worksheet.Cell(1, 1).Value = "Report Name: Helphub Policy";
+                worksheet.Cell(1, 1).Value = "Report Name: Asteron Policy";
                 worksheet.Cell(2, 1).Value = "Report Date: " + DateTime.Now.ToString();
                 worksheet.Cell(3, 1).Value = "Number of Rows: " + items.Count.ToString();
                 worksheet.Cell(4, 1).Value = "Created By: User";
@@ -464,7 +464,7 @@ namespace AppCoreV1.Helper
             {
                 var worksheet = workbook.Worksheets.Add("Note");
                 var currentRow = 6;
-                worksheet.Cell(1, 1).Value = "Report Name: Helphub Note";
+                worksheet.Cell(1, 1).Value = "Report Name: Asteron Note";
                 worksheet.Cell(2, 1).Value = "Report Date: " + DateTime.Now.ToString();
                 worksheet.Cell(3, 1).Value = "Number of Rows: " + items.Count.ToString();
                 worksheet.Cell(4, 1).Value = "Created By: User";
@@ -606,7 +606,7 @@ namespace AppCoreV1.Helper
             {
                 var worksheet = workbook.Worksheets.Add("Document");
                 var currentRow = 6;
-                worksheet.Cell(1, 1).Value = "Report Name: Helphub Document";
+                worksheet.Cell(1, 1).Value = "Report Name: Asteron Document";
                 worksheet.Cell(2, 1).Value = "Report Date: " + DateTime.Now.ToString();
                 worksheet.Cell(3, 1).Value = "Number of Rows: " + items.Count.ToString();
                 worksheet.Cell(4, 1).Value = "Created By: User";
@@ -784,7 +784,7 @@ namespace AppCoreV1.Helper
             {
                 var worksheet = workbook.Worksheets.Add("Activity");
                 var currentRow = 6;
-                worksheet.Cell(1, 1).Value = "Report Name: Helphub Activity";
+                worksheet.Cell(1, 1).Value = "Report Name: Asteron Activity";
                 worksheet.Cell(2, 1).Value = "Report Date: " + DateTime.Now.ToString();
                 worksheet.Cell(3, 1).Value = "Number of Rows: " + items.Count.ToString();
                 worksheet.Cell(4, 1).Value = "Created By: User";
@@ -989,7 +989,7 @@ namespace AppCoreV1.Helper
             {
                 var worksheet = workbook.Worksheets.Add("History");
                 var currentRow = 6;
-                worksheet.Cell(1, 1).Value = "Report Name: Helphub History";
+                worksheet.Cell(1, 1).Value = "Report Name: Asteron History";
                 worksheet.Cell(2, 1).Value = "Report Date: " + DateTime.Now.ToString();
                 worksheet.Cell(3, 1).Value = "Number of Rows: " + items.Count.ToString();
                 worksheet.Cell(4, 1).Value = "Created By: User";
@@ -1092,7 +1092,7 @@ namespace AppCoreV1.Helper
             {
                 var worksheet = workbook.Worksheets.Add("Contact");
                 var currentRow = 6;
-                worksheet.Cell(1, 1).Value = "Report Name: Helphub Contact";
+                worksheet.Cell(1, 1).Value = "Report Name: Asteron Contact";
                 worksheet.Cell(2, 1).Value = "Report Date: " + DateTime.Now.ToString();
                 worksheet.Cell(3, 1).Value = "Number of Rows: " + items.Count.ToString();
                 worksheet.Cell(4, 1).Value = "Created By: User";
@@ -1519,7 +1519,7 @@ namespace AppCoreV1.Helper
             {
                 var worksheet = workbook.Worksheets.Add("Address");
                 var currentRow = 6;
-                worksheet.Cell(1, 1).Value = "Report Name: Helphub Address";
+                worksheet.Cell(1, 1).Value = "Report Name: Asteron Address";
                 worksheet.Cell(2, 1).Value = "Report Date: " + DateTime.Now.ToString();
                 worksheet.Cell(3, 1).Value = "Number of Rows: " + items.Count.ToString();
                 worksheet.Cell(4, 1).Value = "Created By: User";
@@ -1661,7 +1661,7 @@ namespace AppCoreV1.Helper
             {
                 var worksheet = workbook.Worksheets.Add("Coverage");
                 var currentRow = 6;
-                worksheet.Cell(1, 1).Value = "Report Name: Helphub Coverage";
+                worksheet.Cell(1, 1).Value = "Report Name: Asteron Coverage";
                 worksheet.Cell(2, 1).Value = "Report Date: " + DateTime.Now.ToString();
                 worksheet.Cell(3, 1).Value = "Number of Rows: " + items.Count.ToString();
                 worksheet.Cell(4, 1).Value = "Created By: User";
@@ -1794,7 +1794,7 @@ namespace AppCoreV1.Helper
             {
                 var worksheet = workbook.Worksheets.Add("Incident");
                 var currentRow = 6;
-                worksheet.Cell(1, 1).Value = "Report Name: Helphub Incident";
+                worksheet.Cell(1, 1).Value = "Report Name: Asteron Incident";
                 worksheet.Cell(2, 1).Value = "Report Date: " + DateTime.Now.ToString();
                 worksheet.Cell(3, 1).Value = "Number of Rows: " + items.Count.ToString();
                 worksheet.Cell(4, 1).Value = "Created By: User";
@@ -1957,7 +1957,7 @@ namespace AppCoreV1.Helper
             {
                 var worksheet = workbook.Worksheets.Add("Complaint");
                 var currentRow = 6;
-                worksheet.Cell(1, 1).Value = "Report Name: Helphub Complaint";
+                worksheet.Cell(1, 1).Value = "Report Name: Asteron Complaint";
                 worksheet.Cell(2, 1).Value = "Report Date: " + DateTime.Now.ToString();
                 worksheet.Cell(3, 1).Value = "Number of Rows: " + items.Count.ToString();
                 worksheet.Cell(4, 1).Value = "Created By: User";

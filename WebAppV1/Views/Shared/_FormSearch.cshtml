@@ -1,10 +1,51 @@
-﻿<!--Form Search-->
-<div class="form-inline">
-    <div class="form-group mx-sm-1">
-        @Html.DropDownList("column", new SelectList(ViewBag.searchcolumns, "Value", "Text"), new { @class = "form-control btn-outline-primary dropdown-toggle" })
+﻿
+<!-- Professional & Modern Search Panel -->
+<div class="pro-card shadow-sm mb-1">
+    <div class="row g-3 align-items-end">
+
+        <!-- Column dropdown -->
+        <div class="col-md-3 col-sm-6">
+            @Html.DropDownList(
+                "column",
+                new SelectList(ViewBag.searchcolumns, "Value", "Text"),
+                new {
+                    @class = "form-select pro-input",
+                    @id = "column",
+                    @aria_label = "Filter Column"
+                }
+            )
+        </div>
+
+        <!-- Search text -->
+        <div class="col-md-5 col-sm-6">
+            <div class="pro-input-wrap">
+                <input type="text"
+                       id="search"
+                       name="search"
+                       value="@ViewBag.search"
+                       placeholder="Search..."
+                       class="form-control pro-input"
+                       aria-label="Search text" />
+            </div>
+        </div>
+
+        <!-- Search button -->
+        <div class="col-md-2 col-sm-6 d-grid">
+            <button type="submit" id="btnsearch" class="btn btn-primary pro-btn">
+                Search
+            </button>
+        </div>
+
+        <!-- Reset -->
+        <div class="col-md-2 col-sm-6 d-grid">
+            <a href="@Url.Action(
+                        (string?)ViewContext.RouteData.Values["action"],
+                        (string?)ViewContext.RouteData.Values["controller"]
+                    )"
+               class="btn btn-outline-secondary pro-btn-outline w-100">
+                Reset
+            </a>
+        </div>
+
     </div>
-    <div class="form-group mx-sm-1">
-        <input type="text" class="form-inline" id="search" name="search" value="@ViewBag.search" placeholder="search">
-    </div>
-    <button type="submit" id="btnsearch" value="Search" class="btn btn-primary mx-sm-1">Search</button>
 </div>
