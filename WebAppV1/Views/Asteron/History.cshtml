@@ -12,93 +12,147 @@
 }
 <script src="~/js/asteronreport.js"></script>
 
+
 <div class="wrapper">
-    <!-- Page Content  -->
     <div id="content">
         <div class="container-fluid">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">
-                        <div class="row">
-                            <div style="padding-left:10px;">
-                                <h4>Asteron History</h4>
-                                <a asp-action="Index" asp-controller="Asteron">Back to Home</a>
-                                <a asp-action="GetHistorys" asp-controller="AsteronDownload" asp-route-column="@ViewBag.column" asp-route-search="@ViewBag.search" asp-route-pageIndex="@Model.PageIndex" class="btn btn-success">Download</a>
-                            </div>
-                            <div style="float:right;padding-top: 5px;padding-left:10px;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    @using (Html.BeginForm(ViewBag.action as string, "Asteron", FormMethod.Get, new { @column = ViewBag.column as string, @search = ViewBag.search as string, @page = Model.PageIndex }))
-                    {
-                        <partial name="_FormSearch" />
-                    }
-                    <div class="card-body">
 
-                        <table id="tabldata" class="table">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th scope="col">Claimid</th>
-                                    <th scope="col">Eventtimestamp</th>
-                                    <th scope="col">Subtype</th>
-                                    <th scope="col">Description</th>
-                                    <th scope="col">Publicid</th>
+            <!-- Compact Title Bar -->
+            <div class="page-header">
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
 
-                                    <th scope="col">View</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var item in Model)
-                                {
-                                    <tr>
-                                        <td>@Html.DisplayFor(modelItem => item.Claimid)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Eventtimestamp)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Subtype)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Publicid)</td>
+                    <!-- Left side: Title -->
+                    <h4 class="page-title m-0">Asteron Histories</h4>
 
-                                        <td>
-                                            <div class="d-flex gap-2">
-                                                <a class="btn btn-outline-secondary" onclick="return GetHistory('@item.Id')">
-                                                    <i class="bi bi-info-circle" aria-hidden="true"></i>
-                                                </a>
-                                                <a asp-action="HistoryLinks" asp-controller="Asteron" asp-route-id="@item.Id" class="btn btn-outline-secondary">
-                                                    <i class="bi bi-diagram-3" aria-hidden="true"></i>
-                                                </a>
-                                            </div>
-                                        </td>
+                    <!-- Right side: Action links -->
+                    <div class="d-flex align-items-center gap-3">
 
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
+                        <a asp-action="Index"
+                           asp-controller="Asteron"
+                           class="link-normal text-decoration-none">
+                            Back to Home
+                        </a>
 
+                        <a asp-action="GetHistorys"
+                           asp-controller="AsteronDownload"
+                           asp-route-column="@ViewBag.column"
+                           asp-route-search="@ViewBag.search"
+                           asp-route-pageIndex="@Model.PageIndex"
+                           class="btn btn-success">
+                            Download
+                        </a>
 
-                    </div>
-                    <div class="card-footer">
-                        <nav aria-label="...">
-                            <ul class="pagination justify-content-center">
-                                @if (Model.TotalPages > 1)
-                                {
-                                    <li id="fpLink" class="page-item"><a class="page-link" href="./History?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=1&pageSize=25">First</a></li>
-                                    @if (prevpage > 0)
-                                    {
-                                        <li id="ppLink" class="page-item"><a class="page-link" href="./History?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@prevpage&pageSize=25">Prev</a></li>
-                                    }
-                                    <li id="cpLink" class="page-item"><a class="page-link active" href="./History?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@Model.PageIndex&pageSize=25">Page @Model.PageIndex of Pages @Model.TotalPages</a></li>
-                                    @if (nextpage > 0)
-                                    {
-                                        <li id="npLink" class="page-item"><a class="page-link" href="./History?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@nextpage&pageSize=25">Next</a></li>
-                                    }
-                                    <li id="lpLink" class="page-item"><a class="page-link" href="./History?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@Model.TotalPages&pageSize=25">last</a></li>
-                                }
-                            </ul>
-                        </nav>
                     </div>
                 </div>
             </div>
+
+            <div class="mt-1">
+                @using (Html.BeginForm(ViewBag.action as string,
+                                "Asteron",
+                                FormMethod.Get,
+                                new { @column = ViewBag.column, @search = ViewBag.search, @page = Model.PageIndex }))
+                {
+                    <partial name="_FormSearch" />
+                }
+            </div>
+
+            <!-- Data Table -->
+            <div class="card shadow-sm mb-4 table-card">
+                <div class="card-body p-0">
+                    <table class="table modern-table mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">Claimid</th>
+                                <th scope="col">Eventtimestamp</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Publicid</th>
+
+                                <th class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(modelItem => item.Claimid)</td>
+                                    <td style="white-space:nowrap">@Html.DisplayFor(modelItem => item.Eventtimestamp)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Publicid)</td>
+                                    <td class="text-center">
+                                        <div class="d-flex justify-content-center gap-2">
+                                            <button class="btn btn-outline-primary btn-sm"
+                                                    onclick="return GetHistory('@item.Id')">
+                                                <i class="bi bi-info-circle"></i>
+                                            </button>
+
+                                            <a asp-action="HistoryLinks"
+                                               asp-controller="Asteron"
+                                               asp-route-id="@item.Id"
+                                               class="btn btn-outline-primary btn-sm">
+                                                <i class="bi bi-diagram-3"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Elegant Pagination -->
+                <div class="card-footer">
+                    <nav aria-label="...">
+                        <ul class="pagination justify-content-center elegant-pagination gap-2">
+
+                            @if (Model.TotalPages > 1)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link"
+                                       href="./History?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=1&pageSize=25">
+                                        First
+                                    </a>
+                                </li>
+
+                                @if (prevpage > 0)
+                                {
+                                    <li class="page-item">
+                                        <a class="page-link"
+                                           href="./History?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@prevpage&pageSize=25">
+                                            Prev
+                                        </a>
+                                    </li>
+                                }
+
+                                <li class="page-item active">
+                                    <a class="page-link">
+                                        Page @Model.PageIndex of @Model.TotalPages
+                                    </a>
+                                </li>
+
+                                @if (nextpage > 0)
+                                {
+                                    <li class="page-item">
+                                        <a class="page-link"
+                                           href="./History?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@nextpage&pageSize=25">
+                                            Next
+                                        </a>
+                                    </li>
+                                }
+
+                                <li class="page-item">
+                                    <a class="page-link"
+                                       href="./History?id=@ViewBag.id&column=@ViewBag.column&search=@ViewBag.search&pageIndex=@Model.TotalPages&pageSize=25">
+                                        Last
+                                    </a>
+                                </li>
+                            }
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
